@@ -1,0 +1,7 @@
+﻿# Exclude dependency folders - never scan third-party code
+frontend/node_modules/
+backend/node_modules/
+node_modules/
+
+# Exclude compliance tooling - the scanner scanning itself
+compliance/

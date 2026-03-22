@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarketMate GCP Infrastructure Reference v3.0</title>
+<style>
+  @media print {
+    body { margin: 0; background: #fff; }
+    .page { box-shadow: none; }
+    h2 { page-break-after: avoid; }
+    .tool-card, table { page-break-inside: avoid; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    color: #1a1a1a;
+    background: #f0f2f5;
+    padding: 30px 20px;
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  /* Cover */
+  .cover {
+    background: #1a3a5c;
+    color: #fff;
+    padding: 56px 52px 40px;
+  }
+  .cover-label {
+    font-size: 9pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7fb3d3;
+    margin-bottom: 10px;
+  }
+  .cover h1 { font-size: 28pt; font-weight: 700; line-height: 1.1; margin-bottom: 6px; }
+  .cover .subtitle { font-size: 12pt; color: #a8c8e0; margin-bottom: 36px; }
+  .cover-bar { height: 3px; background: linear-gradient(90deg, #4a9fd4, transparent); margin-bottom: 28px; }
+  .meta-grid { display: grid; grid-template-columns: 180px 1fr; gap: 7px 16px; font-size: 9.5pt; }
+  .meta-grid .lbl { color: #7fb3d3; font-weight: 600; }
+  .meta-grid .val { color: #e0eaf2; }
+  /* Body */
+  .body { padding: 40px 52px 52px; }
+  h2 {
+    font-size: 14pt; color: #1a3a5c;
+    border-bottom: 2px solid #1a3a5c;
+    padding-bottom: 5px; margin: 32px 0 14px;
+  }
+  h3 { font-size: 11pt; color: #1a3a5c; margin: 22px 0 8px; font-weight: 700; }
+  p { line-height: 1.65; margin-bottom: 10px; font-size: 10.5pt; }
+  ul { margin: 6px 0 12px 22px; font-size: 10.5pt; line-height: 1.7; }
+  li { margin-bottom: 3px; }
+  code {
+    font-family: 'Courier New', monospace;
+    background: #f0f0f0; border-radius: 3px;
+    padding: 1px 5px; font-size: 9.5pt;
+  }
+  /* Tables */
+  table { width: 100%; border-collapse: collapse; margin: 10px 0 20px; font-size: 9.5pt; }
+  thead tr { background: #1a3a5c; color: #fff; }
+  thead th { padding: 8px 10px; text-align: left; font-size: 9pt; font-weight: 600; letter-spacing: 0.3px; }
+  tbody tr:nth-child(even) { background: #f4f7fa; }
+  tbody td { padding: 7px 10px; border-bottom: 1px solid #dde3ea; vertical-align: top; line-height: 1.5; }
+  /* Two-col key-value */
+  .kv-table td:first-child { font-weight: 700; color: #1a3a5c; width: 220px; }
+  /* Status badges */
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 3px; font-size: 8.5pt; font-weight: 700; }
+  .badge-complete { background: #d4edda; color: #155724; }
+  .badge-pending  { background: #fff3cd; color: #7d4e00; }
+  .badge-progress { background: #cce5ff; color: #004085; }
+  .badge-critical { background: #f8d7da; color: #721c24; }
+  .sev-critical   { color: #b91c1c; font-weight: 700; }
+  .sev-high       { color: #92400e; font-weight: 700; }
+  .sev-medium     { color: #1d4ed8; }
+  /* Info / warn boxes */
+  .info-box {
+    background: #e8f4fb; border-left: 4px solid #1a3a5c;
+    padding: 10px 14px; border-radius: 0 4px 4px 0;
+    margin: 10px 0 16px; font-size: 9.5pt; color: #1a3a5c;
+  }
+  .warn-box {
+    background: #fff3cd; border-left: 4px solid #f59e0b;
+    padding: 10px 14px; border-radius: 0 4px 4px 0;
+    margin: 10px 0 16px; font-size: 9.5pt; color: #7d4e00; font-weight: 600;
+  }
+  .deleted-row td { background: #f8d7da !important; color: #721c24; text-decoration: line-through; }
+  /* Code block */
+  .code-block {
+    background: #1e1e1e; color: #d4d4d4;
+    font-family: 'Courier New', monospace; font-size: 9pt;
+    padding: 14px 18px; border-radius: 4px;
+    margin: 10px 0 16px; line-height: 1.7; white-space: pre-wrap;
+  }
+  /* Footer */
+  .doc-footer {
+    border-top: 1px solid #dde3ea; margin-top: 40px; padding-top: 14px;
+    display: flex; justify-content: space-between; font-size: 8.5pt; color: #888;
+  }
+  .classification {
+    display: inline-block; background: #e8f0fb; color: #1a3a5c;
+    border: 1px solid #b8ccec; border-radius: 3px;
+    padding: 2px 8px; font-size: 8pt; font-weight: 700;
+    margin-bottom: 20px; letter-spacing: 0.5px;
+  }
+  /* TOC */
+  .toc { background: #f4f7fa; border: 1px solid #dde3ea; border-radius: 4px; padding: 16px 20px; margin-bottom: 28px; }
+  .toc h3 { margin: 0 0 10px; color: #1a3a5c; font-size: 10.5pt; }
+  .toc ol { margin-left: 18px; font-size: 9.5pt; line-height: 1.9; }
+  .toc a { color: #1a3a5c; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-label">Marketmate Solutions Ltd</div>
+    <h1>MarketMate<br>GCP Infrastructure Reference</h1>
+    <div class="subtitle">Project: marketmate-486116</div>
+    <div class="cover-bar"></div>
+    <div class="meta-grid">
+      <span class="lbl">Project ID</span>       <span class="val">marketmate-486116</span>
+      <span class="lbl">Project Number</span>    <span class="val">487246736287</span>
+      <span class="lbl">Primary Region</span>    <span class="val">europe-west2 (London, UK)</span>
+      <span class="lbl">Firebase Project</span>  <span class="val">marketmate-486116 (default Firestore database)</span>
+      <span class="lbl">Service Account</span>   <span class="val">487246736287-compute@developer.gserviceaccount.com</span>
+      <span class="lbl">Document Version</span>  <span class="val">3.0 — Fully remediated &amp; compliance-verified</span>
+      <span class="lbl">Last Updated</span>       <span class="val">17 March 2026</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <div class="classification">CONFIDENTIAL — INTERNAL USE</div>
+
+    <div class="toc">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#sec-status">Security Status (as of 17 March 2026)</a></li>
+        <li><a href="#sec-secrets">Secrets Management</a></li>
+        <li><a href="#sec-cloudrun">Cloud Run Services</a></li>
+        <li><a href="#sec-tasks">Cloud Tasks Queues</a></li>
+        <li><a href="#sec-compute">Compute Engine — Typesense</a></li>
+        <li><a href="#sec-iam">IAM — Service Accounts</a></li>
+        <li><a href="#sec-gcs">GCS Bucket</a></li>
+        <li><a href="#sec-network">Networking &amp; Static IPs</a></li>
+        <li><a href="#sec-firestore">Firestore Data Structure</a></li>
+        <li><a href="#sec-integrations">Marketplace Integrations</a></li>
+        <li><a href="#sec-orders">Order Download Infrastructure</a></li>
+        <li><a href="#sec-deploy">Deploy Commands</a></li>
+        <li><a href="#sec-compliance">Compliance Evidence Pipeline</a></li>
+        <li><a href="#sec-pending">Pending Actions</a></li>
+        <li><a href="#sec-website">e-Lister Marketing Website</a></li>
+      </ol>
+    </div>
+
+    <div class="info-box">ℹ Migration from us-central1 to europe-west2 was completed on 08 March 2026. All Cloud Run services, Cloud Tasks queues, and the Typesense VM now run in europe-west2.</div>
+    <div class="info-box" style="background:#d4edda;border-color:#155724;color:#155724">✅ Full compliance scan completed 17 March 2026 — all 9 security tools PASS. Evidence at gs://marketmate/compliance/evidence-20260317/</div>
+
+    <!-- 1. SECURITY STATUS -->
+    <h2 id="sec-status">1. Security Status (as of 17 March 2026 — All Items Complete)</h2>
+    <div class="info-box">ℹ All critical security remediations from the 16 March 2026 compliance session have been completed. This section documents the current hardened state.</div>
+
+    <table>
+      <thead><tr><th style="width:55%">Control</th><th style="width:15%">Severity</th><th style="width:30%">Status</th></tr></thead>
+      <tbody>
+        <tr><td>SHOPIFY_CLIENT_SECRET rotated and moved to Secret Manager</td><td class="sev-critical">Critical</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>CREDENTIAL_ENCRYPTION_KEY moved to Secret Manager</td><td class="sev-critical">Critical</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>serviceAccountKey.json removed from codebase and container image</td><td class="sev-critical">Critical</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>AWS keys removed from backend/.env and backend/.envOLD</td><td class="sev-critical">Critical</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Typesense port 8108 restricted to 34.142.20.65/32 only</td><td class="sev-critical">Critical</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>All secrets migrated to GCP Secret Manager</td><td class="sev-high">High</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Go dependency CVEs remediated (crypto, oauth2, gin-cors)</td><td class="sev-high">High</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Editor role removed from compute service account</td><td class="sev-high">High</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Cloud Asset Inventory API enabled</td><td class="sev-high">High</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Security headers middleware added to Go API (HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy)</td><td class="sev-medium">Medium</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>storage.objectAdmin and cloudbuild.builds.builder added to compute SA (required after editor role removal)</td><td class="sev-medium">Medium</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Cloud Audit Logs enabled (Firestore, Secret Manager, Cloud Run)</td><td class="sev-high">High</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Apply for Shopify Protected Customer Data approval</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Apply for Amazon SP-API Protected Customer Data approval</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Replace [Company Name] in privacy.html / terms.html on e-lister.co.uk</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Whitelist 34.142.20.65 in Temu and Evri portals</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Set real SMTP credentials in Secret Manager</td><td class="sev-medium">Medium</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Run OWASP ZAP DAST scan against live API</td><td class="sev-medium">Medium</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Python compliance script + HTML evidence report</td><td class="sev-medium">Medium</td><td><span class="badge badge-progress">🔄 In Progress</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- 2. SECRETS MANAGEMENT -->
+    <h2 id="sec-secrets">2. Secrets Management</h2>
+    <p>All secrets have been migrated from plaintext environment variables to GCP Secret Manager. Cloud Run services reference secrets natively — no plaintext values are stored in environment variables or baked into container images.</p>
+
+    <table>
+      <thead><tr><th>Secret Manager Name</th><th>Env Var Replaced</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><code>marketmate-credential-encryption-key</code></td><td><code>CREDENTIAL_ENCRYPTION_KEY</code></td><td>32-char AES-256 key</td></tr>
+        <tr><td><code>marketmate-shopify-client-secret</code></td><td><code>SHOPIFY_CLIENT_SECRET</code></td><td>Rotated 16 Mar 2026</td></tr>
+        <tr><td><code>marketmate-claude-api-key</code></td><td><code>CLAUDE_API_KEY</code></td><td></td></tr>
+        <tr><td><code>marketmate-gemini-api-key</code></td><td><code>GEMINI_API_KEY</code></td><td></td></tr>
+        <tr><td><code>marketmate-typesense-api-key</code></td><td><code>TYPESENSE_API_KEY</code></td><td></td></tr>
+        <tr><td><code>marketmate-amazon-lwa-secret</code></td><td><code>AMZ_LWA_CLIENT_SECRET</code></td><td></td></tr>
+        <tr><td><code>marketmate-ebay-client-secret</code></td><td><code>EBAY_PROD_CLIENT_SECRET</code></td><td></td></tr>
+        <tr><td><code>marketmate-paypal-client-secret</code></td><td><code>PAYPAL_CLIENT_SECRET</code></td><td></td></tr>
+        <tr><td><code>marketmate-temu-app-secret</code></td><td><code>TEMU_APP_SECRET</code></td><td>Pending — Temu cert in progress</td></tr>
+        <tr><td><code>marketmate-temu-access-token</code></td><td><code>TEMU_ACCESS_TOKEN</code></td><td>Pending — Temu cert in progress</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 3. CLOUD RUN SERVICES -->
+    <h2 id="sec-cloudrun">3. Cloud Run Services</h2>
+
+    <h3>3.1 marketmate-api (Main Backend)</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Region</td><td>europe-west2</td></tr>
+        <tr><td>URL</td><td><code>https://marketmate-api-487246736287.europe-west2.run.app</code></td></tr>
+        <tr><td>Source</td><td>backend/ (Docker — Dockerfile.backend)</td></tr>
+        <tr><td>Auth</td><td>Requires authentication (IAM)</td></tr>
+        <tr><td>Latest Revision</td><td>marketmate-api-00082-ctc (deployed 16 Mar 2026)</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Key environment variables (non-secret):</strong></p>
+    <table>
+      <thead><tr><th>Variable</th><th>Value</th></tr></thead>
+      <tbody>
+        <tr><td><code>GCP_PROJECT_ID</code></td><td>marketmate-486116</td></tr>
+        <tr><td><code>TYPESENSE_URL</code></td><td><code>http://35.246.78.209:8108</code> (port restricted by firewall to 34.142.20.65/32 only)</td></tr>
+        <tr><td><code>TYPESENSE_GCE_ZONE</code></td><td>europe-west2-a</td></tr>
+        <tr><td><code>GCS_BUCKET_NAME</code></td><td>marketmate</td></tr>
+        <tr><td><code>API_BASE_URL</code></td><td><code>https://marketmate-api-487246736287.europe-west2.run.app</code></td></tr>
+        <tr><td><code>ALLOWED_ORIGINS</code></td><td><code>https://marketmate-486116.web.app</code></td></tr>
+        <tr><td><code>EGRESS_PROXY_URL</code></td><td><code>https://marketmate-proxy-487246736287.us-central1.run.app</code></td></tr>
+        <tr><td><code>SHOPIFY_CLIENT_ID</code></td><td>46f184684603f21c6df23cbc890e0e57</td></tr>
+        <tr><td><code>AMAZON_LWA_CLIENT_ID</code></td><td>amzn1.application-oa2-client.73b96779af624d94b5eb139c923a2114</td></tr>
+        <tr><td><code>AMAZON_APP_ID</code></td><td>amzn1.sp.solution.f52f5c79-c56e-4d6d-9e9b-02f312be257a</td></tr>
+        <tr><td><code>AMAZON_REDIRECT_URI</code></td><td><code>https://marketmate-api-487246736287.europe-west2.run.app/api/v1/amazonnew/oauth/callback</code></td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">ℹ All secret values (CLIENT_SECRET, API_KEY, ENCRYPTION_KEY, etc.) are sourced from GCP Secret Manager. They are NOT present as plaintext environment variables.</div>
+
+    <h3>3.2 import-orchestrator</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Region</td><td>europe-west2</td></tr>
+        <tr><td>URL</td><td><code>https://import-orchestrator-lceeosuhoa-nw.a.run.app</code></td></tr>
+        <tr><td>Auth</td><td>No public access — called by backend only (OIDC)</td></tr>
+        <tr><td>Memory / Timeout</td><td>512Mi / 540s</td></tr>
+      </tbody>
+    </table>
+
+    <h3>3.3 import-batch &amp; import-enrich</h3>
+    <p>Both services run in europe-west2. Called by import-orchestrator via Cloud Tasks.</p>
+
+    <!-- 4. CLOUD TASKS -->
+    <h2 id="sec-tasks">4. Cloud Tasks Queues</h2>
+    <table>
+      <thead><tr><th>Queue Name</th><th>Consumer</th><th>Location</th></tr></thead>
+      <tbody>
+        <tr><td>import-batches</td><td>import-batch Cloud Run</td><td>europe-west2</td></tr>
+        <tr><td>enrich-products</td><td>import-enrich Cloud Run</td><td>europe-west2</td></tr>
+        <tr><td>ebay-ai-enrich</td><td>ebay-ai-enrich Cloud Run</td><td>europe-west2</td></tr>
+        <tr><td>marketmate-workflow-queue</td><td>marketmate-api /tasks/workflow</td><td>europe-west2</td></tr>
+        <tr><td>marketmate-order-sync</td><td>marketmate-api /internal/orders/sync/task</td><td>europe-west2</td></tr>
+        <tr><td>ai-generate</td><td>marketmate-api</td><td>europe-west2</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 5. COMPUTE ENGINE -->
+    <h2 id="sec-compute">5. Compute Engine — Typesense</h2>
+
+    <h3>5.1 Typesense Search Server</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Instance Name</td><td>typesense-server</td></tr>
+        <tr><td>Zone</td><td>europe-west2-a</td></tr>
+        <tr><td>Public IP</td><td>35.246.78.209</td></tr>
+        <tr><td>Machine Type</td><td>e2-small (20GB boot disk)</td></tr>
+        <tr><td>OS</td><td>Container-Optimised OS (cos-stable)</td></tr>
+        <tr><td>Port</td><td>8108 (restricted — see firewall rules below)</td></tr>
+        <tr><td>Docker Image</td><td>typesense/typesense:27.1</td></tr>
+        <tr><td>Data Volume</td><td>/mnt/stateful_partition/typesense-data:/data</td></tr>
+        <tr><td>API Key</td><td>Stored in Secret Manager: <code>marketmate-typesense-api-key</code></td></tr>
+        <tr><td>Restart Policy</td><td>unless-stopped</td></tr>
+      </tbody>
+    </table>
+
+    <div class="warn-box">⚠ Data directory MUST be on /mnt/stateful_partition. Root filesystem is read-only on COS.</div>
+
+    <div class="code-block">sudo docker run -d --name typesense --restart unless-stopped -p 8108:8108 \
+  -v /mnt/stateful_partition/typesense-data:/data \
+  typesense/typesense:27.1 --data-dir /data \
+  --api-key=$(gcloud secrets versions access latest --secret=marketmate-typesense-api-key) \
+  --enable-cors</div>
+
+    <h3>5.2 Firewall Rules (Hardened 16 March 2026)</h3>
+    <table>
+      <thead><tr><th>Rule Name</th><th>Direction</th><th>Source Range</th><th>Allowed</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>allow-typesense-internal</td><td>INGRESS</td><td>34.142.20.65/32</td>
+          <td>tcp:8108 (egress proxy only)</td>
+          <td><span class="badge badge-complete">✅ Active</span></td>
+        </tr>
+        <tr class="deleted-row">
+          <td>allow-typesense</td><td>INGRESS</td><td>0.0.0.0/0</td>
+          <td>tcp:8108 — public rule</td>
+          <td><span class="badge badge-critical">🗑 Deleted 16 Mar 2026</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="info-box">ℹ The public allow-typesense firewall rule (0.0.0.0/0 → port 8108) was deleted on 16 March 2026. Port 8108 is now reachable only from the egress proxy static IP 34.142.20.65.</div>
+
+    <!-- 6. IAM -->
+    <h2 id="sec-iam">6. IAM — Service Accounts</h2>
+    <table>
+      <thead><tr><th>Service Account</th><th>Created By</th><th>Roles</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><code>487246736287-compute@developer.gserviceaccount.com</code></td>
+          <td>Google (auto)</td>
+          <td>datastore.user, cloudtasks.admin, cloudtasks.enqueuer, cloudtasks.taskRunner, run.invoker, cloudfunctions.invoker, iam.serviceAccountTokenCreator, storage.objectAdmin, cloudbuild.builds.builder<br><strong style="color:#155724">roles/editor REMOVED 16 Mar 2026</strong></td>
+        </tr>
+        <tr>
+          <td><code>marketmate-service@marketmate-486116.iam.gserviceaccount.com</code></td>
+          <td>Manual</td>
+          <td>datastore.user, cloudtasks.admin, iam.serviceAccountTokenCreator, storage.objectAdmin. Key rotated 16 Mar 2026.</td>
+        </tr>
+        <tr>
+          <td><code>firebase-adminsdk-fbsvc@marketmate-486116.iam.gserviceaccount.com</code></td>
+          <td>Google / Firebase</td>
+          <td>firebase.sdkAdminServiceAgent, firebaseauth.admin, iam.serviceAccountTokenCreator</td>
+        </tr>
+        <tr>
+          <td><code>marketmate-486116@appspot.gserviceaccount.com</code></td>
+          <td>Google / Firebase</td>
+          <td>roles/editor — Google-managed Firebase SA. <em>Accepted risk: removing editor may break Firebase. Monitored via Cloud Audit Logs.</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 7. GCS -->
+    <h2 id="sec-gcs">7. GCS Bucket</h2>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Bucket Name</td><td>marketmate</td></tr>
+        <tr><td>Region</td><td>europe-west2</td></tr>
+        <tr><td>Access</td><td>Public read (allUsers: roles/storage.objectViewer)</td></tr>
+        <tr><td>Image Path</td><td><code>tenant-{tenantID}/products/{productID}/images/{filename}</code></td></tr>
+        <tr><td>Public URL</td><td><code>https://storage.googleapis.com/marketmate/{path}</code></td></tr>
+        <tr><td>PII Risk</td><td>None — product image URLs only, no buyer data stored</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 8. NETWORKING -->
+    <h2 id="sec-network">8. Networking &amp; Static IPs</h2>
+
+    <h3>8.1 Egress Proxy (Temu / Evri)</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>us-central1 proxy URL</td><td><code>https://marketmate-proxy-487246736287.us-central1.run.app</code></td></tr>
+        <tr><td>eu proxy URL</td><td><code>https://marketmate-proxy-eu-487246736287.europe-west2.run.app</code></td></tr>
+        <tr><td>eu Static IP</td><td>34.142.20.65 (europe-west2)</td></tr>
+        <tr><td>Purpose</td><td>Temu + Evri API egress — fixed IP for whitelisting</td></tr>
+        <tr><td>Temu status</td><td>Waiting for IP whitelist (34.142.20.65)</td></tr>
+        <tr><td>Evri status</td><td>Waiting for IP whitelist (34.142.20.65)</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">ℹ Once EU IP is whitelisted by Temu/Evri, update EGRESS_PROXY_URL to the eu proxy and shut down us-central1 proxy.</div>
+
+    <!-- 9. FIRESTORE -->
+    <h2 id="sec-firestore">9. Firestore Data Structure</h2>
+    <table>
+      <thead><tr><th>Collection</th><th>Path</th></tr></thead>
+      <tbody>
+        <tr><td>Products</td><td><code>tenants/{tenantID}/products/{productID}</code></td></tr>
+        <tr><td>Extended Data</td><td><code>tenants/{tenantID}/products/{productID}/extended_data/{source_key}</code></td></tr>
+        <tr><td>Import Jobs</td><td><code>tenants/{tenantID}/import_jobs/{jobID}</code></td></tr>
+        <tr><td>Listings</td><td><code>tenants/{tenantID}/listings/{listingID}</code></td></tr>
+        <tr><td>Credentials</td><td><code>tenants/{tenantID}/marketplace_credentials/{credID}</code></td></tr>
+        <tr><td>Channel Config</td><td><code>tenants/{tenantID}/marketplace_credentials/{credID}/config</code></td></tr>
+        <tr><td>Orders</td><td><code>tenants/{tenantID}/orders/{orderID}</code></td></tr>
+        <tr><td>Order Lines</td><td><code>tenants/{tenantID}/orders/{orderID}/lines/{lineID}</code></td></tr>
+        <tr><td>Platform ASIN Map</td><td><code>platform_asin_map/{parentASIN}</code></td></tr>
+        <tr><td>Global Config</td><td><code>platform_config/{channel}</code></td></tr>
+        <tr><td><strong>Compliance Scans</strong></td><td><code>compliance_scans/{scan_id}</code> — Added 16 Mar 2026 for automated security evidence collection</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">ℹ platform_config/{channel} stores global app-level keys (e.g. LWA client ID/secret for Amazon, Temu app key). Tenant credentials override global keys via buildFullCredentials() merge.</div>
+
+    <!-- 10. INTEGRATIONS -->
+    <h2 id="sec-integrations">10. Marketplace Integrations</h2>
+
+    <h3>10.1 Shopify</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>App Name (Partners)</td><td>Marketmate</td></tr>
+        <tr><td>Client ID</td><td>46f184684603f21c6df23cbc890e0e57</td></tr>
+        <tr><td>Client Secret</td><td>Stored in Secret Manager: <code>marketmate-shopify-client-secret</code> (rotated 16 Mar 2026)</td></tr>
+        <tr><td>Redirect URI</td><td><code>https://marketmate-api-487246736287.europe-west2.run.app/api/v1/shopify/oauth/callback</code></td></tr>
+        <tr><td>Webhooks API version</td><td>2026-01</td></tr>
+        <tr><td>OAuth flow</td><td>Public app — merchant clicks Connect, popup to Shopify auth</td></tr>
+        <tr><td>Scopes</td><td>read/write products, orders, inventory, fulfillments</td></tr>
+        <tr><td>PCD Status</td><td><span class="badge badge-pending">⏳ Approval pending</span> — required to access order customer details</td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">⚠ Shopify requires Protected Customer Data approval before the app can read order customer details (name, address, email). Submit approval request in Partners dashboard → API access → Protected customer data access. Until approved, order imports return 403.</div>
+
+    <h3>10.2 Amazon (New App — 'amazonnew')</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>App ID (SP-API)</td><td>amzn1.sp.solution.f52f5c79-c56e-4d6d-9e9b-02f312be257a</td></tr>
+        <tr><td>LWA Client ID</td><td>amzn1.application-oa2-client.73b96779af624d94b5eb139c923a2114</td></tr>
+        <tr><td>LWA Client Secret</td><td>Stored in Secret Manager: <code>marketmate-amazon-lwa-secret</code></td></tr>
+        <tr><td>Redirect URI</td><td><code>https://marketmate-api-487246736287.europe-west2.run.app/api/v1/amazonnew/oauth/callback</code></td></tr>
+        <tr><td>PCD Status</td><td><span class="badge badge-pending">⏳ Approval pending</span> — required to read order data via SP-API</td></tr>
+      </tbody>
+    </table>
+
+    <h3>10.3 Amazon (Legacy — 'amazon')</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>LWA Client ID</td><td>amzn1.application-oa2-client.76eb5e03b5b24321a2fde0f9aa631730</td></tr>
+        <tr><td>Global keys location</td><td>Firestore: <code>platform_config/amazon</code></td></tr>
+        <tr><td>Connect method</td><td>Manual — paste refresh_token, marketplace_id, seller_id in Connections page</td></tr>
+      </tbody>
+    </table>
+
+    <h3>10.4 Public Amazon Connect Links (tenant-10007)</h3>
+    <table>
+      <thead><tr><th>Store</th><th>Link</th></tr></thead>
+      <tbody>
+        <tr><td>UK</td><td><code style="font-size:8.5pt">https://marketmate-api-487246736287.europe-west2.run.app/api/v1/amazonnew/connect?tenant=tenant-10007&amp;marketplace_id=A1F83G8C2ARO7P&amp;account_name=Amazon+UK</code></td></tr>
+        <tr><td>Germany</td><td><code style="font-size:8.5pt">https://marketmate-api-487246736287.europe-west2.run.app/api/v1/amazonnew/connect?tenant=tenant-10007&amp;marketplace_id=A1PA6795UKMFR9&amp;account_name=Amazon+DE</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>10.5 Other Channels</h3>
+    <ul>
+      <li><strong>eBay</strong> — OAuth via popup (<code>EBAY_PROD_CLIENT_ID</code>, <code>EBAY_PROD_CLIENT_SECRET</code> in Secret Manager, <code>EBAY_RUNAME</code>)</li>
+      <li><strong>TikTok Shop</strong> — OAuth via popup</li>
+      <li><strong>Etsy</strong> — OAuth PKCE via popup</li>
+      <li><strong>ShopWired</strong> — HTTP Basic (api_key:api_secret), manual entry. Waiting for credentials.</li>
+      <li><strong>WooCommerce, Magento, BigCommerce, OnBuy</strong> — manual API key entry</li>
+      <li><strong>Temu</strong> — manual access token entry; requires IP whitelist (34.142.20.65)</li>
+      <li><strong>Amazon Vendor, Walmart, Kaufland, Back Market, Zalando, Bol, Lazada</strong> — manual entry</li>
+    </ul>
+
+    <!-- 11. ORDER DOWNLOAD -->
+    <h2 id="sec-orders">11. Order Download Infrastructure</h2>
+
+    <h3>11.1 OrderPoller (In-Process Scheduler)</h3>
+    <p>Runs inside marketmate-api on a 15-minute tick.</p>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Tick interval</td><td>15 minutes</td></tr>
+        <tr><td>Config field</td><td><code>marketplace_credentials/{id}.config.orders.enabled = true</code></td></tr>
+        <tr><td>Frequency field</td><td><code>config.orders.frequency_minutes</code> (default: 30)</td></tr>
+        <tr><td>Lookback field</td><td><code>config.orders.lookback_hours</code> (default: 24)</td></tr>
+        <tr><td>Channels supported</td><td>amazon, ebay, temu, tiktok, etsy, woocommerce, walmart, kaufland, magento, bigcommerce, onbuy, shopify, shopwired, backmarket, zalando, bol, lazada</td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.2 Webhook Receivers</h3>
+    <table>
+      <thead><tr><th>Platform</th><th>Endpoint</th></tr></thead>
+      <tbody>
+        <tr><td>Shopify</td><td><code>POST /webhooks/orders/shopify?tenant={id}&amp;cred={id}</code></td></tr>
+        <tr><td>WooCommerce</td><td><code>POST /webhooks/orders/woocommerce</code></td></tr>
+        <tr><td>BigCommerce</td><td><code>POST /webhooks/orders/bigcommerce</code></td></tr>
+        <tr><td>TikTok</td><td><code>POST /webhooks/orders/tiktok</code></td></tr>
+        <tr><td>eBay</td><td><code>POST /webhooks/orders/ebay</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>11.3 Manual Import</h3>
+    <div class="code-block">POST /api/v1/orders/import/now
+Body: { "credential_id": "...", "channel": "shopify", "lookback_hours": 48 }</div>
+
+    <!-- 12. DEPLOY COMMANDS -->
+    <h2 id="sec-deploy">12. Deploy Commands</h2>
+
+    <h3>Backend</h3>
+    <div class="code-block">cd C:\Users\Mrste\Documents\platform\backend
+gcloud run deploy marketmate-api --source . --region europe-west2 --project marketmate-486116
+
+# Re-bind IAM after every deploy:
+gcloud run services add-iam-policy-binding marketmate-api --region europe-west2 --project marketmate-486116 --member="allUsers" --role="roles/run.invoker"</div>
+    <div class="warn-box">⚠ Never use --set-env-vars (wipes all existing vars). Always use --update-env-vars. Always run add-iam-policy-binding after every deploy.</div>
+
+    <h3>Frontend</h3>
+    <div class="code-block">cd C:\Users\Mrste\Documents\platform\frontend
+npm run build && npx firebase-tools deploy --only hosting --project marketmate-486116</div>
+
+    <h3>Import Functions</h3>
+    <div class="code-block">cd C:\Users\Mrste\Documents\platform\functions\import-enrich
+gcloud run deploy import-enrich --source . --region europe-west2 --project marketmate-486116 --no-allow-unauthenticated</div>
+
+    <h3>Update env vars safely</h3>
+    <div class="code-block">gcloud run services update marketmate-api --region europe-west2 --project marketmate-486116 \
+  --update-env-vars "KEY=value,KEY2=value2"</div>
+
+
+    <!-- COMPLIANCE TOOLING -->
+    <h2 id="sec-compliance">13. Compliance Evidence Pipeline</h2>
+    <p>An automated compliance evidence collection script runs all security scanning tools, saves results to Firestore, and generates a dated HTML evidence report. All 9 tools passed as of 17 March 2026.</p>
+
+    <h3>13.1 Tool Stack</h3>
+    <table>
+      <thead><tr><th>Tool</th><th>Purpose</th><th>Output File</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Trivy (container)</strong></td><td>Container image CVE scan</td><td><code>trivy-container-{DATE}.json</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>Trivy (secrets)</strong></td><td>Codebase secret detection</td><td><code>trivy-secrets-FINAL-{DATE}.json</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>govulncheck</strong></td><td>Go dependency vulnerabilities</td><td><code>govulncheck-{DATE}.txt</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>npm audit</strong></td><td>Node.js dependency audit</td><td><code>npm-audit-{label}-{DATE}.json</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>gosec</strong></td><td>Go SAST analysis</td><td><code>gosec-{DATE}.json</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>Semgrep</strong></td><td>Multi-language SAST</td><td><code>semgrep-{DATE}.json</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>GCP Controls</strong></td><td>Audit logs, firewall, SM, IAM</td><td><code>gcp-*.json</code></td><td><span class="badge badge-complete">✅ PASS</span></td></tr>
+        <tr><td><strong>Prowler</strong></td><td>GCP CIS 2.0 benchmark (73 checks)</td><td><code>prowler/prowler-summary-{DATE}.txt</code></td><td><span class="badge badge-complete">✅ PASS — 0 findings</span></td></tr>
+        <tr><td><strong>OWASP ZAP</strong></td><td>DAST against live API</td><td><code>zap/zap-dast-{DATE}.json</code></td><td><span class="badge badge-complete">✅ PASS — 0 HIGH/MEDIUM</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3>13.2 Evidence Storage</h3>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Local</td><td><code>C:\Users\Mrste\Documents\marketmate-compliance\evidence-{YYYYMMDD}\</code></td></tr>
+        <tr><td>GCS Backup</td><td><code>gs://marketmate/compliance/evidence-{YYYYMMDD}/</code></td></tr>
+        <tr><td>Firestore</td><td><code>compliance_scans/{scan_id}</code></td></tr>
+        <tr><td>Script Location</td><td><code>C:\Users\Mrste\Documents\platform\compliance\compliance_scan.py</code></td></tr>
+        <tr><td>Run Command</td><td><code>python compliance_scan.py</code> (full scan including Prowler + ZAP)</td></tr>
+        <tr><td>Skip Docker tools</td><td><code>python compliance_scan.py --skip-prowler --skip-dast</code></td></tr>
+      </tbody>
+    </table>
+
+    <h3>13.3 Accepted Risks (documented in every scan report)</h3>
+    <table>
+      <thead><tr><th>CVE / Finding</th><th>Severity</th><th>Reason Accepted</th></tr></thead>
+      <tbody>
+        <tr><td>CVE-2023-45853 (zlib1g)</td><td class="sev-critical">Critical</td><td>Debian base image OS package — cannot be patched by developer. Cloud Run sandbox mitigates. Re-scan weekly.</td></tr>
+        <tr><td>CVE-2026-0861 (libc6/libc-bin)</td><td class="sev-high">High</td><td>Debian base image OS package — same mitigation as above.</td></tr>
+        <tr><td>CVE-2026-33186 (google.golang.org/grpc)</td><td class="sev-critical">Critical</td><td>gRPC-Go authorisation bypass via missing leading slash in :path. Fix version (v1.79.3) does not yet exist in the public Go module proxy — upgrade attempt causes build failure in google.golang.org/api@v0.154.0. Mitigated by: all gRPC endpoints are internal Cloud Run service-to-service calls only (not public internet); Cloud Run enforces IAM authentication on all inter-service traffic. Will upgrade when a compatible fix version is published upstream. Accepted 20 March 2026.</td></tr>
+        <tr><td>dompurify/monaco-editor (MODERATE)</td><td class="sev-medium">Medium</td><td>Monaco editor used by authenticated tenants only. Breaking change deferred pending compatibility testing.</td></tr>
+        <tr><td>esbuild/vite (MODERATE)</td><td class="sev-medium">Medium</td><td>Build tools only — not in production bundle. Dev server issue only.</td></tr>
+        <tr><td>gosec G101/G704/G118</td><td class="sev-high">High</td><td>False positives — credential struct field names, auto-generated protobuf code, and deprecated ioutil informational warnings.</td></tr>
+        <tr><td>ZAP LOW findings (x7)</td><td class="sev-medium">Low</td><td>Unexpected Content-Type on unauthenticated 401 responses — expected API behaviour, not a vulnerability.</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 14. PENDING -->
+    <h2 id="sec-pending">14. Pending Actions</h2>
+    <table>
+      <thead><tr><th style="width:55%">Action</th><th style="width:15%">Priority</th><th style="width:30%">Status</th></tr></thead>
+      <tbody>
+        <tr><td>Apply for Shopify Protected Customer Data approval</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Apply for Amazon SP-API Protected Customer Data approval</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Replace [Company Name] in privacy.html and terms.html on e-lister.co.uk</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Whitelist 34.142.20.65 in Temu seller portal</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Whitelist 34.142.20.65 in Evri portal</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Set real SMTP credentials (Sendgrid/Mailgun) in Secret Manager</td><td class="sev-medium">Medium</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Switch EGRESS_PROXY_URL to EU proxy once IPs whitelisted, shut down us-central1 proxy</td><td class="sev-medium">Medium</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Run OWASP ZAP DAST scan against live API</td><td class="sev-medium">Medium</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Run Prowler monthly GCP CIS benchmark</td><td class="sev-medium">Medium</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Python compliance_scan.py — automated evidence pipeline (all 9 tools PASS)</td><td class="sev-medium">Medium</td><td><span class="badge badge-complete">✅ Complete</span></td></tr>
+        <tr><td>Submit Amazon PCD application (after evidence pack complete)</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>Re-register Shopify webhooks after each deploy</td><td class="sev-medium">Medium</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+        <tr><td>ShopWired deploy — waiting for credentials</td><td class="sev-high">High</td><td><span class="badge badge-pending">⏳ Pending</span></td></tr>
+      </tbody>
+    </table>
+
+    <!-- 14. WEBSITE -->
+    <h2 id="sec-website">15. e-Lister Marketing Website</h2>
+    <table class="kv-table">
+      <tbody>
+        <tr><td>Firebase Project ID</td><td>e-lister-site-2026</td></tr>
+        <tr><td>Default Hosting URL</td><td><code>https://e-lister-site-2026.web.app</code></td></tr>
+        <tr><td>Custom Domain</td><td><code>https://e-lister.co.uk</code> (and www.e-lister.co.uk)</td></tr>
+        <tr><td>SSL</td><td>Auto-provisioned by Firebase (Let's Encrypt)</td></tr>
+        <tr><td>Local Source Path</td><td><code>C:\Users\Mrste\Documents\platform\elister-website\</code></td></tr>
+        <tr><td>Deploy Command</td><td><code>npx firebase-tools deploy --only hosting</code></td></tr>
+      </tbody>
+    </table>
+    <div class="warn-box">⚠ Replace [Company Name] in privacy.html and terms.html with actual registered company name and number before submitting to Amazon.</div>
+
+    <div class="doc-footer">
+      <span>Marketmate Solutions Ltd &nbsp;|&nbsp; GCP Infrastructure Reference v3.0 &nbsp;|&nbsp; 17 March 2026</span>
+      <span>CONFIDENTIAL</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Build stage
+FROM golang:1.21-alpine AS builder
+WORKDIR /app
+# Copy everything first
+COPY . .
+# Clean any existing go.sum and regenerate it
+RUN rm -f go.sum && \
+    go mod tidy && \
+    go mod download && \
+    CGO_ENABLED=0 GOOS=linux go build -o main .
+
+# Final stage
+FROM alpine:latest
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+
+# Copy binary from builder
+COPY --from=builder /app/main .
+
+# Copy serviceAccountKey.json if it exists (local dev only, Cloud Run uses default SA)
+COPY --from=builder /app/serviceAccountKey.jso[n] ./
+
+# Copy .env if it exists
+COPY --from=builder /app/.env* ./
+
+EXPOSE 8080
+CMD ["./main"]

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Demo — e-Lister</title>
+  <meta name="description" content="Book a personalised e-Lister demo. We'll walk you through the platform tailored to your business, channels and products." />
+  <link rel="canonical" href="https://www.e-lister.io/book-demo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">e<span class="logo-dash">‑</span>Lister</a>
+    <ul class="nav-links">
+      <li><a href="features.html">Features</a></li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="book-demo.html" class="btn-nav">Book a Demo</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+    <a href="book-demo.html" class="btn-nav-mobile">Book a Demo</a>
+  </div>
+</header>
+
+<div class="section-dark" style="padding-top:3rem;padding-bottom:0;min-height:calc(100vh - 60px)">
+  <div class="container demo-wrap">
+
+    <!-- Aside -->
+    <div class="demo-aside">
+      <p class="eyebrow">Book a Demo</p>
+      <h2>See e-Lister working with your products</h2>
+      <p>A personalised 30-minute walkthrough with our team. We'll demonstrate the features most relevant to your business — using your channels and product types as the example.</p>
+      <p>No pushy sales process. We'll show you the platform and answer your questions honestly. If e-Lister isn't the right fit, we'll tell you.</p>
+      <ul class="demo-points">
+        <li>Platform demo tailored to your specific channels and products</li>
+        <li>Live demonstration of AI listing generation</li>
+        <li>Walk through inventory sync, order management and shipping dispatch</li>
+        <li>Transparent discussion of pricing and onboarding timeline</li>
+        <li>All questions answered — technical, commercial or operational</li>
+      </ul>
+      <div style="margin-top:2.5rem;padding:1.25rem;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg)">
+        <div style="font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);margin-bottom:.65rem">What happens next</div>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="display:flex;gap:.75rem;align-items:flex-start"><span style="background:var(--indigo);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span><span style="font-size:.85rem;color:var(--text-muted)">We review your submission and confirm a time within one working day.</span></div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start"><span style="background:var(--indigo);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span><span style="font-size:.85rem;color:var(--text-muted)">You receive a calendar invite with a video call link.</span></div>
+          <div style="display:flex;gap:.75rem;align-items:flex-start"><span style="background:var(--indigo);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:.78rem;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span><span style="font-size:.85rem;color:var(--text-muted)">We run the 30-minute demo. If you'd like to proceed, we arrange onboarding.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div>
+      <div class="form-card">
+        <div id="formWrap">
+          <p class="form-section-title">Your Contact Details</p>
+          <form id="demoForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">First name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Jane" required />
+              </div>
+              <div class="form-field">
+                <label for="lastName">Last name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Smith" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email address *</label>
+                <input type="email" id="email" name="email" placeholder="jane@yourcompany.com" required />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+44 7700 900000" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="company">Company / trading name *</label>
+                <input type="text" id="company" name="company" placeholder="Your Business Ltd" required />
+              </div>
+              <div class="form-field">
+                <label for="website">Website URL</label>
+                <input type="url" id="website" name="website" placeholder="https://yourstore.co.uk" />
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="preferredTime">Preferred demo slot</label>
+              <select id="preferredTime" name="preferredTime">
+                <option value="">No preference — any working day</option>
+                <option value="Mon-Wed AM">Mon–Wed morning (9am–12pm)</option>
+                <option value="Mon-Wed PM">Mon–Wed afternoon (12pm–5pm)</option>
+                <option value="Thu-Fri AM">Thu–Fri morning (9am–12pm)</option>
+                <option value="Thu-Fri PM">Thu–Fri afternoon (12pm–5pm)</option>
+              </select>
+            </div>
+
+            <!-- ─── Wizard Questions ─────────────────────────────────────── -->
+            <p class="form-section-title">To save time and help us understand your needs, please answer a few questions</p>
+            <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:1.25rem">The more detail you provide, the more we can tailor the demo to your specific operation. All fields in this section are optional but genuinely helpful.</p>
+
+            <div class="form-field">
+              <label for="businessType">What best describes your business? *</label>
+              <select id="businessType" name="businessType" required>
+                <option value="">Please select…</option>
+                <option value="Retailer — own branded products">Retailer — own branded products</option>
+                <option value="Retailer — reseller / wholesale">Retailer — reseller / wholesale buyer</option>
+                <option value="Manufacturer selling direct (D2C)">Manufacturer selling direct (D2C)</option>
+                <option value="Dropshipper">Dropshipper</option>
+                <option value="Refurbished / second-hand goods seller">Refurbished / second-hand goods seller</option>
+                <option value="Handmade / craft seller">Handmade / craft seller</option>
+                <option value="Marketplace aggregator / brand owner">Marketplace aggregator / brand owner</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="productCategory">What category of products do you primarily sell?</label>
+              <input type="text" id="productCategory" name="productCategory" placeholder="e.g. Home &amp; Garden, Consumer Electronics, Clothing, Automotive…" />
+            </div>
+
+            <div class="form-field">
+              <label for="skuCount">How many active SKUs do you manage?</label>
+              <select id="skuCount" name="skuCount">
+                <option value="">Please select…</option>
+                <option value="Under 100">Under 100</option>
+                <option value="100–500">100–500</option>
+                <option value="500–2,000">500–2,000</option>
+                <option value="2,000–10,000">2,000–10,000</option>
+                <option value="Over 10,000">Over 10,000</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="monthlyOrders">How many orders do you process per month (across all channels)?</label>
+              <select id="monthlyOrders" name="monthlyOrders">
+                <option value="">Please select…</option>
+                <option value="Under 100">Under 100</option>
+                <option value="100–500">100–500</option>
+                <option value="500–2,000">500–2,000</option>
+                <option value="2,000–10,000">2,000–10,000</option>
+                <option value="Over 10,000">Over 10,000</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label>Which channels are you currently selling on? (select all that apply)</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="eBay" /><span>eBay</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Etsy" /><span>Etsy</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Amazon" /><span>Amazon</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="OnBuy" /><span>OnBuy</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Kaufland" /><span>Kaufland</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Back Market" /><span>Back Market</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Mirakl marketplace" /><span>Mirakl marketplace</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="BigCommerce" /><span>BigCommerce</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Magento 2" /><span>Magento 2</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Bluepark" /><span>Bluepark</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Shopify" /><span>Shopify</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="WooCommerce" /><span>WooCommerce</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="channels" value="Own website" /><span>Own website (other)</span></label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label>Which channels are you looking to add? (select all that apply)</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="eBay" /><span>eBay</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Etsy" /><span>Etsy</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Amazon" /><span>Amazon</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="OnBuy" /><span>OnBuy</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Kaufland" /><span>Kaufland</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Back Market" /><span>Back Market</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Mirakl" /><span>Mirakl marketplace</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="BigCommerce" /><span>BigCommerce</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Magento" /><span>Magento 2</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="wantChannels" value="Bluepark" /><span>Bluepark</span></label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="fulfilmentModel">How do you fulfil orders?</label>
+              <select id="fulfilmentModel" name="fulfilmentModel">
+                <option value="">Please select…</option>
+                <option value="In-house — single warehouse or home">In-house — single warehouse or home</option>
+                <option value="In-house — multiple warehouse locations">In-house — multiple warehouse locations</option>
+                <option value="Third-party logistics (3PL)">Third-party logistics (3PL)</option>
+                <option value="Amazon FBA (partially or fully)">Amazon FBA (partially or fully)</option>
+                <option value="Dropship direct from supplier">Dropship direct from supplier</option>
+                <option value="Mix of the above">Mix of the above</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="currentSoftware">What software or tools are you currently using to manage listings and orders?</label>
+              <input type="text" id="currentSoftware" name="currentSoftware" placeholder="e.g. Linnworks, ChannelAdvisor, spreadsheets, nothing…" />
+            </div>
+
+            <div class="form-field">
+              <label>Which areas are most important to you? (select up to three)</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Listing management and publishing" /><span>Listing management &amp; publishing</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="AI listing generation" /><span>AI listing generation</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Inventory sync across channels" /><span>Inventory sync across channels</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Order management" /><span>Order management</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Shipping and dispatch" /><span>Shipping &amp; dispatch</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Demand forecasting and reordering" /><span>Demand forecasting &amp; reordering</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Automation rules" /><span>Automation rules</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Buyer messaging" /><span>Buyer messaging</span></label>
+                <label class="checkbox-item"><input type="checkbox" name="priorities" value="Analytics and reporting" /><span>Analytics &amp; reporting</span></label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="additionalNotes">Anything else you'd like us to know before the demo?</label>
+              <textarea id="additionalNotes" name="additionalNotes" placeholder="Specific challenges, integration requirements, questions you already have…"></textarea>
+            </div>
+
+            <div id="formError" style="display:none;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:var(--radius);padding:.75rem 1rem;font-size:.85rem;color:#f87171;margin-bottom:1rem;"></div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn-primary btn-large" id="submitBtn" style="width:100%;justify-content:center">
+                <span id="submitText">Request Your Demo</span>
+                <span id="submitSpinner" style="display:none">Sending…</span>
+              </button>
+              <p class="form-note">By submitting this form you agree to our <a href="privacy.html" style="color:var(--indigo)">Privacy Policy</a>. We will use the information you provide to arrange your demo and may contact you with relevant product updates. We will not share your details with third parties or send unsolicited marketing without your consent.</p>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Success state -->
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">✅</div>
+          <h3>Demo request received!</h3>
+          <p>Thank you for your interest in e-Lister. We'll review your submission and come back to you within one working day to confirm a time that works for you.</p>
+          <p style="margin-top:.75rem">In the meantime, feel free to explore our <a href="features.html" style="color:var(--indigo)">feature pages</a> or <a href="channels.html" style="color:var(--indigo)">channel details</a>.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" style="margin-top:0">
+  <div class="container footer-inner">
+    <div class="footer-brand"><div class="logo footer-logo">e<span class="logo-dash">‑</span>Lister</div><p>Multichannel listing and order management for ambitious e-commerce businesses.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><h4>Platform</h4><a href="features.html">Features</a><a href="channels.html">Channels</a><a href="pricing.html">Pricing</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="book-demo.html">Book a Demo</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="cookies.html">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><span>© 2026 e-Lister. All rights reserved.</span><span>Registered in England &amp; Wales</span></div></div>
+</footer>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="main.js"></script>
+<script>
+// ─── EmailJS configuration ───────────────────────────────────────────────────
+// EmailJS is a client-side email service. It relays through Gmail SMTP.
+// Service ID, Template ID and Public Key are set in the EmailJS dashboard.
+// See DEPLOYMENT.md for setup instructions.
+(function(){
+  const EMAILJS_PUBLIC_KEY  = window.EMAILJS_PUBLIC_KEY  || 'AF0B7AEuJA2lOIo4V';
+  const EMAILJS_SERVICE_ID  = window.EMAILJS_SERVICE_ID  || 'service_6sr6x8p';
+  const EMAILJS_TEMPLATE_ID = window.EMAILJS_TEMPLATE_ID || 'template_znc0v0h';
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  const form       = document.getElementById('demoForm');
+  const formWrap   = document.getElementById('formWrap');
+  const formSuccess= document.getElementById('formSuccess');
+  const submitBtn  = document.getElementById('submitBtn');
+  const submitText = document.getElementById('submitText');
+  const submitSpinner = document.getElementById('submitSpinner');
+  const formError  = document.getElementById('formError');
+
+  function showError(msg) {
+    formError.textContent = msg;
+    formError.style.display = 'block';
+    formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  function clearError() {
+    formError.style.display = 'none';
+    formError.textContent = '';
+  }
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    clearError();
+
+    // Basic validation
+    const firstName  = document.getElementById('firstName').value.trim();
+    const lastName   = document.getElementById('lastName').value.trim();
+    const email      = document.getElementById('email').value.trim();
+    const company    = document.getElementById('company').value.trim();
+    const bizType    = document.getElementById('businessType').value;
+
+    if (!firstName || !lastName) { showError('Please enter your first and last name.'); return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please enter a valid email address.'); return; }
+    if (!company) { showError('Please enter your company name.'); return; }
+    if (!bizType) { showError('Please select your business type.'); return; }
+
+    // Gather checkbox values
+    const checked = (name) => Array.from(document.querySelectorAll(`input[name="${name}"]:checked`)).map(c => c.value).join(', ') || 'None selected';
+
+    // Build email params
+    const params = {
+      to_email:        'mrstevenradams@gmail.com',
+      subject:         `New Demo Request — ${firstName} ${lastName} (${company})`,
+      first_name:      firstName,
+      last_name:       lastName,
+      email:           email,
+      phone:           document.getElementById('phone').value.trim() || 'Not provided',
+      company:         company,
+      website:         document.getElementById('website').value.trim() || 'Not provided',
+      preferred_time:  document.getElementById('preferredTime').value || 'No preference',
+      business_type:   bizType,
+      product_category:document.getElementById('productCategory').value.trim() || 'Not specified',
+      sku_count:       document.getElementById('skuCount').value || 'Not specified',
+      monthly_orders:  document.getElementById('monthlyOrders').value || 'Not specified',
+      current_channels:checked('channels'),
+      wanted_channels: checked('wantChannels'),
+      fulfilment_model:document.getElementById('fulfilmentModel').value || 'Not specified',
+      current_software:document.getElementById('currentSoftware').value.trim() || 'Not specified',
+      priorities:      checked('priorities'),
+      additional_notes:document.getElementById('additionalNotes').value.trim() || 'None',
+      submitted_at:    new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })
+    };
+
+    // Disable button, show spinner
+    submitBtn.disabled = true;
+    submitText.style.display = 'none';
+    submitSpinner.style.display = 'inline';
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+      formWrap.style.display = 'none';
+      formSuccess.style.display = 'block';
+    } catch(err) {
+      console.error('EmailJS error:', err);
+      showError('Sorry, there was a problem sending your request. Please email us directly at hello@e-lister.io or try again in a moment.');
+      submitBtn.disabled = false;
+      submitText.style.display = 'inline';
+      submitSpinner.style.display = 'none';
+    }
+  });
+})();
+</script>
+</body>
+</html>

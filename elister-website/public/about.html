@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — e-Lister</title>
+  <meta name="description" content="e-Lister was built by e-commerce operators who experienced the pain of multichannel selling first-hand. Learn about our story, values and mission." />
+  <link rel="canonical" href="https://www.e-lister.io/about" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">e<span class="logo-dash">‑</span>Lister</a>
+    <ul class="nav-links">
+      <li><a href="features.html">Features</a></li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <a href="book-demo.html" class="btn-nav">Book a Demo</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a><a href="pricing.html">Pricing</a><a href="about.html">About</a>
+    <a href="book-demo.html" class="btn-nav-mobile">Book a Demo</a>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <p class="eyebrow">About e-Lister</p>
+    <h1>Built by sellers, for sellers</h1>
+    <p>e-Lister was created because the tools we needed didn't exist. We built it ourselves and decided other growing businesses should have access to the same capabilities.</p>
+  </div>
+</div>
+
+<section class="about-section light">
+  <div class="container">
+    <p class="eyebrow">Our Story</p>
+    <h2>Why we built e-Lister</h2>
+    <p>Running a multichannel e-commerce operation should be a growth strategy, not a source of operational chaos. Yet for most sellers expanding beyond their first or second channel, the reality is hours spent copying listings between platforms, checking stock across dashboards, and manually updating figures in spreadsheets.</p>
+    <p>We experienced this directly. The alternatives — legacy multichannel tools built before modern APIs existed, or enterprise platforms priced for large corporations — left a significant gap for growing businesses that needed genuine capability without the enterprise price tag or the technical complexity.</p>
+    <p>e-Lister was built from scratch on modern cloud infrastructure to address that gap. Every integration is native, not routed through third-party connectors. Every feature was designed around the actual workflow of a real multichannel seller.</p>
+  </div>
+</section>
+
+<section class="about-section dark">
+  <div class="container">
+    <p class="eyebrow">Our Values</p>
+    <h2 style="color:var(--text)">What we stand for</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <h3>Depth over breadth</h3>
+        <p>We build each integration properly. A channel integration in e-Lister means full listing management, order sync, real-time inventory and buyer messaging — not just a basic API connection.</p>
+      </div>
+      <div class="value-card">
+        <h3>Reliability above all</h3>
+        <p>Multichannel sellers depend on their software working correctly, all the time. We invest heavily in testing, monitoring and infrastructure so you can trust e-Lister to run your business.</p>
+      </div>
+      <div class="value-card">
+        <h3>Honest pricing</h3>
+        <p>We charge a flat subscription. No per-order fees, no per-channel surcharges, no surprise invoices. Growing your sales should reduce your cost per order, not increase your software bill.</p>
+      </div>
+      <div class="value-card">
+        <h3>Built for the real world</h3>
+        <p>Features are added because customers need them, not because they make for an impressive checklist. If a feature doesn't improve the working day of a real seller, we don't build it.</p>
+      </div>
+      <div class="value-card">
+        <h3>Data security first</h3>
+        <p>Your product data, order history and customer information are sensitive. We apply encryption at rest and in transit, use principle-of-least-privilege access controls and never sell or share your data.</p>
+      </div>
+      <div class="value-card">
+        <h3>Partnership over transactions</h3>
+        <p>We want long-term relationships with our customers. That means listening to feedback, being transparent about our roadmap and responding when things go wrong.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section light">
+  <div class="container">
+    <p class="eyebrow">Technology</p>
+    <h2>Built on modern, scalable infrastructure</h2>
+    <p>e-Lister is built on Google Cloud Platform, using Cloud Run for containerised services, Firestore for scalable document storage, and Cloud Tasks for reliable background job processing. This architecture means the platform scales automatically with your order volume and is not constrained by fixed server capacity.</p>
+    <p>Our backend is written in Go for performance and reliability. The frontend is built with modern React. Both the Claude and Google Gemini AI APIs are integrated for listing generation, giving you the best available AI output with automatic fallback if one provider is unavailable.</p>
+    <p>All marketplace integrations are built directly against each platform's official API — we do not use intermediary aggregators or third-party connectors. This gives us full control over reliability, data handling and the ability to implement the complete feature set each API offers.</p>
+  </div>
+</section>
+
+<section class="about-section dark">
+  <div class="container">
+    <p class="eyebrow">Data &amp; Privacy</p>
+    <h2 style="color:var(--text)">Your data is your business</h2>
+    <p>We process seller and buyer data only to operate the service. We do not use your product data to train AI models, share it with third parties for commercial purposes, or retain it beyond what is operationally necessary.</p>
+    <p>e-Lister operates in full compliance with the UK GDPR and, where applicable, EU GDPR. All marketplace credential tokens are stored encrypted. Customer personally identifiable information is handled with field-level PII encryption where required by marketplace data protection policies.</p>
+    <p>For full details, please read our <a href="privacy.html" style="color:var(--indigo)">Privacy Policy</a> and <a href="terms.html" style="color:var(--indigo)">Terms of Service</a>.</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <h2>Ready to take e-Lister for a spin?</h2>
+    <p>Book a 30-minute personalised demonstration with our team and see how e-Lister handles your specific channels and product types.</p>
+    <a href="book-demo.html" class="btn-primary btn-large">Book a Free Demo</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand"><div class="logo footer-logo">e<span class="logo-dash">‑</span>Lister</div><p>Multichannel listing and order management for ambitious e-commerce businesses.</p></div>
+    <div class="footer-links">
+      <div class="footer-col"><h4>Platform</h4><a href="features.html">Features</a><a href="channels.html">Channels</a><a href="pricing.html">Pricing</a></div>
+      <div class="footer-col"><h4>Company</h4><a href="about.html">About</a><a href="book-demo.html">Book a Demo</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="cookies.html">Cookie Policy</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container"><span>© 2026 e-Lister. All rights reserved.</span><span>Registered in England &amp; Wales</span></div></div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,527 @@
+/* ============================================================================
+   CARRIER SETTINGS PAGE
+   Dark FinTech theme — matches platform design system
+   ============================================================================ */
+
+.cs-page {
+  padding: 32px;
+  background: var(--bg-primary, #0a0e27);
+  min-height: 100vh;
+  color: var(--text-primary, #e2e8f0);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+
+.cs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+
+.cs-header-left h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 6px;
+  letter-spacing: -0.3px;
+}
+
+.cs-header-left p {
+  font-size: 14px;
+  color: var(--text-secondary, #94a3b8);
+  margin: 0;
+}
+
+.cs-header-stats {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.cs-stat {
+  text-align: center;
+  background: var(--bg-secondary, #131829);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 14px 22px;
+  min-width: 80px;
+}
+
+.cs-stat-num {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3b82f6;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cs-stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #64748b);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Loading ──────────────────────────────────────────────────────────────── */
+
+.cs-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 80px;
+  color: var(--text-secondary, #94a3b8);
+  font-size: 14px;
+}
+
+/* ── Sections ─────────────────────────────────────────────────────────────── */
+
+.cs-section {
+  margin-bottom: 40px;
+}
+
+.cs-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted, #64748b);
+  margin-bottom: 16px;
+}
+
+.cs-section-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.cs-section-dot--green { background: #10b981; box-shadow: 0 0 6px #10b98166; }
+.cs-section-dot--grey  { background: #475569; }
+
+/* ── Card Grid ────────────────────────────────────────────────────────────── */
+
+.cs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ── Carrier Card ─────────────────────────────────────────────────────────── */
+
+.cs-card {
+  position: relative;
+  background: var(--bg-secondary, #131829);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.12s;
+}
+
+.cs-card:hover {
+  border-color: rgba(59,130,246,0.3);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  transform: translateY(-1px);
+}
+
+.cs-card--connected {
+  border-color: rgba(16,185,129,0.25);
+  background: linear-gradient(135deg, #131829 0%, #0f1f18 100%);
+}
+
+.cs-card--connected:hover {
+  border-color: rgba(16,185,129,0.5);
+  box-shadow: 0 4px 24px rgba(16,185,129,0.1);
+}
+
+/* Status pill */
+.cs-card-status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.cs-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+.cs-pill--green { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+.cs-pill--red   { background: rgba(239,68,68,0.15);  color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+.cs-pill--blue  { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+
+/* Icon */
+.cs-card-icon {
+  font-size: 40px;
+  line-height: 1;
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* Info */
+.cs-card-info {}
+
+.cs-card-name {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 3px;
+}
+
+.cs-card-country {
+  font-size: 12px;
+  color: var(--text-muted, #64748b);
+}
+
+/* Features */
+.cs-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cs-feature-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-secondary, #94a3b8);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.cs-feature-tag--more {
+  color: var(--text-muted, #64748b);
+}
+
+/* Test result */
+.cs-test-result {
+  font-size: 12px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  line-height: 1.4;
+}
+.cs-test-result--ok  { background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.2); }
+.cs-test-result--err { background: rgba(239,68,68,0.1);  color: #ef4444; border: 1px solid rgba(239,68,68,0.2); }
+
+/* Actions */
+.cs-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+
+.cs-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s, transform 0.1s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.cs-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.cs-btn--primary {
+  background: #3b82f6;
+  color: #fff;
+}
+.cs-btn--primary:hover:not(:disabled) { background: #2563eb; transform: translateY(-1px); }
+
+.cs-btn--ghost {
+  background: rgba(255,255,255,0.07);
+  color: var(--text-secondary, #94a3b8);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.cs-btn--ghost:hover:not(:disabled) { background: rgba(255,255,255,0.12); color: #e2e8f0; }
+
+.cs-btn--danger {
+  background: #ef4444;
+  color: #fff;
+}
+.cs-btn--danger:hover:not(:disabled) { background: #dc2626; }
+
+.cs-btn--danger-ghost {
+  color: #f87171 !important;
+  border-color: rgba(239,68,68,0.2) !important;
+}
+.cs-btn--danger-ghost:hover:not(:disabled) {
+  background: rgba(239,68,68,0.1) !important;
+  border-color: rgba(239,68,68,0.4) !important;
+}
+
+.cs-btn--sm { padding: 6px 12px; font-size: 12px; }
+.cs-btn--full { width: 100%; }
+
+/* ── Banners ──────────────────────────────────────────────────────────────── */
+
+.cs-banner {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+.cs-banner--error   { background: rgba(239,68,68,0.1);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+.cs-banner--success { background: rgba(16,185,129,0.1); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+
+/* ── Modal overlay ────────────────────────────────────────────────────────── */
+
+.cs-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.cs-modal {
+  background: var(--bg-secondary, #131829);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+  animation: cs-slide-up 0.2s ease;
+}
+
+.cs-modal--sm { max-width: 380px; }
+
+@keyframes cs-slide-up {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cs-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 0;
+}
+
+.cs-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.cs-modal-icon { font-size: 36px; line-height: 1; }
+
+.cs-modal-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.cs-modal-sub {
+  font-size: 13px;
+  color: var(--text-muted, #64748b);
+  margin-top: 2px;
+}
+
+.cs-modal-close {
+  background: none;
+  border: none;
+  color: var(--text-muted, #64748b);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1;
+}
+.cs-modal-close:hover { color: #e2e8f0; background: rgba(255,255,255,0.08); }
+
+.cs-modal-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cs-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px 24px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.cs-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cs-doc-link {
+  font-size: 13px;
+  color: var(--text-muted, #64748b);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.cs-doc-link:hover { color: #60a5fa; }
+
+/* ── Form fields ──────────────────────────────────────────────────────────── */
+
+.cs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.cs-required {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+.cs-input-wrap {
+  position: relative;
+}
+
+.cs-input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #f1f5f9;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box;
+}
+.cs-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+}
+.cs-input::placeholder { color: var(--text-muted, #64748b); }
+
+.cs-reveal {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text-muted, #64748b);
+  padding: 2px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.cs-reveal:hover { color: #94a3b8; }
+
+.cs-help {
+  font-size: 12px;
+  color: var(--text-muted, #64748b);
+  line-height: 1.4;
+}
+
+/* Toggle */
+.cs-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.cs-toggle input { display: none; }
+
+.cs-toggle-track {
+  width: 44px;
+  height: 24px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.cs-toggle input:checked ~ .cs-toggle-track {
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.cs-toggle-thumb {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.cs-toggle input:checked ~ .cs-toggle-track .cs-toggle-thumb {
+  transform: translateX(20px);
+}
+
+.cs-toggle-label {
+  font-size: 14px;
+  color: var(--text-secondary, #94a3b8);
+}
+
+/* Disconnect warning */
+.cs-disconnect-warning {
+  font-size: 14px;
+  color: var(--text-secondary, #94a3b8);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Spinner ──────────────────────────────────────────────────────────────── */
+
+.cs-spinner {
+  display: inline-block;
+  border: 3px solid rgba(255,255,255,0.15);
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: cs-spin 0.7s linear infinite;
+}
+.cs-spinner--sm { width: 14px; height: 14px; border-width: 2px; }
+.cs-spinner--xs { width: 10px; height: 10px; border-width: 2px; }
+
+@keyframes cs-spin {
+  to { transform: rotate(360deg); }
+}

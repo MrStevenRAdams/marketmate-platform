@@ -1,0 +1,6 @@
+﻿{
+  "global": {
+    "nosec": "enabled"
+  },
+  "exclude": ["G101", "G704", "G118"]
+}

@@ -1,0 +1,777 @@
+/* ============================================================================
+   DISPATCH & SHIPPING — Base Styles (preserved from original)
+   ============================================================================ */
+
+.dispatch-container {
+  padding: 24px;
+  background: #0a0e1a;
+  min-height: 100vh;
+  color: #e5e7eb;
+}
+
+.dispatch-header {
+  margin-bottom: 32px;
+}
+
+.dispatch-header h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #f9fafb;
+}
+
+.dispatch-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #3b82f6;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dispatch-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #1e293b;
+}
+
+.dispatch-tabs .tab {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+}
+
+.dispatch-tabs .tab:hover {
+  color: #e5e7eb;
+  background: #1e293b;
+}
+
+.dispatch-tabs .tab.active {
+  color: #3b82f6;
+  border-bottom-color: #3b82f6;
+}
+
+.shipments-view,
+.create-view,
+.rates-view {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.view-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.refresh-btn,
+.get-rates-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.refresh-btn:hover,
+.get-rates-btn:hover {
+  background: #2563eb;
+}
+
+.refresh-btn:disabled,
+.get-rates-btn:disabled {
+  background: #475569;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #94a3b8;
+  font-size: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+}
+
+.empty-state p {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.empty-subtitle {
+  font-size: 14px;
+  color: #475569;
+}
+
+.shipments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.shipments-table th {
+  background: #1e293b;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid #334155;
+}
+
+.shipments-table td {
+  padding: 16px;
+  border-bottom: 1px solid #1e293b;
+  color: #e5e7eb;
+  font-size: 14px;
+}
+
+.shipments-table tbody tr:hover {
+  background: #1e293b;
+}
+
+.tracking-number {
+  background: #1e293b;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #60a5fa;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.status-planned {
+  background: #1e293b;
+  color: #94a3b8;
+}
+
+.status-label-generated {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fbbf24;
+}
+
+.status-dispatched {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.status-delivered {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.status-manifest-failed {
+  background: rgba(248, 113, 113, 0.15);
+  color: #f87171;
+}
+
+.action-link {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.action-link:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.coming-soon {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.coming-soon h2 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #f9fafb;
+}
+
+.coming-soon p {
+  color: #94a3b8;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.coming-soon .note {
+  color: #64748b;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.rate-shopping-container {
+  max-width: 1000px;
+}
+
+.rate-shopping-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #f9fafb;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.carrier-selector {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.carrier-selector label {
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.carrier-selector select {
+  flex: 1;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.carrier-selector select:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.rates-results h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #f9fafb;
+}
+
+.rates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.rate-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s;
+}
+
+.rate-card:hover {
+  border-color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.rate-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.carrier-name {
+  font-weight: 600;
+  color: #94a3b8;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.rate-price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #3b82f6;
+}
+
+.rate-service {
+  font-size: 16px;
+  font-weight: 500;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.rate-delivery {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.carriers-section {
+  margin-top: 32px;
+}
+
+.carriers-section h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #f9fafb;
+}
+
+.carriers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.carrier-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+.carrier-card:hover {
+  border-color: #334155;
+}
+
+.carrier-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.carrier-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.carrier-status {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.carrier-status.active {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+
+.carrier-status.inactive {
+  background: rgba(148, 163, 184, 0.15);
+  color: #94a3b8;
+}
+
+.carrier-country {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.carrier-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.feature-badge {
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.feature-more {
+  color: #64748b;
+  font-size: 11px;
+  padding: 4px 8px;
+}
+
+/* ============================================================================
+   MANIFEST TAB — G-001
+   ============================================================================ */
+
+.manifest-view {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Header row: title+subtitle left, date+CTA right */
+.manifest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.manifest-header-left h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin-bottom: 6px;
+}
+
+.manifest-subtitle {
+  font-size: 13px;
+  color: #64748b;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.manifest-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.manifest-date-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.manifest-date-picker label {
+  font-size: 12px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.manifest-date-picker input[type="date"] {
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.manifest-date-picker input[type="date"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.manifest-all-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.manifest-all-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.manifest-all-btn:disabled {
+  background: #374151;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  color: #6b7280;
+}
+
+/* Feedback alerts */
+.manifest-alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.manifest-alert-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+}
+
+.manifest-alert-success {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+/* Section titles */
+.manifest-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.manifest-date-badge {
+  background: #1e293b;
+  color: #60a5fa;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Courier New', monospace;
+}
+
+/* Per-carrier panels */
+.manifest-carriers-section {
+  margin-bottom: 32px;
+}
+
+.manifest-carrier-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.manifest-carrier-card {
+  background: #0a0e1a;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.manifest-carrier-card:hover {
+  border-color: #334155;
+}
+
+.manifest-carrier-card--empty {
+  opacity: 0.55;
+}
+
+.manifest-carrier-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  gap: 16px;
+}
+
+.manifest-carrier-info {
+  flex: 1;
+}
+
+.manifest-carrier-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 4px;
+}
+
+.manifest-carrier-meta {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.manifest-carrier-btn {
+  background: #1e293b;
+  color: #60a5fa;
+  border: 1px solid #334155;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.manifest-carrier-btn:hover:not(:disabled) {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.manifest-carrier-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Shipment list inside card */
+.manifest-shipment-list {
+  border-top: 1px solid #1e293b;
+  overflow-x: auto;
+}
+
+.manifest-shipments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.manifest-shipments-table th {
+  background: #0d1424;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid #1e293b;
+}
+
+.manifest-shipments-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #0f172a;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.manifest-shipments-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.manifest-shipments-table tbody tr:hover {
+  background: #1e293b;
+}
+
+.manifest-more-rows {
+  text-align: center;
+  color: #475569;
+  font-style: italic;
+  font-size: 12px;
+  padding: 8px 16px !important;
+}
+
+/* Empty state */
+.manifest-empty {
+  text-align: center;
+  padding: 48px 20px;
+  background: #0a0e1a;
+  border: 1px dashed #1e293b;
+  border-radius: 8px;
+}
+
+.manifest-empty-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.manifest-empty p {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.manifest-empty-sub {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* History section */
+.manifest-history-section {
+  margin-top: 8px;
+}
+
+.manifest-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.manifest-history-empty {
+  text-align: center;
+  padding: 32px;
+  color: #475569;
+  font-size: 14px;
+  background: #0a0e1a;
+  border: 1px dashed #1e293b;
+  border-radius: 8px;
+}
+
+.manifest-history-table {
+  margin-top: 0;
+}
+
+.manifest-format-badge {
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: 'Courier New', monospace;
+}

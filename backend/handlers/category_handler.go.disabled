@@ -1,0 +1,335 @@
+package handlers
+
+import (
+	"encoding/json"
+	"net/http"
+	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/google/uuid"
+)
+
+// Category represents a product category with multi-image support
+type Category struct {
+	CategoryID  string    `json:"category_id" firestore:"category_id"`
+	TenantID    string    `json:"tenant_id" firestore:"tenant_id"`
+	Name        string    `json:"name" firestore:"name"`
+	Slug        string    `json:"slug" firestore:"slug"`
+	Description string    `json:"description,omitempty" firestore:"description"`
+	ParentID    *string   `json:"parent_id,omitempty" firestore:"parent_id"`
+	Level       int       `json:"level" firestore:"level"`
+	Path        string    `json:"path" firestore:"path"`
+	Images      []string  `json:"images" firestore:"images"` // Array of image URLs
+	SortOrder   int       `json:"sort_order" firestore:"sort_order"`
+	Status      string    `json:"status" firestore:"status"`
+	CreatedAt   time.Time `json:"created_at" firestore:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at" firestore:"updated_at"`
+}
+
+// CategoryTree represents a category with its children for tree view
+type CategoryTree struct {
+	Category
+	Children []CategoryTree `json:"children"`
+}
+
+// CreateCategory creates a new category with multi-image support
+func (h *ProductHandler) CreateCategory(c *gin.Context) {
+	tenantID := c.GetString("tenant_id")
+	if tenantID == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "Missing tenant ID"})
+		return
+	}
+
+	var req struct {
+		Name        string   `json:"name" binding:"required"`
+		Description string   `json:"description"`
+		ParentID    *string  `json:"parent_id"`
+		Images      []string `json:"images"` // Array of image URLs
+		SortOrder   int      `json:"sort_order"`
+		Status      string   `json:"status"`
+	}
+
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Set defaults
+	if req.Status == "" {
+		req.Status = "active"
+	}
+	if req.Images == nil {
+		req.Images = []string{}
+	}
+
+	// Calculate level and path
+	level := 0
+	path := ""
+	
+	if req.ParentID != nil && *req.ParentID != "" {
+		// Get parent category to calculate level and path
+		parent, err := h.Repository.GetCategory(tenantID, *req.ParentID)
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{"error": "Parent category not found"})
+			return
+		}
+		level = parent.Level + 1
+		path = parent.Path + "/" + parent.CategoryID
+	}
+
+	// Create slug from name
+	slug := createSlug(req.Name)
+
+	category := Category{
+		CategoryID:  uuid.New().String(),
+		TenantID:    tenantID,
+		Name:        req.Name,
+		Slug:        slug,
+		Description: req.Description,
+		ParentID:    req.ParentID,
+		Level:       level,
+		Path:        path,
+		Images:      req.Images,
+		SortOrder:   req.SortOrder,
+		Status:      req.Status,
+		CreatedAt:   time.Now(),
+		UpdatedAt:   time.Now(),
+	}
+
+	if err := h.Repository.CreateCategory(tenantID, &category); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusCreated, gin.H{
+		"data": category,
+		"metadata": gin.H{
+			"timestamp":  time.Now().Format(time.RFC3339),
+			"request_id": c.GetString("request_id"),
+		},
+	})
+}
+
+// UpdateCategory updates an existing category including images
+func (h *ProductHandler) UpdateCategory(c *gin.Context) {
+	tenantID := c.GetString("tenant_id")
+	categoryID := c.Param("id")
+
+	var req struct {
+		Name        *string  `json:"name"`
+		Description *string  `json:"description"`
+		ParentID    *string  `json:"parent_id"`
+		Images      []string `json:"images"` // Allow updating images array
+		SortOrder   *int     `json:"sort_order"`
+		Status      *string  `json:"status"`
+	}
+
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Get existing category
+	existing, err := h.Repository.GetCategory(tenantID, categoryID)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Category not found"})
+		return
+	}
+
+	// Update fields
+	if req.Name != nil {
+		existing.Name = *req.Name
+		existing.Slug = createSlug(*req.Name)
+	}
+	if req.Description != nil {
+		existing.Description = *req.Description
+	}
+	if req.Images != nil {
+		existing.Images = req.Images // Replace entire images array
+	}
+	if req.SortOrder != nil {
+		existing.SortOrder = *req.SortOrder
+	}
+	if req.Status != nil {
+		existing.Status = *req.Status
+	}
+
+	// Handle parent change
+	if req.ParentID != nil {
+		existing.ParentID = req.ParentID
+		// Recalculate level and path
+		if *req.ParentID == "" {
+			existing.Level = 0
+			existing.Path = ""
+		} else {
+			parent, err := h.Repository.GetCategory(tenantID, *req.ParentID)
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "Parent category not found"})
+				return
+			}
+			existing.Level = parent.Level + 1
+			existing.Path = parent.Path + "/" + parent.CategoryID
+		}
+	}
+
+	existing.UpdatedAt = time.Now()
+
+	if err := h.Repository.UpdateCategory(tenantID, existing); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"data": existing,
+		"metadata": gin.H{
+			"timestamp":  time.Now().Format(time.RFC3339),
+			"request_id": c.GetString("request_id"),
+		},
+	})
+}
+
+// GetCategory retrieves a single category
+func (h *ProductHandler) GetCategory(c *gin.Context) {
+	tenantID := c.GetString("tenant_id")
+	categoryID := c.Param("id")
+
+	category, err := h.Repository.GetCategory(tenantID, categoryID)
+	if err != nil {
+		c.JSON(http.StatusNotFound, gin.H{"error": "Category not found"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"data": category,
+		"metadata": gin.H{
+			"timestamp":  time.Now().Format(time.RFC3339),
+			"request_id": c.GetString("request_id"),
+		},
+	})
+}
+
+// ListCategories retrieves all categories (flat list)
+func (h *ProductHandler) ListCategories(c *gin.Context) {
+	tenantID := c.GetString("tenant_id")
+
+	categories, err := h.Repository.ListCategories(tenantID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"data": categories,
+		"metadata": gin.H{
+			"timestamp":  time.Now().Format(time.RFC3339),
+			"request_id": c.GetString("request_id"),
+			"total":      len(categories),
+		},
+	})
+}
+
+// GetCategoryTree retrieves categories as a hierarchical tree
+func (h *ProductHandler) GetCategoryTree(c *gin.Context) {
+	tenantID := c.GetString("tenant_id")
+
+	// Get all categories
+	categories, err := h.Repository.ListCategories(tenantID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	// Build tree structure
+	tree := buildCategoryTree(categories)
+
+	c.JSON(http.StatusOK, gin.H{
+		"data": tree,
+		"metadata": gin.H{
+			"timestamp":  time.Now().Format(time.RFC3339),
+			"request_id": c.GetString("request_id"),
+			"total":      len(categories),
+		},
+	})
+}
+
+// DeleteCategory deletes a category
+func (h *ProductHandler) DeleteCategory(c *gin.Context) {
+	tenantID := c.GetString("tenant_id")
+	categoryID := c.Param("id")
+
+	// Check if category has children
+	categories, err := h.Repository.ListCategories(tenantID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	for _, cat := range categories {
+		if cat.ParentID != nil && *cat.ParentID == categoryID {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": "Cannot delete category with children. Delete children first.",
+			})
+			return
+		}
+	}
+
+	if err := h.Repository.DeleteCategory(tenantID, categoryID); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Category deleted successfully",
+		"metadata": gin.H{
+			"timestamp":  time.Now().Format(time.RFC3339),
+			"request_id": c.GetString("request_id"),
+		},
+	})
+}
+
+// Helper function to build category tree
+func buildCategoryTree(categories []Category) []CategoryTree {
+	// Create a map for quick lookup
+	categoryMap := make(map[string]*CategoryTree)
+	var rootCategories []CategoryTree
+
+	// First pass: create all tree nodes
+	for _, cat := range categories {
+		tree := CategoryTree{
+			Category: cat,
+			Children: []CategoryTree{},
+		}
+		categoryMap[cat.CategoryID] = &tree
+	}
+
+	// Second pass: build parent-child relationships
+	for _, cat := range categories {
+		if cat.ParentID == nil || *cat.ParentID == "" {
+			// Root category
+			if node, exists := categoryMap[cat.CategoryID]; exists {
+				rootCategories = append(rootCategories, *node)
+			}
+		} else {
+			// Child category
+			if parent, exists := categoryMap[*cat.ParentID]; exists {
+				if child, exists := categoryMap[cat.CategoryID]; exists {
+					parent.Children = append(parent.Children, *child)
+				}
+			}
+		}
+	}
+
+	return rootCategories
+}
+
+// Helper function to create URL-friendly slug
+func createSlug(name string) string {
+	// Simple implementation - in production use a proper slug library
+	slug := strings.ToLower(name)
+	slug = strings.ReplaceAll(slug, " ", "-")
+	slug = strings.ReplaceAll(slug, "&", "and")
+	// Remove special characters
+	reg := regexp.MustCompile("[^a-z0-9-]+")
+	slug = reg.ReplaceAllString(slug, "")
+	return slug
+}

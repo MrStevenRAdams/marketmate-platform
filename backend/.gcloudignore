@@ -1,0 +1,12 @@
+﻿.env
+.env*
+*.env
+serviceAccountKey.json
+*serviceAccount*.json
+firebase-debug.log
+*.log
+node_modules/
+batch_ids.json
+extended_data_sample.json
+link-tenant-demo.js
+delete_extended_data.py
