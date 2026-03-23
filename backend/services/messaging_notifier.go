@@ -240,12 +240,25 @@ func (n *MessagingNotifier) sendEmail(toEmail, toName, subject, body string) err
 		fromName = "MarketMate"
 	}
 
-	to := fmt.Sprintf("%s <%s>", toName, toEmail)
-	fromAddr := fmt.Sprintf("%s <%s>", fromName, from)
+	// Sanitise email headers to prevent SMTP header injection (G707)
+	// Strip any CR/LF characters from values that go into email headers
+	sanitiseHeader := func(s string) string {
+		s = strings.ReplaceAll(s, "\r", "")
+		s = strings.ReplaceAll(s, "\n", "")
+		return s
+	}
+	toEmailSafe := sanitiseHeader(toEmail)
+	toNameSafe  := sanitiseHeader(toName)
+	fromSafe    := sanitiseHeader(from)
+	fromNameSafe := sanitiseHeader(fromName)
+	subjectSafe  := sanitiseHeader(subject)
+
+	to := fmt.Sprintf("%s <%s>", toNameSafe, toEmailSafe)
+	fromAddr := fmt.Sprintf("%s <%s>", fromNameSafe, fromSafe)
 
 	headers := fmt.Sprintf(
 		"From: %s\r\nTo: %s\r\nSubject: %s\r\nContent-Type: text/plain; charset=UTF-8\r\nDate: %s\r\n\r\n",
-		fromAddr, to, subject, time.Now().Format(time.RFC1123Z),
+		fromAddr, to, subjectSafe, time.Now().Format(time.RFC1123Z),
 	)
 	msg := []byte(headers + body)
 
@@ -269,10 +282,10 @@ func (n *MessagingNotifier) sendEmail(toEmail, toName, subject, body string) err
 				return err
 			}
 		}
-		if err := client.Mail(from); err != nil {
+		if err := client.Mail(fromSafe); err != nil {
 			return err
 		}
-		if err := client.Rcpt(toEmail); err != nil {
+		if err := client.Rcpt(toEmailSafe); err != nil {
 			return err
 		}
 		w, err := client.Data()
@@ -286,7 +299,7 @@ func (n *MessagingNotifier) sendEmail(toEmail, toName, subject, body string) err
 	}
 
 	// Fall back to STARTTLS
-	return smtp.SendMail(addr, auth, from, []string{toEmail}, msg)
+	return smtp.SendMail(addr, auth, fromSafe, []string{toEmailSafe}, msg)
 }
 
 // ── Twilio (WhatsApp / SMS) ───────────────────────────────────────────────────
