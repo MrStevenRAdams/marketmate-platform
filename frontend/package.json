@@ -14,7 +14,7 @@
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "@monaco-editor/react": "^4.7.0",
-    "axios": "^1.6.2",
+    "axios": "^1.14.0",
     "firebase": "^12.9.0",
     "google-auth-library": "^10.6.1",
     "lucide-react": "^0.564.0",
