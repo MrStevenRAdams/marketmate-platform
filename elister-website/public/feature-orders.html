@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Order Management — MarketMate</title>
+  <meta name="description" content="MarketMate's unified order management system brings every order from Amazon, eBay, Etsy, Temu, and 15+ channels into one intelligent inbox with SLA tracking, bulk dispatch, and AI-assisted messaging."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a>
+    <ul class="nav-links">
+      <li><a href="features.html" class="active">Features</a></li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a>
+  </div>
+</header>
+
+<section class="feature-hero">
+  <div class="container">
+    <div class="feature-hero-inner">
+      <div>
+        <div class="badge">🛒 Order Management</div>
+        <h1>Every order.<br/>One place.<br/><span class="text-green">Zero chaos.</span></h1>
+        <p style="font-size:1.125rem;color:var(--text-secondary);line-height:1.7;margin:20px 0 32px;max-width:520px;">MarketMate's unified order inbox pulls in every order from every connected channel — the moment it's placed. View, process, and dispatch from a single workflow without ever switching tabs or systems.</p>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;">
+          <a href="contact.html" class="btn-primary">Get Started →</a>
+          <a href="features.html" class="btn-ghost">← All Features</a>
+        </div>
+      </div>
+      <div>
+        <div class="mock-window" style="transform:perspective(1000px) rotateY(-4deg);">
+          <div class="mock-titlebar">
+            <div class="mock-dot r"></div><div class="mock-dot y"></div><div class="mock-dot g"></div>
+            <span class="mock-title">Orders — All Channels · 312 pending</span>
+          </div>
+          <div class="mock-body">
+            <div style="display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;">
+              <span style="padding:5px 12px;background:var(--green);color:#fff;border-radius:100px;font-size:.75rem;font-weight:700;">All (312)</span>
+              <span style="padding:5px 12px;background:var(--surface-2);border-radius:100px;font-size:.75rem;font-weight:600;color:var(--text-secondary);">Amazon (98)</span>
+              <span style="padding:5px 12px;background:var(--surface-2);border-radius:100px;font-size:.75rem;font-weight:600;color:var(--text-secondary);">eBay (74)</span>
+              <span style="padding:5px 12px;background:var(--surface-2);border-radius:100px;font-size:.75rem;font-weight:600;color:var(--text-secondary);">Etsy (41)</span>
+            </div>
+            <div class="mock-row active">
+              <div class="mock-row-icon" style="background:#ff9900;color:#fff;font-weight:900;font-size:.7rem;">AMZ</div>
+              <div class="mock-row-text"><strong>#114-7823-4401 · John Smith</strong><span>2× Widget Pro — £89.99 · Dispatch by 5pm ⚠️</span></div>
+              <span class="mock-row-badge badge-amber">Urgent</span>
+            </div>
+            <div class="mock-row">
+              <div class="mock-row-icon" style="background:#e53238;color:#fff;font-weight:900;font-size:.7rem;">EBY</div>
+              <div class="mock-row-text"><strong>#23-19042-28831 · Sarah Jones</strong><span>1× Gadget Case — £42.50 · Standard dispatch</span></div>
+              <span class="mock-row-badge badge-green">Awaiting</span>
+            </div>
+            <div class="mock-row">
+              <div class="mock-row-icon" style="background:#f1641e;color:#fff;font-weight:900;font-size:.65rem;">ETS</div>
+              <div class="mock-row-text"><strong>#3481882834 · Tom Williams</strong><span>3× Handmade Mug Set — £118.00</span></div>
+              <span class="mock-row-badge badge-green">Awaiting</span>
+            </div>
+            <div class="mock-row">
+              <div class="mock-row-icon" style="background:#0053b3;color:#fff;font-weight:900;font-size:.65rem;">OBY</div>
+              <div class="mock-row-text"><strong>#OB-7481992 · Lisa Brown</strong><span>1× Professional Kit — £67.00</span></div>
+              <span class="mock-row-badge badge-blue">On Hold</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow">Core Capabilities</p>
+      <h2>Everything you need to master your order flow</h2>
+    </div>
+    <div class="feature-deep-grid">
+      <div class="feature-deep-card reveal">
+        <h3>🔍 Universal Search &amp; Filtering</h3>
+        <p>Search any order by order number, customer name, SKU, or internal reference. Filter by channel, status (Awaiting, On Hold, Dispatched, Cancelled), dispatch urgency, or date range. Save filters as quick views for your team.</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>⚡ SLA Urgency Indicators</h3>
+        <p>Each order shows its channel's dispatch SLA commitment. Orders approaching their deadline turn amber, overdue orders turn red. The SLA Dashboard gives you a bird's-eye view of your daily dispatch performance across every channel.</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>📋 4-Tab Order Detail Drawer</h3>
+        <p>Click any order to open a slide-out detail drawer without losing your place in the list. Four tabs cover: full Details (items, address, carrier), expanded Line Items, full Activity audit trail, and Notes (internal + channel notes).</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>🚚 Inline Dispatch Flow</h3>
+        <p>Select carrier, choose service level with live rate comparison, enter package dimensions, generate label, and mark as dispatched — all within the order drawer without leaving the page. Dispatch status syncs back to the channel automatically.</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>📦 Bulk Processing</h3>
+        <p>Select hundreds of orders at once. Bulk-mark as dispatched, bulk-print labels, bulk-put on hold, or bulk-export to CSV. Batch Process mode lets you process multiple orders through the same carrier and service in a single workflow.</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>🗂️ Orders Organisation</h3>
+        <p>Assign orders to folders, apply searchable tags, add internal reference codes, and move orders to specific warehouse locations or fulfilment centres. Keep your team's workflow structured even at high volume.</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>🔀 Merge &amp; Split Orders</h3>
+        <p>Merge multiple orders from the same customer into a single shipment, or split one order across multiple parcels or fulfilment locations. Handle complex fulfilment scenarios without manual workarounds.</p>
+      </div>
+      <div class="feature-deep-card reveal">
+        <h3>🖨️ Print Suite</h3>
+        <p>Print invoices, shipping labels, pick lists, pack lists, and stock item labels directly from the platform. Batch-print labels for an entire wave of orders with one click. Compatible with Zebra, Dymo, and standard A4 printers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="eyebrow eyebrow-light">Actions Menu</p>
+      <h2 class="section-title-light">Six action groups. Every order scenario covered.</h2>
+      <p style="color:rgba(255,255,255,.65);margin-top:16px;">MarketMate's contextual Actions menu groups every possible order action into six logical submenus, available on individual orders or bulk selections.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="reveal">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;">
+        <div style="font-size:1.5rem;margin-bottom:12px;">📁</div>
+        <h3 style="color:#fff;margin-bottom:10px;font-size:1rem;">Organise</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.6;">Folders, tags, reference codes, warehouse location assignment, fulfilment centre override.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;">
+        <div style="font-size:1.5rem;margin-bottom:12px;">📦</div>
+        <h3 style="color:#fff;margin-bottom:10px;font-size:1rem;">Items</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.6;">Batch/serial number assignment, auto-assign batches, link unlinked items, add to purchase order.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;">
+        <div style="font-size:1.5rem;margin-bottom:12px;">🚚</div>
+        <h3 style="color:#fff;margin-bottom:10px;font-size:1rem;">Shipping</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.6;">Change service, get live quotes, cancel label, split packaging, change dispatch and delivery dates.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;">
+        <div style="font-size:1.5rem;margin-bottom:12px;">🖨️</div>
+        <h3 style="color:#fff;margin-bottom:10px;font-size:1rem;">Print</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.6;">Invoice, shipping label, pick list, pack list, stock item label — all from one menu.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;">
+        <div style="font-size:1.5rem;margin-bottom:12px;">▶️</div>
+        <h3 style="color:#fff;margin-bottom:10px;font-size:1rem;">Process Order</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.6;">Single order processing flow or batch-process multiple selected orders simultaneously.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px;">
+        <div style="font-size:1.5rem;margin-bottom:12px;">⚙️</div>
+        <h3 style="color:#fff;margin-bottom:10px;font-size:1rem;">Other Actions</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.6;">Change status, view order notes, view raw XML, split order into separate orders, cancel, delete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container two-col reveal">
+    <div class="col-text">
+      <p class="eyebrow">Processed Orders</p>
+      <h2>Every dispatched order. Full history.</h2>
+      <p>The Processed Orders view gives you a complete record of all dispatched and completed orders. Filter by date range, channel, or carrier. Re-print labels, view tracking information, and access the full activity trail.</p>
+      <ul class="feature-list">
+        <li>Searchable history of all dispatched orders</li>
+        <li>Tracking number lookup and carrier status</li>
+        <li>Re-print label for any historical order</li>
+        <li>Export filtered order sets to CSV or XLSX</li>
+        <li>Delivery exception alerts linked back to original orders</li>
+      </ul>
+    </div>
+    <div class="col-visual">
+      <div class="mock-window">
+        <div class="mock-titlebar">
+          <div class="mock-dot r"></div><div class="mock-dot y"></div><div class="mock-dot g"></div>
+          <span class="mock-title">Processed Orders · Today</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-row">
+            <div class="mock-row-icon" style="background:#ff9900;color:#fff;font-weight:900;font-size:.65rem;">AMZ</div>
+            <div class="mock-row-text"><strong>#114-7820-3321</strong><span>Evri · JD000123456 · Delivered ✓</span></div>
+            <span class="mock-row-badge badge-green">Complete</span>
+          </div>
+          <div class="mock-row">
+            <div class="mock-row-icon" style="background:#e53238;color:#fff;font-weight:900;font-size:.65rem;">EBY</div>
+            <div class="mock-row-text"><strong>#23-19040-11223</strong><span>Royal Mail · TT123456789GB · In Transit</span></div>
+            <span class="mock-row-badge badge-blue">In Transit</span>
+          </div>
+          <div class="mock-row active">
+            <div class="mock-row-icon" style="background:#0053b3;color:#fff;font-weight:900;font-size:.65rem;">OBY</div>
+            <div class="mock-row-text"><strong>#OB-7481220</strong><span>DPD · 15614918238990 · Exception ⚠️</span></div>
+            <span class="mock-row-badge badge-amber">Exception</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner">
+      <h2>Take control of your orders today</h2>
+      <p>See MarketMate's order management in action with a personalised demo for your operation.</p>
+      <div class="cta-banner-btns">
+        <a href="contact.html" class="btn-primary" style="background:#fff;color:var(--green);">Book a Demo →</a>
+        <a href="feature-inventory.html" class="btn-ghost-white">Next: Inventory →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="logo">Market<span class="logo-dot" style="color:var(--green-mid);">Mate</span></a><p>The all-in-one order management, inventory, and multichannel listing platform for serious Amazon and marketplace sellers.</p><div class="footer-amazon-badge">✦ Amazon SP-API Approved</div></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="feature-orders.html">Order Management</a></li><li><a href="feature-inventory.html">Inventory &amp; WMS</a></li><li><a href="feature-listings.html">AI Listing Tools</a></li><li><a href="feature-shipping.html">Shipping &amp; Dispatch</a></li><li><a href="feature-analytics.html">Analytics</a></li><li><a href="feature-automation.html">Automation</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="channels.html">Channels</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="cookies.html">Cookie Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Marketmate Solutions Ltd. Registered in England &amp; Wales.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "google-auth-library": "^10.6.1",
+    "lucide-react": "^0.564.0",
+    "node-fetch": "^2.7.0",
+    "uuid": "^13.0.0"
+  }
+}

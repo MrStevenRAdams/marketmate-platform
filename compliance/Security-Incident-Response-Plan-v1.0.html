@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Incident Response Plan v1.0 – Marketmate Solutions Ltd</title>
+<style>
+  @media print {
+    body { margin: 0; }
+    .no-print { display: none; }
+    section { page-break-inside: avoid; }
+    h2 { page-break-after: avoid; }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    color: #1a1a1a;
+    background: #f0f2f5;
+    padding: 30px 20px;
+  }
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  /* Cover */
+  .cover {
+    background: #1a3a5c;
+    color: #fff;
+    padding: 60px 50px 40px;
+  }
+  .cover-label {
+    font-size: 9pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7fb3d3;
+    margin-bottom: 12px;
+  }
+  .cover h1 {
+    font-size: 24pt;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 8px;
+  }
+  .cover .subtitle {
+    font-size: 13pt;
+    color: #a8c8e0;
+    margin-bottom: 40px;
+  }
+  .cover-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #4a9fd4, transparent);
+    margin-bottom: 30px;
+  }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 8px 16px;
+    font-size: 9.5pt;
+  }
+  .meta-grid .label { color: #7fb3d3; font-weight: 600; }
+  .meta-grid .value { color: #e0eaf2; }
+  /* Body */
+  .body { padding: 40px 50px 50px; }
+  h2 {
+    font-size: 14pt;
+    color: #1a3a5c;
+    border-bottom: 2px solid #1a3a5c;
+    padding-bottom: 6px;
+    margin: 32px 0 14px;
+  }
+  h3 {
+    font-size: 11pt;
+    color: #1a3a5c;
+    margin: 20px 0 8px;
+    font-weight: 700;
+  }
+  p {
+    line-height: 1.65;
+    margin-bottom: 10px;
+    font-size: 10.5pt;
+  }
+  ul {
+    margin: 8px 0 12px 24px;
+    font-size: 10.5pt;
+    line-height: 1.7;
+  }
+  li { margin-bottom: 4px; }
+  /* Phase boxes */
+  .phase {
+    border-left: 4px solid #1a3a5c;
+    background: #f4f7fa;
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .phase h3 {
+    margin: 0 0 8px;
+    color: #1a3a5c;
+    font-size: 10.5pt;
+  }
+  .phase ul { margin: 0 0 0 18px; }
+  /* Severity badges */
+  .sev { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 8.5pt; font-weight: 700; margin-right: 4px; }
+  .sev-p1 { background: #fde8e8; color: #b91c1c; }
+  .sev-p2 { background: #fef3cd; color: #92400e; }
+  .sev-p3 { background: #dbeafe; color: #1d4ed8; }
+  .sev-p4 { background: #ecfdf5; color: #065f46; }
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 20px;
+    font-size: 9.5pt;
+  }
+  thead tr { background: #1a3a5c; color: #fff; }
+  thead th {
+    padding: 9px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 9pt;
+    letter-spacing: 0.3px;
+  }
+  tbody tr:nth-child(even) { background: #f4f7fa; }
+  tbody td { padding: 8px 10px; border-bottom: 1px solid #dde3ea; vertical-align: top; line-height: 1.5; }
+  /* Footer */
+  .doc-footer {
+    border-top: 1px solid #dde3ea;
+    margin-top: 40px;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8.5pt;
+    color: #888;
+  }
+  .classification-badge {
+    display: inline-block;
+    background: #fde8e8;
+    color: #7f1d1d;
+    border: 1px solid #fca5a5;
+    border-radius: 3px;
+    padding: 2px 8px;
+    font-size: 8pt;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-label">Marketmate Solutions Ltd</div>
+    <h1>SECURITY INCIDENT<br>RESPONSE PLAN</h1>
+    <div class="subtitle">e-Lister Order Management Platform</div>
+    <div class="cover-bar"></div>
+    <div class="meta-grid">
+      <span class="label">Document Title</span><span class="value">Security Incident Response Plan</span>
+      <span class="label">Version</span><span class="value">1.0</span>
+      <span class="label">Effective Date</span><span class="value">16 March 2026</span>
+      <span class="label">Next Review Date</span><span class="value">16 March 2027</span>
+      <span class="label">Owner</span><span class="value">Marketmate Solutions Ltd</span>
+      <span class="label">Incident Response Contact</span><span class="value">Steven Adams – mrstevenradams@gmail.com</span>
+      <span class="label">Classification</span><span class="value">Confidential – Internal Use</span>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <div class="classification-badge">⚠ CONFIDENTIAL – INTERNAL USE ONLY</div>
+
+    <h2>1. Purpose and Scope</h2>
+    <p>This Security Incident Response Plan defines the procedures Marketmate Solutions Ltd follows when a security incident is detected affecting the e-Lister platform, its customers, or any personal data processed through the platform.</p>
+    <p>This plan applies to all security incidents including:</p>
+    <ul>
+      <li>Unauthorised access to customer data or marketplace credentials</li>
+      <li>Personal data breaches affecting buyer PII retrieved via marketplace APIs</li>
+      <li>Compromise of API credentials, OAuth tokens, or encryption keys</li>
+      <li>Ransomware, malware, or other destructive attacks</li>
+      <li>Denial of service attacks affecting platform availability</li>
+      <li>Insider threats or accidental data exposure</li>
+    </ul>
+
+    <h2>2. Incident Response Team</h2>
+    <table>
+      <thead>
+        <tr><th>Role</th><th>Person</th><th>Contact</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Incident Lead</strong></td><td>Steven Adams</td><td>mrstevenradams@gmail.com</td></tr>
+        <tr><td><strong>Technical Lead</strong></td><td>Steven Adams</td><td>mrstevenradams@gmail.com</td></tr>
+        <tr><td><strong>GCP Infrastructure</strong></td><td>Steven Adams</td><td>GCP Console + gcloud CLI</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3. Incident Classification</h2>
+    <table>
+      <thead>
+        <tr><th>Severity</th><th>Description</th><th>Examples</th><th>Response Target</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="sev sev-p1">P1 – Critical</span></td>
+          <td>Confirmed PII breach or full platform compromise</td>
+          <td>Buyer data exfiltrated; credentials stolen and used</td>
+          <td><strong>Within 1 hour</strong></td>
+        </tr>
+        <tr>
+          <td><span class="sev sev-p2">P2 – High</span></td>
+          <td>Suspected breach or significant vulnerability exploited</td>
+          <td>Unauthorised API access; credential exposure</td>
+          <td><strong>Within 4 hours</strong></td>
+        </tr>
+        <tr>
+          <td><span class="sev sev-p3">P3 – Medium</span></td>
+          <td>Security misconfiguration or vulnerability found</td>
+          <td>Open firewall rule; unpatched CVE</td>
+          <td><strong>Within 24 hours</strong></td>
+        </tr>
+        <tr>
+          <td><span class="sev sev-p4">P4 – Low</span></td>
+          <td>Minor issue with no immediate risk</td>
+          <td>Informational scan finding</td>
+          <td><strong>Next sprint</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Response Procedures</h2>
+
+    <div class="phase">
+      <h3>Phase 1 – Detection and Reporting</h3>
+      <p style="margin-bottom:8px">Security incidents may be detected via:</p>
+      <ul>
+        <li>GCP Cloud Audit Log alerts (Data Read/Write anomalies on Firestore or Secret Manager)</li>
+        <li>Trivy or Semgrep scan findings from automated CI/CD pipeline</li>
+        <li>Marketplace notification (Amazon, eBay, Shopify security alert)</li>
+        <li>Manual discovery during development or operations</li>
+        <li>External report from a customer, researcher, or third party</li>
+      </ul>
+      <p style="margin-top:10px">Any suspected incident must be reported immediately to <strong>Steven Adams</strong> via mrstevenradams@gmail.com.</p>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 2 – Containment</h3>
+      <ul>
+        <li>Revoke any compromised credentials via GCP Secret Manager and respective developer portals</li>
+        <li>Disable affected Cloud Run service revisions if the service is compromised</li>
+        <li>Apply GCP firewall rules to block suspicious traffic sources</li>
+        <li>Preserve all relevant GCP Cloud Audit Logs by exporting to a secure GCS bucket before any remediation</li>
+        <li>Notify affected marketplaces via their developer portals</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 3 – Investigation</h3>
+      <ul>
+        <li>Review GCP Cloud Audit Logs to identify the scope of access</li>
+        <li>Determine which data categories were affected and the number of data subjects involved</li>
+        <li>Identify the attack vector and confirm it has been closed</li>
+        <li>Document all findings in an incident log</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 4 – Notification</h3>
+      <table style="margin-top:10px">
+        <thead>
+          <tr><th>Who to Notify</th><th>When</th><th>How</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ICO</strong></td>
+            <td>Within 72 hours of becoming aware (P1/P2 involving personal data)</td>
+            <td>ico.org.uk self-reporting portal</td>
+          </tr>
+          <tr>
+            <td><strong>Amazon</strong></td>
+            <td>Within 24 hours if Amazon buyer data is involved</td>
+            <td>Amazon Seller Central / SP-API security contact</td>
+          </tr>
+          <tr>
+            <td><strong>Affected Customers</strong></td>
+            <td>Without undue delay if high risk to their rights</td>
+            <td>Email to Customer account contact</td>
+          </tr>
+          <tr>
+            <td><strong>Shopify / eBay / Other Platforms</strong></td>
+            <td>As required by developer agreements</td>
+            <td>Developer portal security contacts</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 5 – Recovery</h3>
+      <ul>
+        <li>Issue new credentials and verify all access controls are functioning correctly</li>
+        <li>Redeploy affected Cloud Run services from a clean source build</li>
+        <li>Run a full Trivy container and codebase scan to confirm no residual compromise</li>
+        <li>Run Prowler GCP benchmark to confirm infrastructure security posture</li>
+        <li>Monitor GCP Cloud Audit Logs closely for 7 days post-incident</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <h3>Phase 6 – Post-Incident Review</h3>
+      <p>Within 14 days of resolving a P1 or P2 incident, a post-incident review is documented covering root cause, timeline, effectiveness of response, and actions to prevent recurrence.</p>
+    </div>
+
+    <h2>5. Detection Tooling</h2>
+    <table>
+      <thead>
+        <tr><th>Tool</th><th>Purpose</th><th>Frequency</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>GCP Cloud Audit Logs</strong></td><td>All Firestore, Secret Manager, and Cloud Run data access events</td><td>Continuous</td></tr>
+        <tr><td><strong>Trivy</strong></td><td>Container image CVE scanning and secret detection</td><td>Every deployment</td></tr>
+        <tr><td><strong>Semgrep + gosec</strong></td><td>Static application security testing (SAST)</td><td>Every deployment</td></tr>
+        <tr><td><strong>Prowler</strong></td><td>GCP CIS 4.0 benchmark IAM and infrastructure audit</td><td>Monthly</td></tr>
+        <tr><td><strong>OWASP ZAP</strong></td><td>Dynamic application security testing (DAST)</td><td>Every deployment</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. Evidence Preservation</h2>
+    <p>All security scan reports, incident logs, and remediation records are stored in:</p>
+    <ul>
+      <li>Local path: <code>Documents/marketmate-compliance/evidence-YYYYMMDD</code></li>
+      <li>Cloud backup: <code>gs://marketmate/compliance/</code> (GCP Cloud Storage, europe-west2)</li>
+      <li>Retention: 3 years minimum from date of creation</li>
+    </ul>
+
+    <h2>7. Policy Review</h2>
+    <p>This plan is reviewed annually or following any P1 or P2 incident. <strong>Next scheduled review: 16 March 2027.</strong></p>
+
+    <div class="doc-footer">
+      <span>Marketmate Solutions Ltd &nbsp;|&nbsp; Security Incident Response Plan v1.0 &nbsp;|&nbsp; 16 March 2026</span>
+      <span>CONFIDENTIAL</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

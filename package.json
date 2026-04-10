@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "firebase-admin": "^13.7.0"
+  },
+  "name": "platform",
+  "version": "1.0.0",
+  "main": "activate-credentials.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

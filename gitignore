@@ -1,0 +1,78 @@
+# ============================================================================
+# MarketMate Platform .gitignore
+# ============================================================================
+
+# ── SECRETS & CREDENTIALS (NEVER COMMIT) ─────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.env
+serviceAccountKey.json
+*serviceAccount*.json
+*service-account*.json
+*.key
+*.pem
+*.p12
+*.pfx
+secure-keys/
+secrets/
+
+# ── GO ────────────────────────────────────────────────────────────────────────
+backend/server
+backend/tmp/
+*.exe
+*.test
+*.out
+
+# ── NODE / FRONTEND ───────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+elister-website/node_modules/
+*.tsbuildinfo
+
+# ── BUILD ARTIFACTS ───────────────────────────────────────────────────────────
+dist/
+build/
+.build/
+
+# ── DOCKER ───────────────────────────────────────────────────────────────────
+.dockerignore
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── EDITORS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── GCP ──────────────────────────────────────────────────────────────────────
+.gcloud/
+gcloud-service-key.json
+application_default_credentials.json
+
+# ── COMPLIANCE / EVIDENCE ─────────────────────────────────────────────────────
+# Evidence reports contain scan results but not secrets — keep them local
+marketmate-compliance/
+
+# ── TEMP / DEBUG FILES ────────────────────────────────────────────────────────
+*.log
+*.tmp
+tmp/
+temp/
+batch_ids.json
+extended_data.json
+extended_data_sample.json
+product.json
+listings.json
+
+# ── FIREBASE ─────────────────────────────────────────────────────────────────
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log

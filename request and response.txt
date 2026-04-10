@@ -1,0 +1,3625 @@
+Source Store Details
+Store Hash: akbkqf8f9b
+Page: Home Page (PageId 0)
+
+Destination Store Details
+Store Hash: ax57c4jtbq
+Page: Home Page (PageId 0)
+
+
+API : https://api.bigcommerce.com/stores/ax57c4jtbq/v3/content/page-widgets
+Action: POST
+Request Payload:
+-----------------
+{
+  "regions": [
+    {
+      "name": "footer_site_links--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "17d7c152-6348-4333-866e-7820c726c2b5",
+                  "configuration": {
+                    "htmlCode": "<style>\n  .links-content {\n    display: flex !important;\n  }\n</style>\n\n<div class=\"links-content\">\n<ul style=\"margin-right:30px;\">\n    <li><a href=\"https://discountmugs.com/customer-service-form/\">Place a Ticket</a></li>\n    <li><a href=\"https://discountmugs.com/account.php?action=order_status\">Track Your Order</a></li>\n    <li><a href=\"https://discountmugs.com/contact-us/\">Contact Us</a></li>\n    <li><a href=\"https://discountmugs.com/careers/\">Careers</a></li>\n    <li><a href=\"https://www.discountmugs.com/blog/\">Read Our Blog</a></li>\n    <li><a href=\"https://www.discountmugs.com/digital-catalog/\">Digital Catalog</li>\n</ul>\n<ul>\n    <li><a href=\"https://www.discountmugs.com/coupons-specials/\">Coupons & Specials</a></li>  \n    <li><a href=\"https://discountmugs.com/about-us/\">About us</a></li>\n    <li><a href=\"https://discountmugs.com/faq/\">FAQ</a></li>\n    <li><a href=\"https://discountmugs.com/login.php\">Upload Artwork</a></li>\n    <li><a href=\"https://discountmugs.com/affiliate-program\">Become an Affiliate</a></li>\n    <li><a href=\"/tax-exempt/\">Customer Tax Exemption</a></li>\n</ul>\n</div>"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "HTML",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "footer_site_reviews--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "17d7c152-6348-4333-866e-7820c726c2b5",
+                  "configuration": {
+                    "htmlCode": "<div class=\"reviews-content\">\n<g:ratingbadge merchant_id=3351413></g:ratingbadge>\n</div>"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "HTML",
+                  "description": "",
+                  "type": "widget"
+                },
+                {
+                  "widget_template_uuid": "a2695d6d-1796-4993-b2ba-db15dd4fd71e",
+                  "configuration": {
+                    "spaceSize": 20
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Spacer",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        },
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "17d7c152-6348-4333-866e-7820c726c2b5",
+                  "configuration": {
+                    "htmlCode": "<script type=\"text/javascript\" src=https://seal-seflorida.bbb.org/inc/legacy.js></script><a href=https://www.bbb.org/us/fl/medley/profile/online-shopping/discount-mugs-0633-30000319/#sealclick id=\"bbblink\" class=\"ruhzbum\" target=\"_blank\" rel=\"nofollow\"><img src=https://seal-seflorida.bbb.org/logo/ruhzbum/bbb-30000319.png style=\"border: 0;\" alt=\"Discount Mugs BBB Business Review\" /></a>\n<hr style=\"border:1px solid lightgray;\">\n<h3 class=\"footer-info-heading\">Love your custom order or weâ€™ll make it right.</h3>\n<p>Price Match Guarantee - Fast Shipping - Trusted by 100,000+ Customers</p>"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "HTML",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "footer_site_copyright_social--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "17d7c152-6348-4333-866e-7820c726c2b5",
+                  "configuration": {
+                    "htmlCode": "<div class=\"footer-social\">\n<ul>\n    <li><a href=\"https://www.facebook.com/discountmugs\" class=\"icon facebook\"></a></li>\n    <li><a href=\"https://twitter.com/discountmugscom\" class=\"icon twitter\"></a></li>\n    <li><a href=\"https://pinterest.com/discountmug/\" class=\"icon pinterest\"></a></li>\n    <li><a href=\"https://www.linkedin.com/company/discountmugs\" class=\"icon linkedin\"></a></li>\n    <li><a href=\"https://maps.google.com/maps?hl=en&q=12610+nw+115th+avenue,+medley+florida+33178&bav=on.2,or.r_gc.r_pw.&biw=1168&bih=1009&wrapid=tlif131109401697610&um=1&ie=UTF-8&hq=&hnear=0x88d9bcbefc9db453:0x5508824b318e75b1,12610+NW+115th+Ave,+Miami,+FL+33178&gl=us&ei=HbUlTpuPMMLAgQfRg7zvBQ&sa=X&oi=geocode_result&ct=title&resnum=1&ved=0CBUQ8gEwAA\" class=\"icon places\"></a></li>\n    <li><a href=\"https://www.youtube.com/discountmugs\" class=\"icon youtube\"></a></li>\n    <li><a href=\"https://www.instagram.com/discountmugs/\" class=\"icon instagram\"></a></li>\n</ul>\n</div>"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "HTML",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "footer_site_copyright_links--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "17d7c152-6348-4333-866e-7820c726c2b5",
+                  "configuration": {
+                    "htmlCode": "<ul>\n    <li><a href=\"https://discountmugs.com/privacy-policy/\">Privacy Policy</a></li>\n    <li><a href=\"https://discountmugs.com/website-terms/\">Terms of Use</a></li>\n    <li><a href=\"https://discountmugs.com/sales-terms/\">Sales Terms</a></li>\n    <li><a href=\"https://discountmugs.com/website-terms/\">Website Terms</a></li>\n</ul>"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "HTML",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "landing_category_below_content--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "a2695d6d-1796-4993-b2ba-db15dd4fd71e",
+                  "configuration": {
+                    "spaceSize": 16
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Spacer",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "glassware_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/glassware.jpg?t=1738074150",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/glassware.jpg?t=1738074150",
+                        "name": "glassware.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/glassware.jpg?t=1738074150",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/glassware.jpg?t=1738074150",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/glassware.jpg?t=1738074150",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/glassware.jpg?t=1738074150",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/glassware.jpg?t=1738074150",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/glassware.jpg?t=1738074150",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/glassware.jpg?t=1738074150",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/glassware.jpg?t=1738074150"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://www.discountmugs.com/bags/best-sellers"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "bags_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/bags.jpg?t=1738074226",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/bags.jpg?t=1738074226",
+                        "name": "bags.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/bags.jpg?t=1738074226",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/bags.jpg?t=1738074226",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/bags.jpg?t=1738074226",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/bags.jpg?t=1738074226",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/bags.jpg?t=1738074226",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/bags.jpg?t=1738074226",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/bags.jpg?t=1738074226",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/bags.jpg?t=1738074226"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://discountmugs.com/category/best-sellers-bags/"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "apparel_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/apparel.jpg?t=1738074246",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/apparel.jpg?t=1738074246",
+                        "name": "apparel.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/apparel.jpg?t=1738074246",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/apparel.jpg?t=1738074246",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/apparel.jpg?t=1738074246",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/apparel.jpg?t=1738074246",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/apparel.jpg?t=1738074246",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/apparel.jpg?t=1738074246",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/apparel.jpg?t=1738074246",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/apparel.jpg?t=1738074246"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://www.discountmugs.com/product/g5000-customized-gildan-heavy-cotton-tees/"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "wellness_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/wellness.jpg?t=1738074462",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/wellness.jpg?t=1738074462",
+                        "name": "wellness.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/wellness.jpg?t=1738074462",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/wellness.jpg?t=1738074462",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/wellness.jpg?t=1738074462",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/wellness.jpg?t=1738074462",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/wellness.jpg?t=1738074462",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/wellness.jpg?t=1738074462",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/wellness.jpg?t=1738074462",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/wellness.jpg?t=1738074462"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://discountmugs.com/category/promotional-hand-sanitizers-personalized-antibacterial-sprays"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "drinkware_amp_can_coolers_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/drinkware.jpg?t=1738073139",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/drinkware.jpg?t=1738073139",
+                        "name": "drinkware.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/drinkware.jpg?t=1738073139",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/drinkware.jpg?t=1738073139",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/drinkware.jpg?t=1738073139",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/drinkware.jpg?t=1738073139",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/drinkware.jpg?t=1738073139",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/drinkware.jpg?t=1738073139",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/drinkware.jpg?t=1738073139",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/drinkware.jpg?t=1738073139"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://www.discountmugs.com/drinkware-can-coolers/best-sellers"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        },
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": []
+            }
+          ],
+          "type": "layout"
+        },
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "rgba(0,0,0,0)",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "rgba(0,0,0,0)",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": []
+            }
+          ],
+          "type": "layout"
+        },
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": []
+            }
+          ],
+          "type": "layout"
+        },
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": []
+            }
+          ],
+          "type": "layout"
+        },
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": []
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "office_amp_pens_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/office-pens.jpg?t=1738074269",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/office-pens.jpg?t=1738074269",
+                        "name": "office-pens.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/office-pens.jpg?t=1738074269",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/office-pens.jpg?t=1738074269",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/office-pens.jpg?t=1738074269",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/office-pens.jpg?t=1738074269",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/office-pens.jpg?t=1738074269",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/office-pens.jpg?t=1738074269",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/office-pens.jpg?t=1738074269",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/office-pens.jpg?t=1738074269"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://discountmugs.com/category/pens-pencils-highlighters/"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "home_amp_auto_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/home-auto.jpg?t=1738074418",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/home-auto.jpg?t=1738074418",
+                        "name": "home-auto.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/home-auto.jpg?t=1738074418",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/home-auto.jpg?t=1738074418",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/home-auto.jpg?t=1738074418",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/home-auto.jpg?t=1738074418",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/home-auto.jpg?t=1738074418",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/home-auto.jpg?t=1738074418",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/home-auto.jpg?t=1738074418",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/home-auto.jpg?t=1738074418"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://www.discountmugs.com/home-auto/best-sellers"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "outdoor_amp_leisure_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/outdoor-leisure.jpg?t=1738074434",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "name": "outdoor-leisure.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/outdoor-leisure.jpg?t=1738074434",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/outdoor-leisure.jpg?t=1738074434"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://discountmugs.com/category/cheap-wholesale-sunglasses-personalized"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "tech_amp_mobile_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/tech-and-mobile.jpg?t=1738074448",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "name": "tech-and-mobile.jpg",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/tech-and-mobile.jpg?t=1738074448",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/tech-and-mobile.jpg?t=1738074448"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://discountmugs.com/category/personalized-custom-phone-chargers"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "events_amp_occasions_navigation_category_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "94197719-e824-4fea-aac8-ca813edb37eb",
+                  "configuration": {
+                    "imageUrl": {
+                      "src": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/deals.png?t=1758883523",
+                      "type": "IMAGE_MANAGER",
+                      "data": {
+                        "imageUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/original/image-manager/deals.png?t=1758883523",
+                        "name": "deals.png",
+                        "thumbnailUrl": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/deals.png?t=1758883523",
+                        "url1280wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1280w/image-manager/deals.png?t=1758883523",
+                        "url160wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/160w/image-manager/deals.png?t=1758883523",
+                        "url1920wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/1920w/image-manager/deals.png?t=1758883523",
+                        "url320wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/320w/image-manager/deals.png?t=1758883523",
+                        "url640wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/640w/image-manager/deals.png?t=1758883523",
+                        "url80wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/80w/image-manager/deals.png?t=1758883523",
+                        "url960wide": "https://store-akbkqf8f9b.mybigcommerce.com/images/stencil/960w/image-manager/deals.png?t=1758883523"
+                      }
+                    },
+                    "imageDimensionType": "auto",
+                    "imageHeight": {
+                      "value": 300,
+                      "type": "px"
+                    },
+                    "imageFit": "fit",
+                    "imageParallax": "off",
+                    "imageOpacity": 100,
+                    "imageAlignment": {
+                      "horizontal": "center",
+                      "vertical": "middle"
+                    },
+                    "containerMargin": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "containerPadding": {
+                      "top": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "right": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "bottom": {
+                        "value": "0",
+                        "type": "px"
+                      },
+                      "left": {
+                        "value": "0",
+                        "type": "px"
+                      }
+                    },
+                    "borderStyle": "none",
+                    "borderColor": "#000000",
+                    "borderThickness": 1,
+                    "imageUrlType": "url",
+                    "imageLink": "https://discountmugs.com/category/clearance-closeout"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "Image",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    },
+    {
+      "name": "header_banner--global",
+      "children": [
+        {
+          "layout_template_uuid": "8172221f-8dde-4776-a7ca-b0d3cac6a74e",
+          "configuration": {
+            "columnWeights": [
+              "100%"
+            ],
+            "layoutBackgroundColor": "rgba(0,0,0,0)",
+            "layoutBackgroundImageAlignment": {
+              "horizontal": "center",
+              "vertical": "middle"
+            },
+            "layoutBackgroundImageFit": "fill",
+            "layoutBackgroundImageOpacity": 100,
+            "layoutBackgroundImageUrl": "",
+            "layoutBorderColor": "#333333",
+            "layoutBorderStyle": "solid",
+            "layoutBorderThickness": 0,
+            "layoutHeight": "",
+            "layoutMargin": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "layoutPadding": {
+              "bottom": {
+                "type": "px",
+                "value": "0"
+              },
+              "left": {
+                "type": "px",
+                "value": "0"
+              },
+              "right": {
+                "type": "px",
+                "value": "0"
+              },
+              "top": {
+                "type": "px",
+                "value": "0"
+              }
+            },
+            "numberOfDropzones": 1,
+            "layoutBackgroundType": "",
+            "layoutZIndex": "auto",
+            "name": "Layout"
+          },
+          "name": "Layout",
+          "dropzones": [
+            {
+              "configuration": {
+                "dropzoneBackgroundColor": "rgba(0,0,0,0)",
+                "dropzoneBackgroundImageAlignment": {
+                  "horizontal": "center",
+                  "vertical": "middle"
+                },
+                "dropzoneBackgroundImageFit": "fill",
+                "dropzoneBackgroundImageOpacity": 100,
+                "dropzoneBackgroundImageUrl": "",
+                "dropzoneBorderColor": "#333333",
+                "dropzoneBorderStyle": "solid",
+                "dropzoneBorderThickness": 0,
+                "dropzoneHeight": "",
+                "dropzoneJustifyContent": "center",
+                "dropzoneMargin": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzonePadding": {
+                  "bottom": {
+                    "type": "px",
+                    "value": "0"
+                  },
+                  "left": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "right": {
+                    "type": "px",
+                    "value": "10.5"
+                  },
+                  "top": {
+                    "type": "px",
+                    "value": "0"
+                  }
+                },
+                "dropzoneZIndex": "auto",
+                "dropzoneBackgroundType": ""
+              },
+              "widgets": [
+                {
+                  "widget_template_uuid": "17d7c152-6348-4333-866e-7820c726c2b5",
+                  "configuration": {
+                    "htmlCode": "<style>\n.navPages-container .navPages ul.navPages-list>li.navPages-item:last-child>a {\n  color: red !important;\n}\n</style>"
+                  },
+                  "storefront_api_query_params": {},
+                  "name": "HTML",
+                  "description": "",
+                  "type": "widget"
+                }
+              ]
+            }
+          ],
+          "type": "layout"
+        }
+      ]
+    }
+  ],
+  "channel_id": 1
+}
+
+
+Response Payload:
+-------------------
+{
+  "status": 504,
+  "title": "",
+  "type": "https://developer.bigcommerce.com/api-docs/getting-started/api-status-codes",
+  "errors": {}
+}

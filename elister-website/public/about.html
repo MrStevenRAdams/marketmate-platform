@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – MarketMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .about-hero {
+      background: var(--surface-dark);
+      padding: 110px 0 80px;
+      text-align: center;
+    }
+    .about-hero h1 { color: #fff; font-size: clamp(2rem,4vw,3.2rem); margin-bottom: 20px; }
+    .about-hero p { color: rgba(255,255,255,.7); font-size: 1.125rem; max-width: 640px; margin: 0 auto; }
+
+    /* ── Story ── */
+    .story-section { padding: 100px 0; background: var(--bg); }
+    .story-inner { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+    .story-inner .section-eyebrow { margin-bottom: 16px; }
+    .story-inner h2 { font-size: clamp(1.8rem,3vw,2.4rem); margin-bottom: 28px; }
+    .story-inner p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 20px; }
+    .story-inner p strong { color: var(--text-primary); }
+    .pull-quote {
+      border-left: 3px solid var(--primary);
+      padding: 16px 28px;
+      margin: 36px 0;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--text-primary);
+      background: var(--surface);
+      border-radius: 0 12px 12px 0;
+    }
+
+    /* ── Values ── */
+    .values-section { padding: 80px 0; background: var(--surface); }
+    .values-section h2 { text-align: center; font-size: clamp(1.5rem,3vw,2rem); margin-bottom: 12px; }
+    .values-section .sub { text-align: center; color: var(--text-muted); margin-bottom: 56px; }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 24px;
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    }
+    .value-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 32px 28px;
+      transition: transform .2s;
+    }
+    .value-card:hover { transform: translateY(-3px); }
+    .value-icon { font-size: 1.8rem; margin-bottom: 16px; }
+    .value-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+    .value-card p { color: var(--text-muted); font-size: .9rem; line-height: 1.7; }
+
+    /* ── Tech stack ── */
+    .tech-section { padding: 80px 0; background: var(--bg); }
+    .tech-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .tech-inner h2 { font-size: clamp(1.5rem,3vw,2rem); margin-bottom: 12px; }
+    .tech-inner .sub { color: var(--text-muted); margin-bottom: 48px; }
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 20px; }
+    .tech-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 20px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .tech-card .tech-label { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--primary); }
+    .tech-card .tech-name { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+    .tech-card .tech-desc { font-size: .8rem; color: var(--text-muted); }
+
+    /* ── Stats row ── */
+    .about-stats { padding: 72px 0; background: var(--primary); }
+    .stats-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .about-stat { flex: 1; min-width: 160px; text-align: center; padding: 24px; border-right: 1px solid rgba(255,255,255,.15); }
+    .about-stat:last-child { border-right: none; }
+    .about-stat .num { font-size: 2.4rem; font-weight: 800; color: #fff; }
+    .about-stat .lbl { font-size: .85rem; color: rgba(255,255,255,.7); margin-top: 4px; }
+
+    /* ── Mission ── */
+    .mission-section { padding: 100px 0; background: var(--surface-dark); text-align: center; }
+    .mission-section h2 { color: #fff; font-size: clamp(1.6rem,3vw,2.4rem); max-width: 740px; margin: 0 auto 24px; line-height: 1.3; }
+    .mission-section p { color: rgba(255,255,255,.6); max-width: 600px; margin: 0 auto 40px; font-size: 1.05rem; }
+
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .about-stat { min-width: 50%; border-right: none; border-bottom: 1px solid rgba(255,255,255,.15); }
+    }
+  </style>
+</head>
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="features.html">Features ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="feature-orders.html"><span class="menu-icon">🛒</span><span>Order Management</span></a>
+          <a href="feature-inventory.html"><span class="menu-icon">📦</span><span>Inventory &amp; WMS</span></a>
+          <a href="feature-listings.html"><span class="menu-icon">🤖</span><span>AI Listing Tools</span></a>
+          <a href="feature-shipping.html"><span class="menu-icon">🚚</span><span>Shipping &amp; Dispatch</span></a>
+          <a href="feature-analytics.html"><span class="menu-icon">📊</span><span>Analytics &amp; Reports</span></a>
+          <a href="feature-automation.html"><span class="menu-icon">⚡</span><span>Automation</span></a>
+        </div>
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a>
+    <a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a>
+  </div>
+</header>
+
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="container">
+    <div class="badge">About MarketMate</div>
+    <h1>Built by sellers,<br><em style="font-family:'Instrument Serif',serif;">for sellers</em></h1>
+    <p>MarketMate exists because we lived the problem. Juggling spreadsheets, copying order numbers between tabs, and losing sleep over missed SLAs — we've been there. So we built the platform we always wanted.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story-section">
+  <div class="story-inner">
+    <div class="section-eyebrow">Our story</div>
+    <h2>Why MarketMate exists</h2>
+    <p>The multichannel e-commerce space is full of tools that were built for a simpler era. Most inventory systems were designed when "multichannel" meant two marketplaces, "AI" wasn't a consideration, and Amazon's API was a fraction of its current complexity. Those tools have been bolted together, acquired, and patched for years — and the sellers using them pay the price.</p>
+    <p>Marketmate Solutions Ltd was founded in the UK with a clear conviction: <strong>sellers deserve a platform that's as sophisticated as the marketplaces they operate on.</strong> Not a system that approximates Amazon's requirements, but one that speaks Amazon's language natively — fetching live product schemas at submission time, understanding SLA logic per channel, and syncing inventory in real time rather than on a batch cycle.</p>
+    <div class="pull-quote">
+      "We didn't set out to build another order management tool. We set out to build the operating system for multichannel retail."
+    </div>
+    <p>We started with Amazon SP-API — the most complex, most important marketplace integration in e-commerce. Rather than wrapping it in abstractions that simplify it too far, we built tools that expose its full power: schema-driven listing builders, FBA inbound planning, performance monitoring, and SLA intelligence at the individual order level. Getting SP-API approved was a milestone, but it was just the beginning.</p>
+    <p>From there, we built outwards — adding eBay, Etsy, OnBuy, Kaufland, Back Market, BigCommerce, Magento, WooCommerce, Bluepark, Temu, and TikTok Shop, each with the same depth of integration that Amazon received. <strong>No half-measures, no "partial" support.</strong> Every channel we connect to, we connect properly.</p>
+    <p>Today, MarketMate manages orders, inventory, listings, shipping, analytics, and automation for sellers operating across more than a dozen channels — from a single, clean interface that doesn't require a PhD to use.</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="about-stats">
+  <div class="stats-row">
+    <div class="about-stat"><div class="num">12+</div><div class="lbl">Live channel integrations</div></div>
+    <div class="about-stat"><div class="num">430+</div><div class="lbl">API endpoints in the platform</div></div>
+    <div class="about-stat"><div class="num">4</div><div class="lbl">UK & EU carrier integrations</div></div>
+    <div class="about-stat"><div class="num">2</div><div class="lbl">AI models powering listings</div></div>
+    <div class="about-stat"><div class="num">143</div><div class="lbl">Frontend views built</div></div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section">
+  <div class="container">
+    <h2>What we stand for</h2>
+    <p class="sub">The principles that drive every product decision we make.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Depth over breadth</h3>
+        <p>We'd rather integrate with one channel properly than twelve channels poorly. Every integration we ship is full-featured — orders, inventory, listings, shipping, and messaging — not a read-only feed.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Real time, not batch</h3>
+        <p>Inventory that syncs every 15 minutes is inventory that lies. Our event-driven architecture propagates stock changes sub-second across every connected channel — because overselling is never acceptable.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤖</div>
+        <h3>AI as an amplifier</h3>
+        <p>We use Claude and Gemini to do what AI is genuinely good at — generating compelling, optimised listing content — and keep humans in control of everything else. No black boxes, no unexplained decisions.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h3>Trust through transparency</h3>
+        <p>Your data belongs to you. We maintain full audit trails, offer 90-day post-cancellation data access, and publish our policies in plain language rather than burying them in legal small print.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🛠</div>
+        <h3>Operator-grade reliability</h3>
+        <p>Your business doesn't stop at 5pm. We run on Google Cloud's europe-west2 region with redundant infrastructure, comprehensive monitoring, and a team that takes uptime personally.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h3>Partnership, not just software</h3>
+        <p>Our best features came from customer conversations. We maintain direct, open lines with every customer — and the feedback we receive directly shapes what we build next.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech-section">
+  <div class="tech-inner">
+    <div class="section-eyebrow">Under the hood</div>
+    <h2>A platform built for scale</h2>
+    <p class="sub">Enterprise-grade infrastructure, chosen deliberately — not inherited from a previous era.</p>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-label">Backend</div>
+        <div class="tech-name">Go (Golang)</div>
+        <div class="tech-desc">High-performance, low-latency API services. Concurrency built in from the ground up.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-label">Infrastructure</div>
+        <div class="tech-name">Google Cloud Platform</div>
+        <div class="tech-desc">Hosted in europe-west2 (London). GDPR-compliant by design, with global redundancy.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-label">Database</div>
+        <div class="tech-name">Firestore</div>
+        <div class="tech-desc">Horizontally scalable NoSQL — handles inventory sync at high throughput without bottlenecks.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-label">Auth</div>
+        <div class="tech-name">Firebase Auth</div>
+        <div class="tech-desc">Industry-standard authentication with MFA support, OAuth, and enterprise SSO (on roadmap).</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-label">Frontend</div>
+        <div class="tech-name">React + TypeScript</div>
+        <div class="tech-desc">143 views, fully typed. Fast, reactive UI built for power users who live in the platform.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-label">AI</div>
+        <div class="tech-name">Claude + Gemini</div>
+        <div class="tech-desc">Best-in-class language models for listing generation, with fallback logic and quality scoring.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section">
+  <div class="container">
+    <div class="badge" style="margin: 0 auto 20px;">Our mission</div>
+    <h2>"To give every multichannel seller the operational tools that were previously only available to the largest enterprises."</h2>
+    <p>Complexity shouldn't be a barrier to competing. MarketMate levels the playing field — bringing the inventory intelligence, listing quality, and automation capabilities of a 100-person operations team to businesses of any size.</p>
+    <a href="contact.html" class="btn-primary" style="margin:0 auto;">Get started today →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="badge badge-light">Work with us</div>
+      <h2>Ready to see it in action?</h2>
+      <p>Book a personalised demo with our team. We'll walk through your specific channels, workflows, and challenges — and show you exactly how MarketMate handles them.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn-ghost-white">Book a demo</a>
+        <a href="pricing.html" class="btn-ghost-white">View pricing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Market<span class="logo-dot">Mate</span></div>
+      <p>Multichannel order management, inventory, and listings — built for serious sellers.</p>
+      <div class="amazon-badge">✦ Amazon SP-API Approved</div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="feature-orders.html">Order Management</a>
+      <a href="feature-inventory.html">Inventory & WMS</a>
+      <a href="feature-listings.html">AI Listing Tools</a>
+      <a href="feature-shipping.html">Shipping & Dispatch</a>
+      <a href="feature-analytics.html">Analytics</a>
+      <a href="feature-automation.html">Automation</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="channels.html">Channels</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Marketmate Solutions Ltd. Registered in England & Wales.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

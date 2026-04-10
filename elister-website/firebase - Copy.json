@@ -1,0 +1,52 @@
+{
+  "hosting": {
+    "site": "e-lister-site-2026",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "DEPLOYMENT.md"
+    ],
+    "headers": [
+      {
+        "source": "**/*.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, max-age=0" },
+          { "key": "X-Content-Type-Options", "value": "nosniff" },
+          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        ]
+      },
+      {
+        "source": "**/*.css",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        ]
+      },
+      {
+        "source": "**/*.js",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        ]
+      }
+    ],
+    "rewrites": [
+      { "source": "/features",         "destination": "/features.html" },
+      { "source": "/features/orders",  "destination": "/feature-orders.html" },
+      { "source": "/features/inventory","destination": "/feature-inventory.html" },
+      { "source": "/features/listings","destination": "/feature-listings.html" },
+      { "source": "/features/shipping","destination": "/feature-shipping.html" },
+      { "source": "/features/analytics","destination": "/feature-analytics.html" },
+      { "source": "/features/automation","destination": "/feature-automation.html" },
+      { "source": "/channels",         "destination": "/channels.html" },
+      { "source": "/pricing",          "destination": "/pricing.html" },
+      { "source": "/roadmap",          "destination": "/roadmap.html" },
+      { "source": "/about",            "destination": "/about.html" },
+      { "source": "/contact",          "destination": "/contact.html" },
+      { "source": "/privacy",          "destination": "/privacy.html" },
+      { "source": "/terms",            "destination": "/terms.html" },
+      { "source": "/cookies",          "destination": "/cookies.html" }
+    ]
+  }
+}

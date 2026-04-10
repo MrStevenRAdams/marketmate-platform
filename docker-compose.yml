@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # Typesense Search Engine
+  typesense:
+    image: typesense/typesense:27.1
+    ports:
+      - "8108:8108"
+    environment:
+      TYPESENSE_API_KEY: marketmate-ts-key
+      TYPESENSE_DATA_DIR: /data
+      TYPESENSE_ENABLE_CORS: "true"
+    volumes:
+      - typesense-data:/data
+    networks:
+      - pim-network
+    restart: unless-stopped
+
+  # Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.backend
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+      - GCP_PROJECT_ID=marketmate-486116
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/serviceAccountKey.json
+      - GCS_BUCKET_NAME=marketmate
+      - GCS_CREDENTIALS_FILE=/app/serviceAccountKey.json
+      - GIN_MODE=debug
+      - CREDENTIAL_ENCRYPTION_KEY=default-32-char-key-change-me!!!
+      - TYPESENSE_URL=http://typesense:8108
+      - TYPESENSE_API_KEY=marketmate-ts-key
+    volumes:
+      - ./backend:/app
+      - ./serviceAccountKey.json:/app/serviceAccountKey.json:ro
+    depends_on:
+      - typesense
+    networks:
+      - pim-network
+    restart: unless-stopped
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_URL=http://localhost:8080/api/v1
+      - VITE_TENANT_ID=tenant-demo
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - pim-network
+    restart: unless-stopped
+
+volumes:
+  typesense-data:
+
+networks:
+  pim-network:
+    driver: bridge

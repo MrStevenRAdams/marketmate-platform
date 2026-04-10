@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Pricing – MarketMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .pricing-hero { background:var(--navy); padding:90px 0 0; text-align:center; }
+    .pricing-hero h1 { color:#fff; font-size:clamp(2rem,4vw,3rem); margin-bottom:16px; }
+    .pricing-hero p  { color:rgba(255,255,255,.6); font-size:1.125rem; max-width:560px; margin:0 auto 36px; }
+
+    .sku-selector { max-width:700px; margin:0 auto; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:24px 28px; }
+    .sku-selector label { display:block; font-size:.8rem; font-weight:700; color:rgba(255,255,255,.5); margin-bottom:12px; text-transform:uppercase; letter-spacing:.1em; }
+    .sku-steps { display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+    .sku-btn { padding:9px 18px; border-radius:100px; font-size:.875rem; font-weight:700; border:1.5px solid rgba(255,255,255,.2); color:rgba(255,255,255,.6); background:transparent; cursor:pointer; transition:all .18s; }
+    .sku-btn:hover { border-color:rgba(255,255,255,.5); color:#fff; }
+    .sku-btn.active { background:var(--green); border-color:var(--green); color:#fff; box-shadow:0 0 20px rgba(0,128,96,.4); }
+    .sku-note { font-size:.78rem; color:rgba(255,255,255,.3); margin-top:10px; text-align:center; }
+
+    .billing-bar { display:flex; align-items:center; justify-content:center; gap:14px; padding:18px 0; background:rgba(0,0,0,.15); }
+    .billing-bar span { font-size:.875rem; color:rgba(255,255,255,.4); }
+    .billing-bar span.active { color:#fff; font-weight:600; }
+    .toggle-sw { width:44px; height:24px; background:var(--green); border-radius:12px; position:relative; cursor:pointer; flex-shrink:0; transition:background .2s; }
+    .toggle-sw::after { content:''; position:absolute; width:18px; height:18px; background:#fff; border-radius:50%; top:3px; left:3px; transition:transform .25s; }
+    .toggle-sw.on::after { transform:translateX(20px); }
+    .save-pill { background:rgba(0,200,96,.2); color:#00e070; font-size:.72rem; font-weight:800; padding:3px 10px; border-radius:20px; }
+
+    .plans-section { background:var(--navy); padding:0 0 80px; }
+    .plans-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1160px; margin:0 auto; padding:40px 24px 0; }
+
+    .plan-card { background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.1); border-radius:20px; padding:28px 22px; position:relative; transition:transform .2s, box-shadow .2s; display:flex; flex-direction:column; }
+    .plan-card:hover { transform:translateY(-4px); box-shadow:0 20px 60px rgba(0,0,0,.3); }
+    .plan-card.featured { background:rgba(0,128,96,.18); border-color:var(--green); }
+    .featured-rib { position:absolute; top:-1px; left:50%; transform:translateX(-50%); background:var(--green); color:#fff; font-size:.68rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:5px 16px; border-radius:0 0 12px 12px; white-space:nowrap; }
+
+    .plan-name { font-size:.82rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; color:rgba(255,255,255,.45); margin-bottom:6px; }
+    .plan-tagline { font-size:.8rem; color:rgba(255,255,255,.4); margin-bottom:18px; line-height:1.5; min-height:32px; }
+    .plan-price { font-size:2.5rem; font-weight:800; color:#fff; line-height:1; margin-bottom:4px; }
+    .plan-price .cur { font-size:1.3rem; vertical-align:top; margin-top:5px; display:inline-block; }
+    .plan-price .per { font-size:.85rem; font-weight:500; color:rgba(255,255,255,.35); }
+    .plan-annual-note { font-size:.72rem; color:rgba(255,255,255,.3); min-height:16px; margin-bottom:4px; }
+    .plan-skus { font-size:.8rem; color:rgba(255,255,255,.4); margin-bottom:20px; padding-bottom:18px; border-bottom:1px solid rgba(255,255,255,.1); }
+    .plan-skus strong { color:rgba(255,255,255,.75); }
+
+    .plan-cta { display:block; text-align:center; width:100%; margin-bottom:20px; padding:11px; border-radius:10px; font-weight:700; font-size:.875rem; transition:all .18s; }
+    .cta-free { background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.2); }
+    .cta-free:hover { background:rgba(255,255,255,.18); }
+    .cta-paid { background:var(--green); color:#fff; }
+    .cta-paid:hover { background:var(--green-dark); }
+    .cta-ent { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.3); }
+    .cta-ent:hover { border-color:#fff; }
+
+    .plan-features { list-style:none; display:flex; flex-direction:column; gap:8px; flex:1; }
+    .plan-features li { display:flex; align-items:flex-start; gap:8px; font-size:.8rem; color:rgba(255,255,255,.6); line-height:1.5; }
+    .pf-tick { color:var(--green); font-size:.85rem; flex-shrink:0; margin-top:1px; }
+    .pf-dash { color:rgba(255,255,255,.2); flex-shrink:0; margin-top:1px; }
+    .pf-off { color:rgba(255,255,255,.25); }
+    .pf-strong { color:rgba(255,255,255,.9); font-weight:600; }
+
+    .addons-section { padding:80px 0; background:var(--surface-2); }
+    .addons-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:900px; margin:0 auto; padding:0 24px; }
+    .addon-card { background:#fff; border:1.5px solid var(--border); border-radius:16px; padding:28px; }
+    .addon-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:6px; }
+    .addon-sub { font-size:.875rem; color:var(--text-muted); margin-bottom:18px; line-height:1.6; }
+    .addon-tier { display:flex; justify-content:space-between; align-items:center; padding:10px 14px; background:var(--surface-2); border-radius:8px; font-size:.85rem; margin-bottom:6px; }
+    .addon-tier:last-child { margin-bottom:0; }
+    .at-label { color:var(--text-secondary); }
+    .at-price { font-weight:700; color:var(--text-primary); }
+
+    .compare-wrap { overflow-x:auto; padding:0 24px; }
+    .compare-table { width:100%; border-collapse:collapse; font-size:.84rem; min-width:600px; }
+    .compare-table th, .compare-table td { padding:11px 14px; text-align:left; border-bottom:1px solid var(--border); }
+    .compare-table thead th { background:var(--surface-2); font-weight:700; }
+    .compare-table thead th:not(:first-child) { text-align:center; }
+    .compare-table td:not(:first-child) { text-align:center; }
+    .compare-table .cat-row td { background:#f0faf6; font-weight:700; color:var(--green); font-size:.77rem; text-transform:uppercase; letter-spacing:.06em; }
+    .ct { color:var(--green); }
+    .cx { color:#ccc; }
+    .compare-table tr:hover td { background:var(--surface); }
+    .ph { font-weight:800; color:var(--green); }
+
+    .faq-2col { display:grid; grid-template-columns:1fr 1fr; gap:0; max-width:960px; margin:0 auto; padding:0 24px; }
+
+    @media(max-width:1024px) { .plans-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:640px)  { .plans-grid { grid-template-columns:1fr; } .faq-2col { grid-template-columns:1fr; } .addons-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="features.html">Features ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="feature-orders.html"><span class="menu-icon">🛒</span><span>Order Management</span></a>
+          <a href="feature-inventory.html"><span class="menu-icon">📦</span><span>Inventory &amp; WMS</span></a>
+          <a href="feature-listings.html"><span class="menu-icon">🤖</span><span>AI Listing Tools</span></a>
+          <a href="feature-shipping.html"><span class="menu-icon">🚚</span><span>Shipping &amp; Dispatch</span></a>
+          <a href="feature-analytics.html"><span class="menu-icon">📊</span><span>Analytics &amp; Reports</span></a>
+          <a href="feature-automation.html"><span class="menu-icon">⚡</span><span>Automation</span></a>
+        </div>
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html" class="active">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a>
+    <a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a>
+  </div>
+</header>
+
+<section class="pricing-hero">
+  <div class="container">
+    <div class="eyebrow eyebrow-light" style="margin-bottom:14px;">Transparent pricing</div>
+    <h1>Start free. Scale as you grow.</h1>
+    <p>Pricing scales with your catalogue size — not your order volume. No per-order fees, ever.</p>
+    <div class="sku-selector">
+      <label>How many SKUs do you manage?</label>
+      <div class="sku-steps">
+        <button class="sku-btn active" data-sku="50">Up to 50</button>
+        <button class="sku-btn" data-sku="500">Up to 500</button>
+        <button class="sku-btn" data-sku="2000">Up to 2,000</button>
+        <button class="sku-btn" data-sku="5000">Up to 5,000</button>
+        <button class="sku-btn" data-sku="10000">Up to 10,000</button>
+        <button class="sku-btn" data-sku="25000">Up to 25,000</button>
+        <button class="sku-btn" data-sku="unlimited">Unlimited</button>
+      </div>
+      <div class="sku-note">All plans include unlimited orders · no per-order fees · no per-channel fees</div>
+    </div>
+  </div>
+</section>
+
+<div class="billing-bar">
+  <span id="lbl-monthly" class="active">Monthly</span>
+  <div class="toggle-sw" id="billToggle"></div>
+  <span id="lbl-annual">Annual</span>
+  <span class="save-pill">Save 20%</span>
+</div>
+
+<section class="plans-section">
+  <div class="plans-grid">
+
+    <!-- FREE -->
+    <div class="plan-card">
+      <div class="plan-name">Free</div>
+      <div class="plan-tagline">Try MarketMate with no commitment.</div>
+      <div class="plan-price"><span class="cur">£</span>0<span class="per">/mo</span></div>
+      <div class="plan-annual-note">&nbsp;</div>
+      <div class="plan-skus">Up to <strong>50 SKUs</strong> · 1 channel</div>
+      <a href="contact.html" class="plan-cta cta-free">Start free — no card needed</a>
+      <ul class="plan-features">
+        <li><span class="pf-tick">✓</span> Unified order inbox</li>
+        <li><span class="pf-tick">✓</span> Real-time inventory sync</li>
+        <li><span class="pf-tick">✓</span> 1 sales channel</li>
+        <li><span class="pf-tick">✓</span> Label printing (1 carrier)</li>
+        <li><span class="pf-tick">✓</span> 5 automation rules</li>
+        <li><span class="pf-tick">✓</span> 1 user seat</li>
+        <li><span class="pf-tick">✓</span> Email support</li>
+        <li><span class="pf-dash">—</span> <span class="pf-off">AI listing generation</span></li>
+        <li><span class="pf-dash">—</span> <span class="pf-off">Multi-channel</span></li>
+        <li><span class="pf-dash">—</span> <span class="pf-off">Analytics</span></li>
+      </ul>
+    </div>
+
+    <!-- STARTER -->
+    <div class="plan-card">
+      <div class="plan-name">Starter</div>
+      <div class="plan-tagline">For sellers establishing multichannel operations.</div>
+      <div class="plan-price" id="s-price"><span class="cur">£</span><span id="s-amt">29</span><span class="per">/mo</span></div>
+      <div class="plan-annual-note" id="s-note">&nbsp;</div>
+      <div class="plan-skus" id="s-skus">Up to <strong>500 SKUs</strong> · Up to 3 channels</div>
+      <a href="contact.html" class="plan-cta cta-paid">Start 14-day trial</a>
+      <ul class="plan-features">
+        <li><span class="pf-tick">✓</span> Everything in Free</li>
+        <li><span class="pf-tick">✓</span> <span class="pf-strong">Up to 3 channels</span></li>
+        <li><span class="pf-tick">✓</span> All 4 carriers</li>
+        <li><span class="pf-tick">✓</span> AI listings <span style="color:rgba(255,255,255,.3);font-size:.75rem">(credits add-on)</span></li>
+        <li><span class="pf-tick">✓</span> 20 automation rules</li>
+        <li><span class="pf-tick">✓</span> Revenue analytics</li>
+        <li><span class="pf-tick">✓</span> 3 user seats</li>
+        <li><span class="pf-tick">✓</span> FBA inbound planning</li>
+        <li><span class="pf-dash">—</span> <span class="pf-off">Advanced WMS</span></li>
+        <li><span class="pf-dash">—</span> <span class="pf-off">Priority support</span></li>
+      </ul>
+    </div>
+
+    <!-- GROWTH -->
+    <div class="plan-card featured">
+      <div class="featured-rib">Most popular</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-tagline">For scaling operators across multiple channels.</div>
+      <div class="plan-price" id="g-price"><span class="cur">£</span><span id="g-amt">79</span><span class="per">/mo</span></div>
+      <div class="plan-annual-note" id="g-note">&nbsp;</div>
+      <div class="plan-skus" id="g-skus">Up to <strong>2,000 SKUs</strong> · Up to 8 channels</div>
+      <a href="contact.html" class="plan-cta cta-paid">Start 14-day trial</a>
+      <ul class="plan-features">
+        <li><span class="pf-tick">✓</span> Everything in Starter</li>
+        <li><span class="pf-tick">✓</span> <span class="pf-strong">Up to 8 channels</span></li>
+        <li><span class="pf-tick">✓</span> Unlimited automation rules</li>
+        <li><span class="pf-tick">✓</span> Full analytics suite</li>
+        <li><span class="pf-tick">✓</span> 10 user seats</li>
+        <li><span class="pf-tick">✓</span> Priority support (4hr SLA)</li>
+        <li><span class="pf-tick">✓</span> Advanced WMS <span style="color:rgba(255,255,255,.35);font-size:.72rem">Q3 2026</span></li>
+        <li><span class="pf-tick">✓</span> Demand forecasting <span style="color:rgba(255,255,255,.35);font-size:.72rem">Q3 2026</span></li>
+        <li><span class="pf-tick">✓</span> Purchase orders <span style="color:rgba(255,255,255,.35);font-size:.72rem">Q3 2026</span></li>
+      </ul>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="plan-card">
+      <div class="plan-name">Enterprise</div>
+      <div class="plan-tagline">For high-volume operations and agencies.</div>
+      <div class="plan-price"><span style="font-size:1.5rem;font-weight:800;color:#fff;line-height:1.3;">Custom<br><span style="font-size:.85rem;font-weight:500;color:rgba(255,255,255,.35);">talk to us</span></span></div>
+      <div class="plan-annual-note">&nbsp;</div>
+      <div class="plan-skus">Unlimited SKUs · Unlimited channels</div>
+      <a href="contact.html" class="plan-cta cta-ent">Talk to sales</a>
+      <ul class="plan-features">
+        <li><span class="pf-tick">✓</span> Everything in Growth</li>
+        <li><span class="pf-tick">✓</span> <span class="pf-strong">Unlimited channels &amp; SKUs</span></li>
+        <li><span class="pf-tick">✓</span> Unlimited user seats</li>
+        <li><span class="pf-tick">✓</span> Dedicated account manager</li>
+        <li><span class="pf-tick">✓</span> 1hr response SLA</li>
+        <li><span class="pf-tick">✓</span> Custom integrations</li>
+        <li><span class="pf-tick">✓</span> Multi-brand / agency</li>
+        <li><span class="pf-tick">✓</span> Onboarding &amp; migration</li>
+        <li><span class="pf-tick">✓</span> Early roadmap access</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons-section">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:48px;">
+      <p class="eyebrow">Optional add-ons</p>
+      <h2>Only pay for what you use</h2>
+      <p>The platform is flat-rate per plan. These two add-ons are consumption-based — top up when you need them, pay nothing when you don't.</p>
+    </div>
+    <div class="addons-grid">
+      <div class="addon-card reveal">
+        <div style="font-size:1.8rem;margin-bottom:10px;">🤖</div>
+        <h3>AI Listing Credits</h3>
+        <div class="addon-sub">Used when generating product listings with Claude or Gemini AI. One credit = one AI-generated listing for one channel. Credits never expire and carry over month to month.</div>
+        <div class="addon-tier"><span class="at-label">Starter — 100 credits</span><span class="at-price">£9</span></div>
+        <div class="addon-tier"><span class="at-label">Standard — 500 credits</span><span class="at-price">£39</span></div>
+        <div class="addon-tier"><span class="at-label">Pro — 2,000 credits</span><span class="at-price">£129</span></div>
+        <div class="addon-tier"><span class="at-label">Bulk — 10,000 credits</span><span class="at-price">£499</span></div>
+      </div>
+      <div class="addon-card reveal">
+        <div style="font-size:1.8rem;margin-bottom:10px;">💬</div>
+        <h3>Messaging Credits</h3>
+        <div class="addon-sub">Used when sending buyer communications via SMS or WhatsApp through MarketMate's messaging automation. Email and marketplace messages are always included free on all plans.</div>
+        <div class="addon-tier"><span class="at-label">SMS — UK</span><span class="at-price">£0.04 / message</span></div>
+        <div class="addon-tier"><span class="at-label">SMS — International</span><span class="at-price">£0.08 / message</span></div>
+        <div class="addon-tier"><span class="at-label">WhatsApp Business</span><span class="at-price">£0.06 / message</span></div>
+        <div class="addon-tier" style="background:var(--green-pale);">
+          <span class="at-label" style="color:var(--green-dark);">Email &amp; marketplace messaging</span>
+          <span class="at-price" style="color:var(--green);">Free</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare-section" style="padding:80px 0;background:var(--bg);">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:48px;">
+      <p class="eyebrow">Full comparison</p>
+      <h2>Everything side by side</h2>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="width:36%">Feature</th>
+            <th>Free</th>
+            <th class="ph">Starter</th>
+            <th class="ph">Growth</th>
+            <th class="ph">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="cat-row"><td colspan="5">Catalogue &amp; Channels</td></tr>
+          <tr><td>SKU limit</td><td>50</td><td>Up to 25,000</td><td>Up to 25,000</td><td>Unlimited</td></tr>
+          <tr><td>Sales channels</td><td>1</td><td>Up to 3</td><td>Up to 8</td><td>Unlimited</td></tr>
+          <tr><td>Unlimited orders</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>No per-order fees</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+
+          <tr class="cat-row"><td colspan="5">Order Management</td></tr>
+          <tr><td>Unified order inbox</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Bulk order actions</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>SLA tracking</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Merge &amp; split orders</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>4-tab order drawer</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+
+          <tr class="cat-row"><td colspan="5">Inventory</td></tr>
+          <tr><td>Real-time channel sync</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Default warehouse</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>FBA inbound planning</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Multi-warehouse &amp; WMS <span style="color:#f0a500;font-size:.8em;">Q3 2026</span></td><td class="cx">—</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Demand forecasting <span style="color:#f0a500;font-size:.8em;">Q3 2026</span></td><td class="cx">—</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Purchase orders <span style="color:#f0a500;font-size:.8em;">Q3 2026</span></td><td class="cx">—</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+
+          <tr class="cat-row"><td colspan="5">AI &amp; Listings</td></tr>
+          <tr><td>AI listing generation (Claude + Gemini)</td><td class="cx">—</td><td>Credits add-on</td><td>Credits add-on</td><td>Credits add-on</td></tr>
+          <tr><td>Schema-driven Amazon builder</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Smart configurators</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Listing health scores</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+
+          <tr class="cat-row"><td colspan="5">Shipping</td></tr>
+          <tr><td>Carrier integrations</td><td>1</td><td>All 4</td><td>All 4</td><td>All 4</td></tr>
+          <tr><td>Label generation &amp; manifests</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Live rate shopping</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Dispatch console</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+
+          <tr class="cat-row"><td colspan="5">Automation &amp; Analytics</td></tr>
+          <tr><td>Automation rules</td><td>5</td><td>20</td><td>Unlimited</td><td>Unlimited</td></tr>
+          <tr><td>Revenue &amp; order analytics</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Full analytics suite <span style="color:#f0a500;font-size:.8em;">Q3 2026</span></td><td class="cx">—</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+
+          <tr class="cat-row"><td colspan="5">Team &amp; Support</td></tr>
+          <tr><td>User seats</td><td>1</td><td>3</td><td>10</td><td>Unlimited</td></tr>
+          <tr><td>Email support</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Priority support (4hr SLA)</td><td class="cx">—</td><td class="cx">—</td><td class="ct">✓</td><td class="ct">✓</td></tr>
+          <tr><td>Dedicated account manager</td><td class="cx">—</td><td class="cx">—</td><td class="cx">—</td><td class="ct">✓</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-alt" style="padding:80px 0;">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:48px;"><h2>Common questions</h2></div>
+    <div class="faq-2col">
+      <div>
+        <div class="faq-item">
+          <button class="faq-question">What counts as a SKU?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Each unique product variant counts as one SKU. A t-shirt in 3 colours × 4 sizes = 12 SKUs. Listing the same SKU across multiple channels doesn't multiply your count — it's catalogue-based, not listing-based.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Are there any per-order fees?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">None. Process as many orders as you like on any plan. A seller doing 50,000 orders a month pays exactly the same subscription as one doing 500 — if they have the same number of SKUs.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">How do AI listing credits work?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">One credit generates one AI-optimised listing for one channel. Generating an Amazon listing and an eBay listing for the same product costs 2 credits. Credits never expire and roll over month to month.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is the free plan really free — forever?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. The free plan has no time limit. It's designed for sellers just starting out or testing the platform. You can stay on free as long as you like — upgrade only when you need more SKUs, channels, or features.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="faq-item">
+          <button class="faq-question">Can I change plans anytime?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Yes. Upgrade immediately (prorated). Downgrade takes effect at the end of your billing period. You can also move up and down SKU tiers at any time — useful for seasonal businesses.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What happens if I exceed my SKU limit?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">We'll notify you when you're approaching your limit. You're never suddenly cut off — we give you time to upgrade. We don't delete data if you temporarily exceed a limit.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Do prices include VAT?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">All prices shown exclude VAT. UK VAT at the prevailing rate is added at checkout for UK-registered businesses. Non-UK customers may be subject to their local tax rules.</div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What is the 14-day trial?<svg class="faq-chevron" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></button>
+          <div class="faq-answer"><div class="faq-answer-inner">Starter and Growth plans come with a 14-day free trial — no credit card required. If you don't upgrade at the end of the trial, your account automatically drops to the free plan (not deleted).</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner-inner reveal">
+      <h2>Start free. No credit card required.</h2>
+      <p>Get connected and orders flowing in minutes. Upgrade when you're ready to scale.</p>
+      <div class="cta-banner-btns">
+        <a href="contact.html" class="btn-primary" style="background:#fff;color:var(--green);">Get started free →</a>
+        <a href="contact.html" class="btn-ghost-white">Talk to sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Market<span class="logo-dot" style="color:var(--green-mid);">Mate</span></a>
+        <p>The all-in-one order management, inventory, and multichannel listing platform for serious Amazon and marketplace sellers.</p>
+        <div class="footer-amazon-badge">✦ Amazon SP-API Approved</div>
+      </div>
+      <div class="footer-col"><h4>Platform</h4><ul>
+        <li><a href="feature-orders.html">Order Management</a></li><li><a href="feature-inventory.html">Inventory &amp; WMS</a></li>
+        <li><a href="feature-listings.html">AI Listing Tools</a></li><li><a href="feature-shipping.html">Shipping &amp; Dispatch</a></li>
+        <li><a href="feature-analytics.html">Analytics</a></li><li><a href="feature-automation.html">Automation</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="about.html">About</a></li><li><a href="channels.html">Channels</a></li>
+        <li><a href="pricing.html">Pricing</a></li><li><a href="roadmap.html">Roadmap</a></li>
+        <li><a href="contact.html">Contact Sales</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li>
+        <li><a href="cookies.html">Cookie Policy</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Marketmate Solutions Ltd. Registered in England &amp; Wales. All prices exclude VAT.</p>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="cookies.html">Cookies</a><a href="contact.html">Contact</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+<script>
+// SKU-based pricing — monthly base prices
+const tiers = {
+  50:        { s: null,  g: null,  sLabel: 'Free plan covers up to 50 SKUs', gLabel: '' },
+  500:       { s: 29,   g: 79,   sLabel: 'Up to <strong>500 SKUs</strong> · Up to 3 channels',    gLabel: 'Up to <strong>500 SKUs</strong> · Up to 8 channels' },
+  2000:      { s: 49,   g: 99,   sLabel: 'Up to <strong>2,000 SKUs</strong> · Up to 3 channels',  gLabel: 'Up to <strong>2,000 SKUs</strong> · Up to 8 channels' },
+  5000:      { s: 79,   g: 149,  sLabel: 'Up to <strong>5,000 SKUs</strong> · Up to 3 channels',  gLabel: 'Up to <strong>5,000 SKUs</strong> · Up to 8 channels' },
+  10000:     { s: 119,  g: 219,  sLabel: 'Up to <strong>10,000 SKUs</strong> · Up to 3 channels', gLabel: 'Up to <strong>10,000 SKUs</strong> · Up to 8 channels' },
+  25000:     { s: 179,  g: 329,  sLabel: 'Up to <strong>25,000 SKUs</strong> · Up to 3 channels', gLabel: 'Up to <strong>25,000 SKUs</strong> · Up to 8 channels' },
+  unlimited: { s: null,  g: null,  sLabel: 'Contact us for Enterprise pricing', gLabel: 'Contact us for Enterprise pricing' },
+};
+
+let annual = false;
+let sku = 500;
+
+function render() {
+  const t = tiers[sku];
+  const mul = annual ? 0.8 : 1;
+
+  // Starter
+  if (t.s) {
+    const p = Math.round(t.s * mul);
+    document.getElementById('s-amt').textContent = p;
+    document.getElementById('s-note').textContent = annual ? `£${Math.round(t.s * 0.8 * 12)}/year` : ' ';
+    document.getElementById('s-skus').innerHTML = t.sLabel;
+  } else {
+    document.getElementById('s-price').innerHTML = `<span style="font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.7);">${t.sLabel}</span>`;
+    document.getElementById('s-note').textContent = ' ';
+    document.getElementById('s-skus').innerHTML = '&nbsp;';
+  }
+
+  // Growth
+  if (t.g) {
+    const p = Math.round(t.g * mul);
+    document.getElementById('g-amt').textContent = p;
+    document.getElementById('g-note').textContent = annual ? `£${Math.round(t.g * 0.8 * 12)}/year` : ' ';
+    document.getElementById('g-skus').innerHTML = t.gLabel;
+  } else {
+    document.getElementById('g-price').innerHTML = `<span style="font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.7);">${t.gLabel || 'Contact sales'}</span>`;
+    document.getElementById('g-note').textContent = ' ';
+    document.getElementById('g-skus').innerHTML = '&nbsp;';
+  }
+}
+
+document.querySelectorAll('.sku-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.sku-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    sku = b.dataset.sku === 'unlimited' ? 'unlimited' : parseInt(b.dataset.sku);
+    render();
+  });
+});
+
+document.getElementById('billToggle').addEventListener('click', () => {
+  annual = !annual;
+  document.getElementById('billToggle').classList.toggle('on', annual);
+  document.getElementById('lbl-monthly').classList.toggle('active', !annual);
+  document.getElementById('lbl-annual').classList.toggle('active', annual);
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

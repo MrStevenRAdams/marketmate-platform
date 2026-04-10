@@ -1,0 +1,60 @@
+@"
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'deploy-backend'
+    entrypoint: gcloud
+    args:
+      - run
+      - deploy
+      - marketmate-api
+      - --source
+      - backend
+      - --region
+      - europe-west2
+      - --project
+      - marketmate-486116
+      - --allow-unauthenticated
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    id: 'set-iam'
+    entrypoint: gcloud
+    args:
+      - run
+      - services
+      - add-iam-policy-binding
+      - marketmate-api
+      - --region=europe-west2
+      - --project=marketmate-486116
+      - --member=allUsers
+      - --role=roles/run.invoker
+    waitFor: ['deploy-backend']
+
+  - name: 'node:20'
+    id: 'build-frontend'
+    entrypoint: npm
+    args: ['run', 'build']
+    dir: 'frontend'
+
+  - name: 'node:20'
+    id: 'deploy-frontend'
+    entrypoint: npx
+    args:
+      - firebase-tools
+      - deploy
+      - --only
+      - hosting
+      - --project
+      - marketmate-486116
+      - --non-interactive
+    dir: 'frontend'
+    waitFor: ['build-frontend']
+
+options:
+  machineType: 'E2_HIGHCPU_8'
+  logging: CLOUD_LOGGING_ONLY
+
+timeout: '1200s'
+"@ | Out-File -FilePath "C:\Users\Mrste\Documents\platform\cloudbuild.yaml" -Encoding UTF8
+
+# Verify it was created
+Test-Path "C:\Users\Mrste\Documents\platform\cloudbuild.yaml"

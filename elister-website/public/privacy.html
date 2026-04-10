@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy – MarketMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal-hero {
+      background: var(--surface-dark);
+      padding: 90px 0 56px;
+      text-align: center;
+    }
+    .legal-hero h1 { color: #fff; font-size: clamp(1.8rem,3.5vw,2.6rem); margin-bottom: 12px; }
+    .legal-hero .meta { color: rgba(255,255,255,.5); font-size: .875rem; }
+
+    /* ── Layout ── */
+    .legal-layout {
+      max-width: 1100px; margin: 0 auto; padding: 64px 24px;
+      display: grid; grid-template-columns: 240px 1fr; gap: 64px; align-items: start;
+    }
+
+    /* ── TOC ── */
+    .legal-toc {
+      position: sticky; top: 90px;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .legal-toc h4 { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 16px; }
+    .legal-toc a {
+      display: block;
+      font-size: .82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color .15s;
+    }
+    .legal-toc a:last-child { border-bottom: none; }
+    .legal-toc a:hover { color: var(--primary); }
+
+    /* ── Content ── */
+    .legal-content h2 {
+      font-size: 1.4rem; font-weight: 800; margin: 48px 0 16px;
+      padding-bottom: 12px; border-bottom: 2px solid var(--border);
+      color: var(--text-primary); scroll-margin-top: 100px;
+    }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content h3 { font-size: 1.05rem; font-weight: 700; margin: 28px 0 10px; color: var(--text-primary); }
+    .legal-content p { color: var(--text-secondary); font-size: .925rem; line-height: 1.8; margin-bottom: 14px; }
+    .legal-content ul, .legal-content ol { color: var(--text-secondary); font-size: .925rem; line-height: 1.8; margin: 10px 0 16px 20px; }
+    .legal-content li { margin-bottom: 6px; }
+    .legal-content strong { color: var(--text-primary); }
+    .legal-content a { color: var(--primary); }
+
+    .info-box {
+      background: rgba(0,128,96,.06);
+      border: 1px solid rgba(0,128,96,.2);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-size: .875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .data-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 16px 0 24px; }
+    .data-table th { background: var(--surface); padding: 10px 14px; text-align: left; font-weight: 700; color: var(--text-primary); border: 1px solid var(--border); }
+    .data-table td { padding: 10px 14px; border: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+    .data-table tr:hover td { background: var(--surface); }
+
+    @media (max-width: 900px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-toc { position: static; }
+    }
+  </style>
+</head>
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="features.html">Features ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="feature-orders.html"><span class="menu-icon">🛒</span><span>Order Management</span></a>
+          <a href="feature-inventory.html"><span class="menu-icon">📦</span><span>Inventory &amp; WMS</span></a>
+          <a href="feature-listings.html"><span class="menu-icon">🤖</span><span>AI Listing Tools</span></a>
+          <a href="feature-shipping.html"><span class="menu-icon">🚚</span><span>Shipping &amp; Dispatch</span></a>
+          <a href="feature-analytics.html"><span class="menu-icon">📊</span><span>Analytics &amp; Reports</span></a>
+          <a href="feature-automation.html"><span class="menu-icon">⚡</span><span>Automation</span></a>
+        </div>
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a>
+    <a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a>
+  </div>
+</header>
+
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="legal-hero">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="meta">Marketmate Solutions Ltd · Last updated: 1 March 2026 · Version 1.2</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<div class="legal-layout">
+
+  <!-- TOC -->
+  <nav class="legal-toc">
+    <h4>Contents</h4>
+    <a href="#introduction">1. Introduction</a>
+    <a href="#controller">2. Data Controller</a>
+    <a href="#what-data">3. Data We Collect</a>
+    <a href="#how-collected">4. How Data Is Collected</a>
+    <a href="#purposes">5. How We Use Your Data</a>
+    <a href="#legal-basis">6. Legal Basis</a>
+    <a href="#marketplace-data">7. Marketplace & Third-Party Data</a>
+    <a href="#sharing">8. Sharing Your Data</a>
+    <a href="#international">9. International Transfers</a>
+    <a href="#retention">10. Data Retention</a>
+    <a href="#security">11. Security</a>
+    <a href="#rights">12. Your Rights</a>
+    <a href="#cookies">13. Cookies</a>
+    <a href="#children">14. Children</a>
+    <a href="#changes">15. Changes to This Policy</a>
+    <a href="#contact-dpo">16. Contact & Complaints</a>
+  </nav>
+
+  <!-- POLICY -->
+  <article class="legal-content">
+
+    <h2 id="introduction">1. Introduction</h2>
+    <p>Marketmate Solutions Ltd ("<strong>MarketMate</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, share, and protect personal data when you:</p>
+    <ul>
+      <li>Visit our website at <strong>marketmate.co.uk</strong> and any subdomains (the "<strong>Website</strong>");</li>
+      <li>Register for and use the MarketMate platform and associated services (the "<strong>Platform</strong>");</li>
+      <li>Communicate with us by email, telephone, or through contact forms;</li>
+      <li>Receive marketing communications from us.</li>
+    </ul>
+    <p>This policy is written to comply with the <strong>UK General Data Protection Regulation (UK GDPR)</strong>, the <strong>Data Protection Act 2018</strong>, and — where applicable — the <strong>EU General Data Protection Regulation (EU GDPR)</strong> and the <strong>Privacy and Electronic Communications Regulations 2003 (PECR)</strong>.</p>
+    <div class="info-box">
+      <strong>Plain English summary:</strong> We collect information about you to operate our platform and communicate with you. We do not sell your personal data. We do not use your data for advertising. We use reputable, GDPR-compliant third-party services to run our infrastructure. This policy explains all of this in detail.
+    </div>
+
+    <h2 id="controller">2. Data Controller</h2>
+    <p>The data controller responsible for your personal data is:</p>
+    <p><strong>Marketmate Solutions Ltd</strong><br>
+    Registered in England and Wales<br>
+    Email: <a href="mailto:privacy@marketmate.co.uk">privacy@marketmate.co.uk</a></p>
+    <p>If you have any questions about this policy or how we handle your data, please contact us at the address above. We aim to respond to all privacy enquiries within <strong>30 days</strong>.</p>
+
+    <h2 id="what-data">3. Data We Collect</h2>
+
+    <h3>3.1 Data you provide directly</h3>
+    <ul>
+      <li><strong>Account registration:</strong> Full name, business email address, password (stored as a hashed credential), company name, telephone number, country.</li>
+      <li><strong>Billing and subscription:</strong> Billing address, VAT registration number. Payment card details are collected and stored directly by our payment processor (Stripe) — we never store raw card numbers on our systems.</li>
+      <li><strong>Contact and enquiry forms:</strong> Name, email, phone number, company, message content, channels and order volumes you disclose voluntarily.</li>
+      <li><strong>Platform content:</strong> Product listings, SKUs, inventory records, purchase orders, supplier data, warehouse configurations, automation rules, and any other data you enter into the Platform.</li>
+      <li><strong>Support communications:</strong> The content of any emails or messages you send us, including technical and account queries.</li>
+    </ul>
+
+    <h3>3.2 Data collected automatically</h3>
+    <ul>
+      <li><strong>Usage data:</strong> Pages visited, features accessed, buttons clicked, session duration, search queries within the Platform.</li>
+      <li><strong>Technical data:</strong> IP address, browser type and version, operating system, device type, screen resolution, referring URL.</li>
+      <li><strong>Log data:</strong> Server-side request logs including timestamps, HTTP method, endpoint path, response codes, and processing time. Logs are used for debugging, security monitoring, and infrastructure management.</li>
+      <li><strong>Cookie data:</strong> See Section 13 (Cookies) for full details.</li>
+    </ul>
+
+    <h3>3.3 Data received from third parties</h3>
+    <ul>
+      <li><strong>Marketplace APIs:</strong> When you connect your marketplace accounts (e.g. Amazon Seller Central, eBay, Etsy), we retrieve order data, inventory levels, listing data, buyer messaging threads, and shipping information via those platforms' authorised APIs. This data is processed on your behalf as a data processor.</li>
+      <li><strong>Carrier APIs:</strong> Shipment tracking data retrieved from carrier APIs (Royal Mail, Evri, DPD, FedEx) on your behalf.</li>
+      <li><strong>AI service providers:</strong> When you use our AI listing generation features, product information is sent to Anthropic (Claude) and/or Google (Gemini) APIs. This data is used solely to generate listing content and is not retained by those providers for training purposes under our enterprise agreements.</li>
+    </ul>
+
+    <h2 id="how-collected">4. How Data Is Collected</h2>
+    <p>We collect data through the following means:</p>
+    <ul>
+      <li><strong>Direct submission:</strong> Via registration forms, contact forms, and in-platform data entry.</li>
+      <li><strong>Automated technical systems:</strong> Via server logs, cookies, and analytics tools as described in this policy.</li>
+      <li><strong>Third-party API calls:</strong> When you grant MarketMate authorisation to access your marketplace and carrier accounts via OAuth or API keys, we retrieve the relevant operational data on your behalf.</li>
+      <li><strong>Payment processor:</strong> Stripe provides us with billing confirmation data (transaction ID, last four card digits, billing name) once payment is processed.</li>
+    </ul>
+
+    <h2 id="purposes">5. How We Use Your Data</h2>
+    <p>We use personal data only for the purposes described below. We do not use your data for targeted advertising, profiling for third-party commercial purposes, or any purpose incompatible with those stated here.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Purpose</th><th>Data used</th><th>Legal basis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>To create and manage your account</td><td>Name, email, password, company</td><td>Contract performance</td></tr>
+        <tr><td>To provide Platform services</td><td>All Platform and marketplace data</td><td>Contract performance</td></tr>
+        <tr><td>To process payments and manage subscriptions</td><td>Billing data, email</td><td>Contract performance</td></tr>
+        <tr><td>To provide customer support</td><td>Account data, support messages</td><td>Contract performance / Legitimate interests</td></tr>
+        <tr><td>To send transactional communications (e.g. receipts, alerts)</td><td>Email, notification preferences</td><td>Contract performance</td></tr>
+        <tr><td>To send marketing communications (with consent or soft opt-in)</td><td>Email, name</td><td>Consent / Legitimate interests</td></tr>
+        <tr><td>To improve the Platform and develop new features</td><td>Aggregated usage data</td><td>Legitimate interests</td></tr>
+        <tr><td>To detect and prevent fraud and abuse</td><td>Technical data, log data, usage patterns</td><td>Legitimate interests / Legal obligation</td></tr>
+        <tr><td>To comply with legal and regulatory obligations</td><td>Account data, billing data</td><td>Legal obligation</td></tr>
+        <tr><td>To enforce our Terms of Service</td><td>Account data, usage logs</td><td>Legitimate interests / Contract</td></tr>
+        <tr><td>To run analytics and measure performance</td><td>Aggregated, anonymised usage data</td><td>Legitimate interests</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="legal-basis">6. Legal Basis for Processing</h2>
+    <p>We rely on the following legal bases under UK GDPR / EU GDPR:</p>
+
+    <h3>6.1 Contract performance (Article 6(1)(b))</h3>
+    <p>Processing necessary for the performance of the contract we have with you — including providing the Platform, processing your subscription, and sending service-critical communications.</p>
+
+    <h3>6.2 Legitimate interests (Article 6(1)(f))</h3>
+    <p>We process certain data where it is necessary for our legitimate business interests and those interests are not overridden by your rights. This includes: improving the Platform based on usage data, fraud detection, security monitoring, and sending relevant marketing to existing customers (soft opt-in under PECR). We have conducted Legitimate Interests Assessments (LIAs) for these processing activities.</p>
+
+    <h3>6.3 Legal obligation (Article 6(1)(c))</h3>
+    <p>Where we are required to process data to comply with applicable law — for example, retaining financial records under UK HMRC requirements, or responding to lawful data access requests from public authorities.</p>
+
+    <h3>6.4 Consent (Article 6(1)(a))</h3>
+    <p>Where you have given us explicit consent — for example, when subscribing to our newsletter via the website contact form, or when accepting non-essential cookies. You may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.</p>
+
+    <h2 id="marketplace-data">7. Marketplace and Third-Party Platform Data</h2>
+    <p>MarketMate integrates with third-party marketplace platforms including Amazon Seller Central, eBay, Etsy, OnBuy, Kaufland, Back Market, BigCommerce, Magento, WooCommerce, Bluepark, Temu, and TikTok Shop (collectively "<strong>Marketplace Platforms</strong>").</p>
+
+    <h3>7.1 Data we access on your behalf</h3>
+    <p>When you connect a Marketplace Platform account, MarketMate accesses data via that platform's authorised API. The categories of data accessed include:</p>
+    <ul>
+      <li>Order details: order ID, order status, line items, quantities, prices, shipping addresses, requested shipping service</li>
+      <li>Buyer information: buyer name, delivery address, and (where provided by the platform) buyer message threads</li>
+      <li>Inventory levels and SKU data</li>
+      <li>Listing data: product titles, descriptions, images, prices, categories, attributes</li>
+      <li>Shipment and tracking information</li>
+      <li>Return and refund information</li>
+    </ul>
+    <p>This data is processed by MarketMate as your <strong>data processor</strong> — we act on your instructions as the data controller for this data. Our Data Processing Agreement (DPA) governs this relationship and is incorporated into our Terms of Service.</p>
+
+    <h3>7.2 Amazon SP-API</h3>
+    <p>MarketMate is an approved Amazon SP-API (Selling Partner API) application. Our integration is subject to Amazon's Developer Agreement and Data Protection Policy. We access only the data scopes required to provide our services, as documented in our SP-API application. Amazon buyer personal data accessed via SP-API is used solely to fulfil orders and provide related services to you as the seller — it is never used for our own commercial purposes, shared with third parties outside of what is necessary for order fulfilment, or retained beyond our stated retention periods.</p>
+
+    <h3>7.3 Buyer personal data</h3>
+    <p>Buyer names, delivery addresses, and contact information retrieved from marketplace platforms are processed on behalf of you (the seller) to enable order management, dispatch, and customer communications. This data:</p>
+    <ul>
+      <li>Is stored securely within our UK-based cloud infrastructure;</li>
+      <li>Is not used for any purpose other than fulfilling the services you have requested;</li>
+      <li>Is not shared with any party other than shipping carriers (for label generation) and, where applicable, cloud infrastructure providers;</li>
+      <li>Is subject to the same retention and security standards as all other data on the Platform.</li>
+    </ul>
+
+    <h3>7.4 AI listing generation</h3>
+    <p>When you use AI-powered listing generation, product information (titles, descriptions, attributes, categories) is transmitted to Anthropic (Claude) and/or Google (Gemini) APIs. This information:</p>
+    <ul>
+      <li>Does not include buyer personal data;</li>
+      <li>Is used solely to generate listing content in response to your request;</li>
+      <li>Is subject to the data processing terms of our enterprise agreements with Anthropic and Google;</li>
+      <li>Is not retained by these providers for model training under our agreement terms.</li>
+    </ul>
+
+    <h2 id="sharing">8. Sharing Your Personal Data</h2>
+    <p>We do not sell, rent, or trade your personal data. We share data only in the following circumstances:</p>
+
+    <h3>8.1 Service providers (data processors)</h3>
+    <p>We engage carefully selected third-party service providers who process data on our behalf under contractual obligations to maintain confidentiality and security. These include:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Provider</th><th>Purpose</th><th>Location</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Google Cloud Platform</td><td>Cloud hosting, database (Firestore), authentication (Firebase Auth), logging</td><td>UK (europe-west2 / London)</td></tr>
+        <tr><td>Stripe</td><td>Payment processing and subscription management</td><td>UK / EEA</td></tr>
+        <tr><td>Anthropic</td><td>AI listing generation (Claude API)</td><td>USA (enterprise DPA in place)</td></tr>
+        <tr><td>Google (Gemini)</td><td>AI listing generation (Gemini API)</td><td>USA / EEA (enterprise DPA in place)</td></tr>
+        <tr><td>Royal Mail</td><td>Shipping label generation and tracking</td><td>UK</td></tr>
+        <tr><td>Evri</td><td>Shipping label generation and tracking</td><td>UK</td></tr>
+        <tr><td>DPD</td><td>Shipping label generation and tracking</td><td>UK / EEA</td></tr>
+        <tr><td>FedEx</td><td>Shipping label generation and tracking</td><td>UK / USA</td></tr>
+        <tr><td>Email delivery provider</td><td>Transactional email delivery</td><td>UK / EEA</td></tr>
+      </tbody>
+    </table>
+
+    <h3>8.2 Legal requirements</h3>
+    <p>We may disclose personal data where required by applicable law, court order, or at the request of competent public authorities (e.g. law enforcement, tax authorities). We will inform you of such disclosures unless prohibited by law from doing so.</p>
+
+    <h3>8.3 Business transfers</h3>
+    <p>If MarketMate is involved in a merger, acquisition, asset sale, or similar transaction, personal data may be transferred to the acquiring entity subject to the same privacy protections. We will notify affected individuals before any such transfer and, where required, seek fresh consent.</p>
+
+    <h3>8.4 With your explicit consent</h3>
+    <p>In any other circumstance, we will only share your data with your explicit prior consent.</p>
+
+    <h2 id="international">9. International Data Transfers</h2>
+    <p>Our primary data infrastructure is hosted within the United Kingdom (Google Cloud Platform, europe-west2). However, certain third-party service providers (including Anthropic and FedEx) are based in the United States.</p>
+    <p>Where data is transferred outside the UK or EEA, we ensure appropriate safeguards are in place, including:</p>
+    <ul>
+      <li><strong>UK International Data Transfer Agreements (IDTAs)</strong> or UK addenda to EU Standard Contractual Clauses (SCCs), as applicable;</li>
+      <li>Adequacy decisions made by the UK Secretary of State or the European Commission where applicable;</li>
+      <li>Enterprise Data Processing Agreements with Anthropic and Google that include transfer mechanisms compliant with UK GDPR and EU GDPR.</li>
+    </ul>
+    <p>You may request a copy of the transfer mechanisms we rely on by contacting <a href="mailto:privacy@marketmate.co.uk">privacy@marketmate.co.uk</a>.</p>
+
+    <h2 id="retention">10. Data Retention</h2>
+    <p>We retain personal data only for as long as necessary for the purposes for which it was collected, and in accordance with legal requirements. Our retention schedule is summarised below:</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Data category</th><th>Retention period</th><th>Reason</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Account and profile data</td><td>Duration of contract + 6 years</td><td>Legal / contractual claims limitation period</td></tr>
+        <tr><td>Order and transaction data</td><td>7 years from transaction date</td><td>HMRC / UK tax requirements</td></tr>
+        <tr><td>Billing and payment records</td><td>7 years</td><td>UK tax and accounting obligations</td></tr>
+        <tr><td>Platform content (listings, inventory, POs)</td><td>Duration of contract + 90 days</td><td>Post-cancellation data access window</td></tr>
+        <tr><td>Support communications</td><td>3 years from last contact</td><td>Legitimate interests — dispute resolution</td></tr>
+        <tr><td>Marketing contact data</td><td>Until you unsubscribe + 12 months</td><td>Consent / soft opt-in maintenance</td></tr>
+        <tr><td>Website analytics data</td><td>26 months (aggregated after 13 months)</td><td>Legitimate interests — service improvement</td></tr>
+        <tr><td>Server log data</td><td>90 days</td><td>Security and debugging</td></tr>
+        <tr><td>Buyer shipping addresses (via marketplace API)</td><td>Duration of contract + 90 days</td><td>Order fulfilment records</td></tr>
+      </tbody>
+    </table>
+
+    <p>When your account is closed or your subscription expires, we will retain your data for the post-cancellation window (90 days) during which you may export your data. After this period, data will be securely deleted or irreversibly anonymised, except where legal obligations require longer retention.</p>
+
+    <h2 id="security">11. Security</h2>
+    <p>We implement technical and organisational security measures appropriate to the risk level of the data we process. These include:</p>
+
+    <h3>11.1 Technical measures</h3>
+    <ul>
+      <li><strong>Encryption in transit:</strong> All data transmitted between your browser/application and our servers uses TLS 1.2 or higher (HTTPS). API communications are encrypted throughout.</li>
+      <li><strong>Encryption at rest:</strong> All data stored in Firestore and associated Google Cloud storage is encrypted at rest using Google-managed encryption keys (AES-256).</li>
+      <li><strong>Authentication:</strong> Platform accounts are protected by Firebase Authentication with support for multi-factor authentication (MFA).</li>
+      <li><strong>Access controls:</strong> Role-based access control (RBAC) is implemented across the Platform. Staff access to production systems is restricted on a need-to-know basis and subject to access review.</li>
+      <li><strong>Vulnerability management:</strong> Regular dependency updates, security scanning as part of our CI/CD pipeline, and periodic security reviews.</li>
+      <li><strong>Monitoring and alerting:</strong> Automated monitoring for unusual access patterns, error spikes, and security events with on-call alerting for the engineering team.</li>
+    </ul>
+
+    <h3>11.2 Organisational measures</h3>
+    <ul>
+      <li>Data protection is considered at the design stage of all new features (Privacy by Design and by Default).</li>
+      <li>Employees and contractors with access to personal data are bound by confidentiality obligations.</li>
+      <li>We maintain a documented Security Incident Response Plan governing how we detect, contain, assess, and notify in the event of a data breach.</li>
+      <li>We conduct periodic reviews of our data processing activities and this Privacy Policy.</li>
+    </ul>
+
+    <h3>11.3 Data breach notification</h3>
+    <p>In the event of a personal data breach that is likely to result in a risk to your rights and freedoms, we will notify the <strong>Information Commissioner's Office (ICO)</strong> within 72 hours of becoming aware of the breach, as required by UK GDPR Article 33. Where the breach is likely to result in a high risk to you, we will also notify you directly without undue delay.</p>
+
+    <h2 id="rights">12. Your Rights</h2>
+    <p>Under UK GDPR (and EU GDPR where applicable), you have the following rights in respect of your personal data. We aim to respond to all rights requests within <strong>30 calendar days</strong>. For complex requests, this may be extended by a further 60 days, in which case we will inform you.</p>
+
+    <h3>12.1 Right of access (Article 15)</h3>
+    <p>You have the right to obtain a copy of the personal data we hold about you, along with information about how it is used, where it came from, who it has been shared with, and how long we intend to keep it. This is also known as a Subject Access Request (SAR).</p>
+
+    <h3>12.2 Right to rectification (Article 16)</h3>
+    <p>You have the right to ask us to correct personal data that is inaccurate or incomplete. You may update much of your data directly within your account settings.</p>
+
+    <h3>12.3 Right to erasure (Article 17)</h3>
+    <p>You have the right to ask us to delete your personal data in certain circumstances — for example, where the data is no longer necessary for the purpose it was collected, or where you withdraw consent and there is no other legal basis for processing. This right is not absolute and may be subject to legal retention requirements.</p>
+
+    <h3>12.4 Right to restriction of processing (Article 18)</h3>
+    <p>You have the right to ask us to restrict processing of your data in certain circumstances — for example, while a dispute about accuracy is being resolved, or where processing is unlawful but you prefer restriction to erasure.</p>
+
+    <h3>12.5 Right to data portability (Article 20)</h3>
+    <p>Where processing is based on consent or contract and carried out by automated means, you have the right to receive your personal data in a structured, commonly used, machine-readable format (such as CSV or JSON), and to transmit it to another controller. The Platform provides built-in data export functionality for this purpose.</p>
+
+    <h3>12.6 Right to object (Article 21)</h3>
+    <p>You have the right to object to processing based on legitimate interests, including profiling. You also have an absolute right to object to direct marketing (including profiling for marketing purposes) at any time. Where you object, we will cease that processing unless we can demonstrate compelling legitimate grounds that override your rights.</p>
+
+    <h3>12.7 Rights related to automated decision-making (Article 22)</h3>
+    <p>MarketMate does not make decisions about you solely by automated means that produce legal or similarly significant effects. Where automation is used (e.g. in fraud detection), human review is available.</p>
+
+    <h3>12.8 Right to withdraw consent</h3>
+    <p>Where processing is based on your consent, you may withdraw that consent at any time by contacting us or using the unsubscribe mechanism in any marketing email. Withdrawal does not affect the lawfulness of processing before withdrawal.</p>
+
+    <h3>How to exercise your rights</h3>
+    <p>To exercise any of the above rights, please contact us at <a href="mailto:privacy@marketmate.co.uk">privacy@marketmate.co.uk</a> with a description of your request. We may ask you to verify your identity before processing the request. We will not charge a fee for reasonable requests; however, we reserve the right to charge a reasonable administrative fee for manifestly unfounded or excessive requests, or to refuse them.</p>
+
+    <h2 id="cookies">13. Cookies and Tracking Technologies</h2>
+    <p>Our Website uses cookies and similar tracking technologies. For full details of which cookies we use, their purpose, and how to manage them, please see our <a href="cookies.html">Cookie Policy</a>.</p>
+
+    <p>In summary:</p>
+    <ul>
+      <li><strong>Strictly necessary cookies:</strong> Required for the Website and Platform to function. These cannot be disabled. No consent is required.</li>
+      <li><strong>Analytics cookies:</strong> Used to understand how visitors interact with our Website. These require your consent and can be declined via our cookie banner.</li>
+      <li><strong>Preference cookies:</strong> Used to remember settings such as language or login state.</li>
+    </ul>
+    <p>You can manage cookie preferences at any time via the cookie settings link in the footer of our Website.</p>
+
+    <h2 id="children">14. Children's Privacy</h2>
+    <p>Our Platform is not directed at children under the age of 16, and we do not knowingly collect personal data from children. If you believe that a child has provided us with personal data without appropriate parental or guardian consent, please contact us at <a href="mailto:privacy@marketmate.co.uk">privacy@marketmate.co.uk</a> and we will take steps to delete it promptly.</p>
+
+    <h2 id="changes">15. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will:</p>
+    <ul>
+      <li>Post the updated policy on this page with a revised "last updated" date;</li>
+      <li>Notify registered Platform users by email or via an in-platform notification;</li>
+      <li>Where required by law, seek fresh consent.</li>
+    </ul>
+    <p>We encourage you to review this policy periodically. Continued use of the Platform after the effective date of any changes constitutes acceptance of those changes.</p>
+
+    <h2 id="contact-dpo">16. Contact and Complaints</h2>
+    <p>If you have any questions about this Privacy Policy or the way we handle your personal data, please contact us:</p>
+    <p>
+      <strong>Privacy enquiries:</strong> <a href="mailto:privacy@marketmate.co.uk">privacy@marketmate.co.uk</a><br>
+      <strong>General:</strong> <a href="mailto:hello@marketmate.co.uk">hello@marketmate.co.uk</a><br>
+      <strong>Postal:</strong> Marketmate Solutions Ltd, England & Wales
+    </p>
+    <h3>Right to complain to the supervisory authority</h3>
+    <p>You have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong>, the UK supervisory authority for data protection:</p>
+    <p>
+      Website: <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a><br>
+      Helpline: 0303 123 1113<br>
+      ICO, Wycliffe House, Water Lane, Wilmslow, Cheshire, SK9 5AF
+    </p>
+    <p>If you are located in the European Union, you may also have the right to lodge a complaint with your local data protection authority.</p>
+    <p>We would, however, appreciate the opportunity to address your concerns directly before you approach the ICO or another supervisory authority. Please contact us first and we will do our best to resolve your concerns promptly.</p>
+
+    <div class="info-box" style="margin-top:40px;">
+      <strong>Version history:</strong><br>
+      v1.2 — 1 March 2026: Updated AI provider details, added international transfer section, expanded marketplace data section.<br>
+      v1.1 — 15 January 2026: Added Temu and TikTok Shop integrations, updated retention schedule.<br>
+      v1.0 — 1 November 2025: Initial publication.
+    </div>
+
+  </article>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Market<span class="logo-dot">Mate</span></div>
+      <p>Multichannel order management, inventory, and listings — built for serious sellers.</p>
+      <div class="amazon-badge">✦ Amazon SP-API Approved</div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="feature-orders.html">Order Management</a>
+      <a href="feature-inventory.html">Inventory & WMS</a>
+      <a href="feature-listings.html">AI Listing Tools</a>
+      <a href="feature-shipping.html">Shipping & Dispatch</a>
+      <a href="feature-analytics.html">Analytics</a>
+      <a href="feature-automation.html">Automation</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="channels.html">Channels</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Marketmate Solutions Ltd. Registered in England & Wales.</span>
+    <span>Version 1.2 · Updated 1 March 2026</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

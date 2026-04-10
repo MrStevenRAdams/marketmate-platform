@@ -1,0 +1,275 @@
+import { MarketplaceAdapter } from './types';
+import AmazonAdapter from './adapters/AmazonAdapter';
+import EbayAdapter from './adapters/EbayAdapter';
+import ShopifyAdapter from './adapters/ShopifyAdapter';
+import TemuAdapter from './adapters/TemuAdapter';
+import TescoAdapter from './adapters/TescoAdapter';
+import TikTokAdapter from './adapters/TikTokAdapter';
+import EtsyAdapter from './adapters/EtsyAdapter';
+import WooCommerceAdapter from './adapters/WooCommerceAdapter';
+import WalmartAdapter from './adapters/WalmartAdapter';
+import KauflandAdapter from './adapters/KauflandAdapter';
+import MagentoAdapter from './adapters/MagentoAdapter';
+import BigCommerceAdapter from './adapters/BigCommerceAdapter';
+import OnBuyAdapter from './adapters/OnBuyAdapter';
+import {
+  BackMarketAdapter,
+  ZalandoAdapter,
+  BolAdapter,
+  LazadaAdapter,
+} from './adapters/S4Adapters';
+import {
+  amazonDataSync,
+  ebayDataSync,
+  shopifyDataSync,
+  temuDataSync,
+  tescoDataSync,
+  validateAmazonData,
+  validateEbayData,
+  validateShopifyData,
+  validateGenericData,
+} from './utils/dataSync';
+
+// ============================================================================
+// MARKETPLACE REGISTRY
+// ============================================================================
+
+export const marketplaceRegistry: MarketplaceAdapter[] = [
+  {
+    id: 'amazon-us',
+    name: 'Amazon US Store',
+    platform: 'Amazon',
+    icon: 'ri-amazon-fill',
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-100',
+    isConnected: true,
+    FormComponent: AmazonAdapter,
+    syncFromCore: amazonDataSync,
+    validate: validateAmazonData,
+  },
+  {
+    id: 'amazon-uk',
+    name: 'Amazon UK Store',
+    platform: 'Amazon',
+    icon: 'ri-amazon-fill',
+    color: 'text-orange-600',
+    bgColor: 'bg-orange-100',
+    isConnected: true,
+    FormComponent: AmazonAdapter,
+    syncFromCore: amazonDataSync,
+    validate: validateAmazonData,
+  },
+  {
+    id: 'ebay-us',
+    name: 'eBay US Account',
+    platform: 'eBay',
+    icon: 'ri-auction-fill',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100',
+    isConnected: true,
+    FormComponent: EbayAdapter,
+    syncFromCore: ebayDataSync,
+    validate: validateEbayData,
+  },
+  {
+    id: 'ebay-uk',
+    name: 'eBay UK Account',
+    platform: 'eBay',
+    icon: 'ri-auction-fill',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-100',
+    isConnected: true,
+    FormComponent: EbayAdapter,
+    syncFromCore: ebayDataSync,
+    validate: validateEbayData,
+  },
+  {
+    id: 'shopify-main',
+    name: 'Shopify Main Store',
+    platform: 'Shopify',
+    icon: 'ri-shopping-cart-fill',
+    color: 'text-green-600',
+    bgColor: 'bg-green-100',
+    isConnected: true,
+    FormComponent: ShopifyAdapter,
+    syncFromCore: shopifyDataSync,
+    validate: validateShopifyData,
+  },
+  {
+    id: 'temu-main',
+    name: 'Temu Main Account',
+    platform: 'Temu',
+    icon: 'ri-store-2-fill',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-100',
+    isConnected: false,
+    FormComponent: TemuAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'tesco-uk',
+    name: 'Tesco UK Marketplace',
+    platform: 'Tesco',
+    icon: 'ri-store-3-fill',
+    color: 'text-red-600',
+    bgColor: 'bg-red-100',
+    isConnected: false,
+    FormComponent: TescoAdapter,
+    syncFromCore: tescoDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'tiktok-shop',
+    name: 'TikTok Shop',
+    platform: 'TikTok',
+    icon: 'ri-tiktok-fill',
+    color: 'text-black dark:text-white',
+    bgColor: 'bg-cyan-50',
+    isConnected: false,
+    FormComponent: TikTokAdapter,
+    syncFromCore: temuDataSync, // basic field mapping reuse
+    validate: validateGenericData,
+  },
+  {
+    id: 'etsy',
+    name: 'Etsy',
+    platform: 'Etsy',
+    icon: 'ri-store-2-fill',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-50',
+    isConnected: false,
+    FormComponent: EtsyAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'woocommerce',
+    name: 'WooCommerce',
+    platform: 'WooCommerce',
+    icon: 'ri-store-3-fill',
+    color: 'text-purple-600',
+    bgColor: 'bg-purple-50',
+    isConnected: false,
+    FormComponent: WooCommerceAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'walmart',
+    name: 'Walmart Marketplace',
+    platform: 'Walmart',
+    icon: 'ri-store-2-fill',
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-50',
+    isConnected: false,
+    FormComponent: WalmartAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'kaufland',
+    name: 'Kaufland',
+    platform: 'Kaufland',
+    icon: 'ri-shopping-bag-3-fill',
+    color: 'text-red-600',
+    bgColor: 'bg-red-50',
+    isConnected: false,
+    FormComponent: KauflandAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'magento',
+    name: 'Magento 2',
+    platform: 'Magento',
+    icon: 'ri-store-line',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-50',
+    isConnected: false,
+    FormComponent: MagentoAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'bigcommerce',
+    name: 'BigCommerce',
+    platform: 'BigCommerce',
+    icon: 'ri-store-3-line',
+    color: 'text-blue-600',
+    bgColor: 'bg-blue-50',
+    isConnected: false,
+    FormComponent: BigCommerceAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'onbuy',
+    name: 'OnBuy',
+    platform: 'OnBuy',
+    icon: 'ri-shopping-bag-3-line',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-50',
+    isConnected: false,
+    FormComponent: OnBuyAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  // ── Session 4 ─────────────────────────────────────────────────────────────
+  {
+    id: 'backmarket',
+    name: 'Back Market',
+    platform: 'Back Market',
+    icon: 'ri-recycle-fill',
+    color: 'text-teal-600',
+    bgColor: 'bg-teal-50',
+    isConnected: false,
+    FormComponent: BackMarketAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'zalando',
+    name: 'Zalando',
+    platform: 'Zalando',
+    icon: 'ri-shopping-bag-3-fill',
+    color: 'text-orange-500',
+    bgColor: 'bg-orange-50',
+    isConnected: false,
+    FormComponent: ZalandoAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'bol',
+    name: 'Bol.com',
+    platform: 'Bol.com',
+    icon: 'ri-store-2-fill',
+    color: 'text-blue-700',
+    bgColor: 'bg-blue-50',
+    isConnected: false,
+    FormComponent: BolAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+  {
+    id: 'lazada',
+    name: 'Lazada',
+    platform: 'Lazada',
+    icon: 'ri-store-fill',
+    color: 'text-blue-500',
+    bgColor: 'bg-blue-50',
+    isConnected: false,
+    FormComponent: LazadaAdapter,
+    syncFromCore: temuDataSync,
+    validate: validateGenericData,
+  },
+];
+
+export const getMarketplaceById = (id: string): MarketplaceAdapter | undefined => {
+  return marketplaceRegistry.find(m => m.id === id);
+};
+
+export const getConnectedMarketplaces = (): MarketplaceAdapter[] => {
+  return marketplaceRegistry.filter(m => m.isConnected);
+};

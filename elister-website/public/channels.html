@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Channels — MarketMate Integrations</title>
+  <meta name="description" content="MarketMate integrates with Amazon, eBay, Etsy, Temu, TikTok Shop, OnBuy, Kaufland, Back Market, BigCommerce, Magento, WooCommerce, Bluepark, and more. Sell everywhere from one platform."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .channel-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .channel-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:24px;text-align:center;transition:all .2s}
+    .channel-card:hover{border-color:var(--green);box-shadow:var(--shadow-green);transform:translateY(-2px)}
+    .channel-icon{width:56px;height:56px;border-radius:12px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900}
+    .channel-card h3{font-size:1rem;margin-bottom:6px}
+    .channel-card p{font-size:.825rem;color:var(--text-secondary);line-height:1.55}
+    .channel-card .ch-status{display:inline-block;margin-top:10px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:100px}
+    .ch-status.live{background:var(--green-pale);color:var(--green-dark)}
+    .ch-status.coming{background:var(--surface-2);color:var(--text-muted)}
+    @media(max-width:900px){.channel-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:500px){.channel-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header class="nav-wrap" id="nav"><nav class="nav-inner"><a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a><ul class="nav-links"><li><a href="features.html">Features</a></li><li><a href="channels.html" class="active">Channels</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="about.html">About</a></li></ul><div class="nav-spacer"></div><div class="nav-cta"><a href="contact.html" class="btn-ghost">Contact Sales</a><a href="contact.html" class="btn-primary">Get Started →</a></div><button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button></nav><div class="nav-mobile" id="navMobile"><a href="features.html">Features</a><a href="channels.html">Channels</a><a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a><a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a></div></header>
+
+<section class="page-hero">
+  <div class="container"><div class="page-hero-inner">
+    <p class="eyebrow">Channel Integrations</p>
+    <h1>Sell everywhere.<br/>Manage from one place.</h1>
+    <p>MarketMate connects to the world's leading marketplaces and webstores. Live channel integrations are built and maintained in-house — no third-party middleware, no brittle API wrappers.</p>
+  </div></div>
+</section>
+
+<section class="section-light">
+  <div class="container">
+    <div class="section-header reveal"><p class="eyebrow">Live Integrations</p><h2>15+ channels, connected today</h2></div>
+    <div class="channel-grid">
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fff8ee;">🟠</div>
+        <h3>Amazon</h3>
+        <p>Full SP-API: listings, orders, FBA, messaging, OAuth, schema-driven creation, multi-marketplace support (UK, DE, FR, IT, ES, US)</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fff0f0;">🔴</div>
+        <h3>eBay</h3>
+        <p>Listing creation, order management, category aspects, business policies, eBay schema refresh, bulk revise and end listings</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fff4f0;">🟠</div>
+        <h3>Etsy</h3>
+        <p>Listing creation with taxonomy and shipping profiles, order management, personalised item handling, image upload</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0f7ff;">🔵</div>
+        <h3>OnBuy</h3>
+        <p>Listing creation, order management, condition and category validation, price and stock sync</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fffbf0;">🟡</div>
+        <h3>Kaufland</h3>
+        <p>Unit listing creation with EAN validation, order management, category mapping, stock and price synchronisation</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0fff4;">🟢</div>
+        <h3>Back Market</h3>
+        <p>Refurbished goods listing, order management, condition grading support, Back Market order webhook integration</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0f4ff;">🔷</div>
+        <h3>BigCommerce</h3>
+        <p>Full product and listing sync, order management, category and brand mapping, attribute set support, webhook-driven updates</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f5f0ff;">🟣</div>
+        <h3>Magento 2</h3>
+        <p>Product listing creation with attribute set mapping, order management, category sync, configurable and simple product support</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0f8ff;">🔵</div>
+        <h3>WooCommerce</h3>
+        <p>Product and category sync, order management, attribute and tag mapping, variable product support, real-time stock updates</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fff0f5;">🟥</div>
+        <h3>Bluepark</h3>
+        <p>Product listing creation and sync, order management, category mapping — fully supported UK webstore platform</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fff8f0;">🟠</div>
+        <h3>Temu</h3>
+        <p>Category recommendations, brand lookup, listing creation wizard, order management, Temu schema refresh and webhook subscriptions</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0f0f0;">⬛</div>
+        <h3>TikTok Shop</h3>
+        <p>Listing creation with category attributes, image upload, order management, TikTok Shop-specific fulfilment requirements</p>
+        <span class="ch-status live">● Live</span>
+      </div>
+    </div>
+
+    <div class="section-header reveal" style="margin-top:80px;"><p class="eyebrow">Coming Soon</p><h2>Next on the roadmap</h2><p>Our integration team is actively building these channels. Dates reflect our planned GA releases — subscribe to our roadmap updates to be notified when they go live.</p></div>
+    <div class="channel-grid">
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0fff0;">🟩</div>
+        <h3>Shopify</h3>
+        <p>Full product, variant, and order sync. Metafield support, collection management, Shopify Markets for multi-currency.</p>
+        <span class="ch-status coming">Q3 2026</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#fff5e0;">🟧</div>
+        <h3>Walmart Marketplace</h3>
+        <p>Item feed creation, price and inventory sync, Walmart order management and fulfilment status updates.</p>
+        <span class="ch-status coming">Q4 2026</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f5f0ff;">🟣</div>
+        <h3>Bol.com</h3>
+        <p>Dutch and Belgian marketplace listing and order management. EAN-based listing, FBB (Fulfilment by Bol) support.</p>
+        <span class="ch-status coming">Q1 2027</span>
+      </div>
+      <div class="channel-card reveal">
+        <div class="channel-icon" style="background:#f0fff8;">🟢</div>
+        <h3>Zalando</h3>
+        <p>Fashion marketplace listing with size/colour variant handling, Zalando Partner Programme order management.</p>
+        <span class="ch-status coming">Q1 2027</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="container">
+    <div class="section-header reveal"><p class="eyebrow eyebrow-light">How Channel Integrations Work</p><h2 class="section-title-light">Direct API integrations. No middleware.</h2><p style="color:rgba(255,255,255,.65);margin-top:16px;">Unlike platforms that rely on third-party connectors, every MarketMate channel integration is built and maintained directly by our engineering team — using each marketplace's official, supported API.</p></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="reveal">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;">
+        <div style="font-size:2rem;margin-bottom:14px;">🔐</div><h3 style="color:#fff;margin-bottom:10px;">Secure OAuth Connections</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65;">Connect your marketplace accounts via each channel's official OAuth flow. Credentials are encrypted at rest using AES-256 and are never exposed in our UI or logs.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;">
+        <div style="font-size:2rem;margin-bottom:14px;">⚡</div><h3 style="color:#fff;margin-bottom:10px;">Webhook-Driven Updates</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65;">Where channels support webhooks, MarketMate uses them — so new orders and status changes arrive in real time, not on a polling schedule. Orders typically appear within 30 seconds of placement.</p>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;">
+        <div style="font-size:2rem;margin-bottom:14px;">🔄</div><h3 style="color:#fff;margin-bottom:10px;">Reconciliation Engine</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.55);line-height:1.65;">Our reconciliation tool compares MarketMate's local listing records against the live channel state to detect drift — price changes, stock discrepancies, suppressed listings — and surface them for resolution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner"><div class="container"><div class="cta-banner-inner"><h2>Connect your channels. Take back your time.</h2><p>Most sellers are live on all their existing channels within the same day they sign up.</p><div class="cta-banner-btns"><a href="contact.html" class="btn-primary" style="background:#fff;color:var(--green);">Get Started Today →</a><a href="pricing.html" class="btn-ghost-white">View Pricing</a></div></div></div></section>
+
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a href="index.html" class="logo">Market<span class="logo-dot" style="color:var(--green-mid);">Mate</span></a><p>The all-in-one multichannel platform for Amazon and marketplace sellers.</p><div class="footer-amazon-badge">✦ Amazon SP-API Approved</div></div><div class="footer-col"><h4>Platform</h4><ul><li><a href="feature-orders.html">Order Management</a></li><li><a href="feature-inventory.html">Inventory &amp; WMS</a></li><li><a href="feature-listings.html">AI Listing Tools</a></li><li><a href="feature-shipping.html">Shipping</a></li><li><a href="feature-analytics.html">Analytics</a></li><li><a href="feature-automation.html">Automation</a></li></ul></div><div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="channels.html">Channels</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="cookies.html">Cookies</a></li></ul></div></div><div class="footer-bottom"><p>© 2026 Marketmate Solutions Ltd. Registered in England &amp; Wales.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div></div></div></footer>
+<script src="main.js"></script>
+</body>
+</html>

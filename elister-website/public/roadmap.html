@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Roadmap – MarketMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .roadmap-hero {
+      background: var(--surface-dark);
+      padding: 100px 0 72px;
+      text-align: center;
+    }
+    .roadmap-hero h1 { color: #fff; font-size: clamp(2rem,4vw,3rem); margin-bottom: 16px; }
+    .roadmap-hero p { color: rgba(255,255,255,.65); max-width: 580px; margin: 0 auto; font-size: 1.1rem; }
+
+    /* ── Phase tabs ── */
+    .phase-nav {
+      position: sticky; top: 64px; z-index: 50;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0;
+    }
+    .phase-nav-inner {
+      display: flex; gap: 0;
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      overflow-x: auto;
+    }
+    .phase-tab {
+      flex-shrink: 0;
+      padding: 16px 28px;
+      font-size: .875rem; font-weight: 600;
+      color: var(--text-muted);
+      border-bottom: 3px solid transparent;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .phase-tab:hover { color: var(--text-primary); }
+    .phase-tab.active { color: var(--primary); border-color: var(--primary); }
+    .phase-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: currentColor;
+    }
+    .status-live { color: var(--primary); }
+    .status-dev  { color: #f0a500; }
+    .status-plan { color: #6b7280; }
+
+    /* ── Timeline layout ── */
+    .roadmap-section { padding: 80px 0; }
+    .roadmap-section:nth-child(even) { background: var(--surface); }
+    .roadmap-section:nth-child(odd) { background: var(--bg); }
+
+    .phase-header {
+      max-width: 1100px; margin: 0 auto 48px; padding: 0 24px;
+      display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 24px;
+    }
+    .phase-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+      padding: 4px 14px; border-radius: 20px; margin-bottom: 10px;
+    }
+    .phase-label.live { background: rgba(0,128,96,.1); color: var(--primary); }
+    .phase-label.dev  { background: rgba(240,165,0,.1); color: #c47f00; }
+    .phase-label.plan { background: rgba(107,114,128,.1); color: #4b5563; }
+    .phase-header h2 { font-size: clamp(1.5rem,3vw,2rem); margin-bottom: 8px; }
+    .phase-header p { color: var(--text-muted); max-width: 520px; }
+    .phase-date {
+      text-align: right; flex-shrink: 0;
+    }
+    .phase-date .date-label { font-size: .8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; }
+    .phase-date .date-val { font-size: 1.4rem; font-weight: 800; color: var(--text-primary); }
+
+    /* ── Feature cards in roadmap ── */
+    .roadmap-grid {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;
+    }
+    .roadmap-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .roadmap-section:nth-child(even) .roadmap-card { background: var(--bg); }
+    .roadmap-section:nth-child(odd) .roadmap-card { background: var(--surface); }
+    .roadmap-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,.06); }
+    .card-status {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: 3px 10px; border-radius: 20px; margin-bottom: 14px;
+    }
+    .card-status.live   { background: rgba(0,128,96,.1); color: var(--primary); }
+    .card-status.beta   { background: rgba(0,128,96,.08); color: #059669; }
+    .card-status.dev    { background: rgba(240,165,0,.1); color: #c47f00; }
+    .card-status.planned{ background: rgba(107,114,128,.08); color: #4b5563; }
+    .card-status::before { content: '●'; font-size: .55rem; }
+    .roadmap-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+    .roadmap-card p { font-size: .875rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .card-tag {
+      font-size: .72rem; font-weight: 600;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── Big timeline bar ── */
+    .timeline-bar-section {
+      padding: 80px 0;
+      background: var(--surface-dark);
+    }
+    .timeline-bar-section h2 { text-align: center; color: #fff; font-size: clamp(1.4rem,3vw,2rem); margin-bottom: 12px; }
+    .timeline-bar-section .sub { text-align: center; color: rgba(255,255,255,.55); margin-bottom: 56px; }
+    .timeline-track {
+      max-width: 1000px; margin: 0 auto; padding: 0 24px;
+      position: relative;
+    }
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px; background: rgba(255,255,255,.1);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: grid; grid-template-columns: 1fr 60px 1fr; gap: 24px;
+      margin-bottom: 48px; align-items: start;
+    }
+    .timeline-item:nth-child(even) .tl-content-left { grid-column: 3; }
+    .timeline-item:nth-child(even) .tl-spacer { grid-column: 2; }
+    .timeline-item:nth-child(even) .tl-content-right { grid-column: 1; grid-row: 1; text-align: right; }
+    .tl-node {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.2);
+      background: var(--surface-dark);
+      font-size: .8rem; font-weight: 700; color: #fff;
+      margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .tl-node.live   { border-color: var(--primary); background: var(--primary); }
+    .tl-node.active { border-color: #f0a500; }
+    .tl-content {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+    .tl-content h3 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .tl-content .tl-date { font-size: .75rem; color: rgba(255,255,255,.4); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .06em; }
+    .tl-content ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .tl-content ul li { font-size: .82rem; color: rgba(255,255,255,.65); display: flex; align-items: center; gap: 8px; }
+    .tl-content ul li::before { content: '→'; color: var(--primary); flex-shrink: 0; }
+    .tl-spacer { display: flex; flex-direction: column; align-items: center; }
+
+    @media (max-width: 700px) {
+      .timeline-track::before { left: 20px; }
+      .timeline-item { grid-template-columns: 44px 1fr; }
+      .timeline-item:nth-child(even) .tl-content-right { grid-column: 2; grid-row: auto; text-align: left; }
+      .timeline-item:nth-child(even) .tl-spacer { grid-column: 1; }
+      .timeline-item:nth-child(even) .tl-content-left { grid-column: 2; }
+      .tl-node { margin: 0; }
+    }
+    @media (max-width: 600px) {
+      .roadmap-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="features.html">Features ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="feature-orders.html"><span class="menu-icon">🛒</span><span>Order Management</span></a>
+          <a href="feature-inventory.html"><span class="menu-icon">📦</span><span>Inventory & WMS</span></a>
+          <a href="feature-listings.html"><span class="menu-icon">🤖</span><span>AI Listing Tools</span></a>
+          <a href="feature-shipping.html"><span class="menu-icon">🚚</span><span>Shipping & Dispatch</span></a>
+          <a href="feature-analytics.html"><span class="menu-icon">📊</span><span>Analytics & Reports</span></a>
+          <a href="feature-automation.html"><span class="menu-icon">⚡</span><span>Automation</span></a>
+        </div>
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html" class="active">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a>
+    <a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="roadmap-hero">
+  <div class="container">
+    <div class="badge">Product roadmap</div>
+    <h1>Where we're going — and when</h1>
+    <p>Transparency isn't just a principle. See exactly what we've shipped, what's being built, and what's coming next — with honest timelines.</p>
+  </div>
+</section>
+
+<!-- PHASE NAV -->
+<div class="phase-nav">
+  <div class="phase-nav-inner">
+    <div class="phase-tab active status-live"><span class="phase-dot"></span> MVP · Live Now</div>
+    <div class="phase-tab status-dev"><span class="phase-dot"></span> Release 2 · Q3 2026</div>
+    <div class="phase-tab status-dev"><span class="phase-dot"></span> Release 3 · Q4 2026</div>
+    <div class="phase-tab status-plan"><span class="phase-dot"></span> Release 4 · Q1 2027</div>
+    <div class="phase-tab status-plan"><span class="phase-dot"></span> Release 5 · Q2 2027</div>
+  </div>
+</div>
+
+<!-- MVP / LIVE -->
+<section class="roadmap-section" id="phase-mvp">
+  <div class="phase-header">
+    <div>
+      <div class="phase-label live">● Live now</div>
+      <h2>MVP — Core Platform</h2>
+      <p>Fully operational and serving live customers. Everything below is production-ready and available on all plans from launch.</p>
+    </div>
+    <div class="phase-date">
+      <div class="date-label">Released</div>
+      <div class="date-val">Q1 2026</div>
+    </div>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>Unified Order Management</h3>
+      <p>A single inbox for all orders across Amazon, eBay, Etsy, OnBuy, Kaufland, Back Market and more. Four-panel order drawer with full dispatch, communications, and history.</p>
+      <div class="card-tags"><span class="card-tag">Orders</span><span class="card-tag">Multichannel</span><span class="card-tag">SLA tracking</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>Real-Time Inventory Sync</h3>
+      <p>Event-driven, sub-second inventory propagation across all connected channels. Bin-rack-shelf location management with full multi-warehouse support from day one.</p>
+      <div class="card-tags"><span class="card-tag">Inventory</span><span class="card-tag">WMS</span><span class="card-tag">Multi-warehouse</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>AI Listing Generation</h3>
+      <p>Claude (Anthropic) and Gemini-powered listing creation with channel-specific optimisation. Schema-driven Amazon listing builder with live schema fetching at submission time.</p>
+      <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Listings</span><span class="card-tag">Amazon</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>Shipping & Label Generation</h3>
+      <p>Integrated with Royal Mail, Evri, DPD, and FedEx. Live rate shopping, SLA-driven carrier selection, manifest generation, exception handling, and label cancellation.</p>
+      <div class="card-tags"><span class="card-tag">Shipping</span><span class="card-tag">Labels</span><span class="card-tag">4 carriers</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>Automation & Workflow Engine</h3>
+      <p>No-code rule builder with 20+ trigger types, multi-condition logic, and action chains across orders, inventory, listings, and messaging. Automation log with full audit trail.</p>
+      <div class="card-tags"><span class="card-tag">Automation</span><span class="card-tag">Workflows</span><span class="card-tag">No-code</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>Analytics & Reporting</h3>
+      <p>Revenue analytics, inventory health dashboards, SLA compliance reports, operational KPIs, order analytics, and pivot reporting with full CSV/XLSX export.</p>
+      <div class="card-tags"><span class="card-tag">Analytics</span><span class="card-tag">Reporting</span><span class="card-tag">Forecasting</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>12 Live Channel Integrations</h3>
+      <p>Amazon SP-API (full), eBay, Etsy, OnBuy, Kaufland, Back Market, BigCommerce, Magento, WooCommerce, Bluepark, Temu, and TikTok Shop — all live and full-featured.</p>
+      <div class="card-tags"><span class="card-tag">Channels</span><span class="card-tag">Amazon SP-API</span><span class="card-tag">Marketplaces</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>FBA Inbound Shipment Planning</h3>
+      <p>Plan, build, and submit FBA inbound shipments directly from MarketMate. Stock allocation from any warehouse, carton and pallet planning, and Amazon shipment reference management.</p>
+      <div class="card-tags"><span class="card-tag">FBA</span><span class="card-tag">Amazon</span><span class="card-tag">Inbound</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status live">Live</div>
+      <h3>Purchase Order Management</h3>
+      <p>Raise POs against suppliers, receive stock, and reconcile deliveries against orders. Full PO lifecycle management with supplier master data and delivery tracking.</p>
+      <div class="card-tags"><span class="card-tag">Procurement</span><span class="card-tag">POs</span><span class="card-tag">Stock</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- R2 -->
+<section class="roadmap-section" id="phase-r2">
+  <div class="phase-header">
+    <div>
+      <div class="phase-label dev">● In development</div>
+      <h2>Release 2 — Intelligence & Scale</h2>
+      <p>Shipping Q3 2026. Deeper AI capabilities, Shopify integration, and the first iteration of our seller performance intelligence layer.</p>
+    </div>
+    <div class="phase-date">
+      <div class="date-label">Target</div>
+      <div class="date-val">Q3 2026</div>
+    </div>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="card-status dev">In development</div>
+      <h3>Shopify Integration</h3>
+      <p>Native bidirectional sync with Shopify — orders, inventory, products, and customers. Supports multiple Shopify stores under one MarketMate account with per-store configuration.</p>
+      <div class="card-tags"><span class="card-tag">Shopify</span><span class="card-tag">Ecommerce</span><span class="card-tag">New channel</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status dev">In development</div>
+      <h3>AI Repricer</h3>
+      <p>Intelligent, rule-based repricing engine for Amazon and eBay. Set floor/ceiling prices, competitor-aware rules, and margin protection with a full audit trail of every price change.</p>
+      <div class="card-tags"><span class="card-tag">Repricing</span><span class="card-tag">AI</span><span class="card-tag">Amazon</span><span class="card-tag">eBay</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status dev">In development</div>
+      <h3>Seller Performance Dashboard</h3>
+      <p>Centralised health monitoring for Amazon account metrics, eBay seller levels, defect rates, and late shipment tracking — with proactive alerts before thresholds are breached.</p>
+      <div class="card-tags"><span class="card-tag">Performance</span><span class="card-tag">Alerts</span><span class="card-tag">Amazon</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status dev">In development</div>
+      <h3>Enhanced Messaging Hub</h3>
+      <p>Unified buyer messaging across Amazon, eBay, and Etsy with AI-assisted response drafting, sentiment detection, template management, and response SLA tracking.</p>
+      <div class="card-tags"><span class="card-tag">Messaging</span><span class="card-tag">AI</span><span class="card-tag">CX</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status dev">In development</div>
+      <h3>Advanced Returns Management</h3>
+      <p>End-to-end returns workflow with automated RMA generation, condition grading, restocking decisions, and refund processing — fully integrated with the inventory layer.</p>
+      <div class="card-tags"><span class="card-tag">Returns</span><span class="card-tag">RMA</span><span class="card-tag">Refunds</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status beta">Beta</div>
+      <h3>Mobile Companion App</h3>
+      <p>iOS and Android app for warehouse teams and managers. Scan-to-pick, stock counting, order status checks, and push notifications for SLA breaches and exceptions.</p>
+      <div class="card-tags"><span class="card-tag">Mobile</span><span class="card-tag">iOS</span><span class="card-tag">Android</span><span class="card-tag">WMS</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- R3 -->
+<section class="roadmap-section" id="phase-r3">
+  <div class="phase-header">
+    <div>
+      <div class="phase-label dev">● Planned — Q4 2026</div>
+      <h2>Release 3 — Global Expansion</h2>
+      <p>Extending MarketMate's reach to North America and core European marketplaces, alongside major platform API improvements for agency and enterprise customers.</p>
+    </div>
+    <div class="phase-date">
+      <div class="date-label">Target</div>
+      <div class="date-val">Q4 2026</div>
+    </div>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Walmart Marketplace Integration</h3>
+      <p>Full Walmart Seller Centre integration for US-based and cross-border sellers. Order management, listing sync, inventory, and fulfilment — including Walmart Fulfilment Services (WFS).</p>
+      <div class="card-tags"><span class="card-tag">Walmart</span><span class="card-tag">US Market</span><span class="card-tag">New channel</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Amazon US & EU Expansion</h3>
+      <p>Extend Amazon SP-API coverage to include full Amazon.com (US), Amazon.de, Amazon.fr, Amazon.it, and Amazon.es — with per-marketplace listing and pricing management.</p>
+      <div class="card-tags"><span class="card-tag">Amazon</span><span class="card-tag">International</span><span class="card-tag">EU</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Public REST API</h3>
+      <p>Developer-grade REST API with full authentication, webhooks, and comprehensive documentation. Enables custom integrations, ERP connectivity, and Scale-tier automation extensions.</p>
+      <div class="card-tags"><span class="card-tag">API</span><span class="card-tag">Developers</span><span class="card-tag">Integrations</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>PIM — Product Information Manager</h3>
+      <p>Centralised product catalogue management with attribute mapping per channel, digital asset storage, variant management, and bulk attribute editing across all connected channels simultaneously.</p>
+      <div class="card-tags"><span class="card-tag">PIM</span><span class="card-tag">Catalogue</span><span class="card-tag">Listings</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>3PL Partner Network</h3>
+      <p>Standardised integration framework for third-party logistics providers. Connect your 3PL directly to MarketMate for automated order routing, stock updates, and tracking number retrieval.</p>
+      <div class="card-tags"><span class="card-tag">3PL</span><span class="card-tag">Fulfilment</span><span class="card-tag">Logistics</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Advanced Price Sync Engine</h3>
+      <p>Cross-channel price management with margin-aware rules, currency conversion, tax configuration, and channel-specific promotional pricing — all from a single control panel.</p>
+      <div class="card-tags"><span class="card-tag">Pricing</span><span class="card-tag">Multicurrency</span><span class="card-tag">Promotions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- R4 -->
+<section class="roadmap-section" id="phase-r4">
+  <div class="phase-header">
+    <div>
+      <div class="phase-label plan">● On the horizon</div>
+      <h2>Release 4 — European Marketplaces</h2>
+      <p>Bringing MarketMate's full capabilities to the major continental European platforms — a critical unlock for sellers targeting German, Dutch, and French consumer markets.</p>
+    </div>
+    <div class="phase-date">
+      <div class="date-label">Target</div>
+      <div class="date-val">Q1 2027</div>
+    </div>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Bol.com Integration</h3>
+      <p>Full integration with Bol.com — the dominant marketplace in the Netherlands and Belgium. Order management, inventory, listing tools, and shipping label generation for Bol carriers.</p>
+      <div class="card-tags"><span class="card-tag">Bol.com</span><span class="card-tag">Netherlands</span><span class="card-tag">Belgium</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Zalando Integration</h3>
+      <p>Connect to Zalando Partner Programme for fashion and lifestyle sellers. Product feed management, order fulfilment, and returns handling across Zalando's European markets.</p>
+      <div class="card-tags"><span class="card-tag">Zalando</span><span class="card-tag">Fashion</span><span class="card-tag">EU</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>OTTO Integration</h3>
+      <p>Integration with OTTO Marketplace — Germany's second-largest online marketplace. Full product listing, order management, and inventory sync for German market sellers.</p>
+      <div class="card-tags"><span class="card-tag">OTTO</span><span class="card-tag">Germany</span><span class="card-tag">New channel</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>AI Demand Sensing</h3>
+      <p>Next-generation demand forecasting that incorporates external signals — search trends, seasonal patterns, competitor stock levels, and promotional calendars — not just your own sales history.</p>
+      <div class="card-tags"><span class="card-tag">AI</span><span class="card-tag">Forecasting</span><span class="card-tag">Demand</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Multi-Currency Accounting Export</h3>
+      <p>Automated accounting-ready exports for Xero, QuickBooks, and Sage with full multicurrency reconciliation, marketplace fee extraction, and VAT-compliant transaction reporting.</p>
+      <div class="card-tags"><span class="card-tag">Accounting</span><span class="card-tag">Xero</span><span class="card-tag">Finance</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>White-Label Platform</h3>
+      <p>Allow agencies and enterprise groups to deploy MarketMate under their own brand with custom domain, colours, and customer management tools. Includes per-client billing and access controls.</p>
+      <div class="card-tags"><span class="card-tag">White-label</span><span class="card-tag">Agency</span><span class="card-tag">Enterprise</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- R5 -->
+<section class="roadmap-section" id="phase-r5">
+  <div class="phase-header">
+    <div>
+      <div class="phase-label plan">● Future vision</div>
+      <h2>Release 5 — Platform Ecosystem</h2>
+      <p>Looking further ahead — building the infrastructure for a true platform ecosystem with developer extensions, AI agents, and advanced operational intelligence.</p>
+    </div>
+    <div class="phase-date">
+      <div class="date-label">Target</div>
+      <div class="date-val">Q2 2027</div>
+    </div>
+  </div>
+  <div class="roadmap-grid">
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>AI Operations Agent</h3>
+      <p>A conversational AI agent that monitors your entire operation, answers questions in natural language, suggests optimisations, and can execute routine tasks on your behalf.</p>
+      <div class="card-tags"><span class="card-tag">AI Agent</span><span class="card-tag">Conversational</span><span class="card-tag">Automation</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>Marketplace Intelligence</h3>
+      <p>Competitive analysis tools — track competitor pricing, detect buy box trends, monitor keyword rankings, and receive actionable intelligence reports automatically every morning.</p>
+      <div class="card-tags"><span class="card-tag">Intelligence</span><span class="card-tag">Competitive</span><span class="card-tag">Amazon</span></div>
+    </div>
+    <div class="roadmap-card">
+      <div class="card-status planned">Planned</div>
+      <h3>App Marketplace</h3>
+      <p>A curated ecosystem of partner integrations and community-built extensions — connecting MarketMate to specialist tools for accounting, advertising, freight, and more.</p>
+      <div class="card-tags"><span class="card-tag">Marketplace</span><span class="card-tag">Extensions</span><span class="card-tag">Partners</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE BAR -->
+<section class="timeline-bar-section">
+  <div class="container">
+    <h2>Our journey at a glance</h2>
+    <p class="sub">From launch to a fully global, AI-powered commerce platform.</p>
+    <div class="timeline-track">
+
+      <div class="timeline-item">
+        <div class="tl-content">
+          <div class="tl-date">Q1 2026</div>
+          <h3>MVP Launch</h3>
+          <ul>
+            <li>12 live channel integrations</li>
+            <li>Full order, inventory & listing platform</li>
+            <li>4 carrier integrations</li>
+            <li>Amazon SP-API approved</li>
+          </ul>
+        </div>
+        <div class="tl-spacer"><div class="tl-node live">✓</div></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="tl-spacer"><div class="tl-node active"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">Q3 2026</div>
+          <h3>Release 2 — Intelligence</h3>
+          <ul>
+            <li>Shopify integration</li>
+            <li>AI Repricer</li>
+            <li>Seller Performance Dashboard</li>
+            <li>Mobile app (iOS + Android)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-content">
+          <div class="tl-date">Q4 2026</div>
+          <h3>Release 3 — Global Scale</h3>
+          <ul>
+            <li>Walmart US integration</li>
+            <li>Amazon EU expansion</li>
+            <li>Public REST API</li>
+            <li>PIM & 3PL network</li>
+          </ul>
+        </div>
+        <div class="tl-spacer"><div class="tl-node"></div></div>
+        <div></div>
+      </div>
+
+      <div class="timeline-item">
+        <div></div>
+        <div class="tl-spacer"><div class="tl-node"></div></div>
+        <div class="tl-content">
+          <div class="tl-date">Q1 2027</div>
+          <h3>Release 4 — European Markets</h3>
+          <ul>
+            <li>Bol.com + Zalando + OTTO</li>
+            <li>AI Demand Sensing</li>
+            <li>Accounting integrations</li>
+            <li>White-label platform</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="tl-content">
+          <div class="tl-date">Q2 2027</div>
+          <h3>Release 5 — Platform Ecosystem</h3>
+          <ul>
+            <li>AI Operations Agent</li>
+            <li>Marketplace intelligence</li>
+            <li>App Marketplace launch</li>
+          </ul>
+        </div>
+        <div class="tl-spacer"><div class="tl-node"></div></div>
+        <div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="badge badge-light">Shape the roadmap</div>
+      <h2>Your feedback drives our priorities</h2>
+      <p>We build in close partnership with our customers. Reach out to tell us which features matter most to your business — and get early access to features as they roll out.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-white">Talk to the team</a>
+        <a href="pricing.html" class="btn btn-outline-white">View pricing →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Market<span class="logo-dot">Mate</span></div>
+      <p>Multichannel order management, inventory, and listings — built for serious sellers.</p>
+      <div class="amazon-badge">✦ Amazon SP-API Approved</div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="feature-orders.html">Order Management</a>
+      <a href="feature-inventory.html">Inventory & WMS</a>
+      <a href="feature-listings.html">AI Listing Tools</a>
+      <a href="feature-shipping.html">Shipping & Dispatch</a>
+      <a href="feature-analytics.html">Analytics</a>
+      <a href="feature-automation.html">Automation</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="channels.html">Channels</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="roadmap.html">Roadmap</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Marketmate Solutions Ltd. Registered in England & Wales.</span>
+    <span>Roadmap timelines are indicative and subject to change.</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

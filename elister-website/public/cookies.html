@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy – MarketMate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal-hero { background: var(--surface-dark); padding: 90px 0 56px; text-align: center; }
+    .legal-hero h1 { color: #fff; font-size: clamp(1.8rem,3.5vw,2.6rem); margin-bottom: 12px; }
+    .legal-hero .meta { color: rgba(255,255,255,.5); font-size: .875rem; }
+    .legal-layout { max-width: 1100px; margin: 0 auto; padding: 64px 24px; display: grid; grid-template-columns: 240px 1fr; gap: 64px; align-items: start; }
+    .legal-toc { position: sticky; top: 90px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px; padding: 24px; }
+    .legal-toc h4 { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 16px; }
+    .legal-toc a { display: block; font-size: .82rem; color: var(--text-muted); text-decoration: none; padding: 6px 0; border-bottom: 1px solid var(--border); transition: color .15s; }
+    .legal-toc a:last-child { border-bottom: none; }
+    .legal-toc a:hover { color: var(--primary); }
+    .legal-content h2 { font-size: 1.3rem; font-weight: 800; margin: 44px 0 14px; padding-bottom: 10px; border-bottom: 2px solid var(--border); color: var(--text-primary); scroll-margin-top: 100px; }
+    .legal-content h2:first-child { margin-top: 0; }
+    .legal-content h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 10px; }
+    .legal-content p { color: var(--text-secondary); font-size: .925rem; line-height: 1.8; margin-bottom: 14px; }
+    .legal-content ul, .legal-content ol { color: var(--text-secondary); font-size: .925rem; line-height: 1.8; margin: 10px 0 16px 20px; }
+    .legal-content li { margin-bottom: 6px; }
+    .legal-content strong { color: var(--text-primary); }
+    .legal-content a { color: var(--primary); }
+    .info-box { background: rgba(0,128,96,.06); border: 1px solid rgba(0,128,96,.2); border-left: 4px solid var(--primary); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 20px 0; font-size: .875rem; color: var(--text-secondary); line-height: 1.7; }
+    .cookie-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 16px 0 24px; }
+    .cookie-table th { background: var(--surface); padding: 10px 14px; text-align: left; font-weight: 700; border: 1px solid var(--border); }
+    .cookie-table td { padding: 10px 14px; border: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+    .cookie-table tr:hover td { background: var(--surface); }
+    .cookie-type { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: .72rem; font-weight: 700; }
+    .cookie-type.necessary { background: rgba(0,128,96,.1); color: var(--primary); }
+    .cookie-type.analytics { background: rgba(59,130,246,.1); color: #2563eb; }
+    .cookie-type.preference { background: rgba(245,158,11,.1); color: #b45309; }
+    @media (max-width: 900px) { .legal-layout { grid-template-columns: 1fr; } .legal-toc { position: static; } }
+  </style>
+</head>
+<header class="nav-wrap" id="nav">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo">Market<span class="logo-dot">Mate</span></a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="features.html">Features ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="feature-orders.html"><span class="menu-icon">🛒</span><span>Order Management</span></a>
+          <a href="feature-inventory.html"><span class="menu-icon">📦</span><span>Inventory &amp; WMS</span></a>
+          <a href="feature-listings.html"><span class="menu-icon">🤖</span><span>AI Listing Tools</span></a>
+          <a href="feature-shipping.html"><span class="menu-icon">🚚</span><span>Shipping &amp; Dispatch</span></a>
+          <a href="feature-analytics.html"><span class="menu-icon">📊</span><span>Analytics &amp; Reports</span></a>
+          <a href="feature-automation.html"><span class="menu-icon">⚡</span><span>Automation</span></a>
+        </div>
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="features.html">Features</a><a href="channels.html">Channels</a>
+    <a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="about.html">About</a>
+    <a href="contact.html" class="btn-primary" style="text-align:center;margin-top:8px;">Get Started →</a>
+  </div>
+</header>
+
+      </li>
+      <li><a href="channels.html">Channels</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="roadmap.html">Roadmap</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-spacer"></div>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn-ghost">Contact Sales</a>
+      <a href="contact.html" class="btn-primary">Get Started →</a>
+    </div>
+    <button class="nav-burger" id="navBurger">☰</button>
+  </div>
+</nav>
+
+<section class="legal-hero">
+  <div class="container">
+    <h1>Cookie Policy</h1>
+    <p class="meta">Marketmate Solutions Ltd · Last updated: 1 March 2026 · Version 1.0</p>
+  </div>
+</section>
+
+<div class="legal-layout">
+  <nav class="legal-toc">
+    <h4>Contents</h4>
+    <a href="#what-cookies">1. What Are Cookies?</a>
+    <a href="#how-we-use">2. How We Use Cookies</a>
+    <a href="#types">3. Types of Cookies</a>
+    <a href="#cookie-list">4. Cookies We Use</a>
+    <a href="#third-party-cookies">5. Third-Party Cookies</a>
+    <a href="#managing">6. Managing Cookies</a>
+    <a href="#changes-cookies">7. Changes</a>
+    <a href="#contact-cookies">8. Contact</a>
+  </nav>
+
+  <article class="legal-content">
+
+    <div class="info-box"><strong>Summary:</strong> We use a small number of cookies to keep the Website working and to understand how it is used. We do not use advertising or tracking cookies. Non-essential cookies require your consent via our cookie banner.</div>
+
+    <h2 id="what-cookies">1. What Are Cookies?</h2>
+    <p>Cookies are small text files that are placed on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work efficiently and to provide information to website operators.</p>
+    <p>Cookies are not harmful to your device and cannot access any other information on it. They can only be read by the website that placed them (or third-party services that website has engaged).</p>
+    <p>Similar technologies — such as local storage, session storage, and web beacons — may also be used by us and are referred to collectively as "<strong>cookies</strong>" in this policy.</p>
+
+    <h2 id="how-we-use">2. How We Use Cookies</h2>
+    <p>We use cookies on the MarketMate website (<strong>marketmate.co.uk</strong>) and within the MarketMate Platform for the following purposes:</p>
+    <ul>
+      <li>To keep the Website and Platform functioning correctly;</li>
+      <li>To remember your login state and session within the Platform;</li>
+      <li>To remember your preferences (such as cookie consent choices);</li>
+      <li>To understand how visitors use our Website so we can improve it;</li>
+      <li>To measure the effectiveness of our content.</li>
+    </ul>
+    <p>We do <strong>not</strong> use cookies for: advertising or retargeting; tracking you across third-party websites; building advertising profiles; or any purpose other than those described above.</p>
+
+    <h2 id="types">3. Types of Cookies We Use</h2>
+
+    <h3>Strictly necessary cookies</h3>
+    <p>These cookies are essential for the Website and Platform to function. Without them, services you have requested (such as staying logged in) cannot be provided. These cookies do not require your consent under applicable law (PECR and UK GDPR), as they are strictly necessary for the service you have requested.</p>
+
+    <h3>Preference cookies</h3>
+    <p>These cookies allow the Website to remember choices you make — such as your cookie consent preferences, language settings, or UI customisations within the Platform. They are set in response to your actions and persist so you do not have to re-enter preferences on every visit.</p>
+
+    <h3>Analytics cookies</h3>
+    <p>These cookies help us understand how visitors interact with our Website — which pages are most popular, how long visitors stay, where they come from, and what actions they take. The information collected is aggregated and anonymised; it does not identify individual visitors. These cookies require your consent and can be declined via our cookie banner.</p>
+
+    <h2 id="cookie-list">4. Cookies We Use</h2>
+
+    <table class="cookie-table">
+      <thead>
+        <tr><th>Cookie name</th><th>Type</th><th>Purpose</th><th>Expiry</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>mm_session</strong></td>
+          <td><span class="cookie-type necessary">Necessary</span></td>
+          <td>Maintains your login session in the MarketMate Platform. Without this cookie, you would be logged out on every page load.</td>
+          <td>Session (expires on browser close)</td>
+        </tr>
+        <tr>
+          <td><strong>mm_auth_token</strong></td>
+          <td><span class="cookie-type necessary">Necessary</span></td>
+          <td>Firebase authentication token. Used to verify your identity with the MarketMate API. Set by Firebase Auth.</td>
+          <td>1 hour (auto-renewed)</td>
+        </tr>
+        <tr>
+          <td><strong>mm_cookie_consent</strong></td>
+          <td><span class="cookie-type preference">Preference</span></td>
+          <td>Records your cookie consent choice (accepted / declined analytics cookies). This prevents the cookie banner from appearing on every visit.</td>
+          <td>12 months</td>
+        </tr>
+        <tr>
+          <td><strong>mm_prefs</strong></td>
+          <td><span class="cookie-type preference">Preference</span></td>
+          <td>Stores your in-Platform UI preferences such as sidebar state, table column widths, and default views.</td>
+          <td>12 months</td>
+        </tr>
+        <tr>
+          <td><strong>_ga</strong></td>
+          <td><span class="cookie-type analytics">Analytics</span></td>
+          <td>Google Analytics. Used to distinguish unique visitors and generate anonymised usage statistics. IP addresses are anonymised before storage.</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td><strong>_ga_[ID]</strong></td>
+          <td><span class="cookie-type analytics">Analytics</span></td>
+          <td>Google Analytics. Used to persist session state across page requests.</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td><strong>_gid</strong></td>
+          <td><span class="cookie-type analytics">Analytics</span></td>
+          <td>Google Analytics. Used to distinguish users within a single day.</td>
+          <td>24 hours</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="third-party-cookies">5. Third-Party Cookies</h2>
+    <p>Some cookies on our Website are set by third-party services that we use. The key third-party cookies are:</p>
+
+    <h3>Google Analytics</h3>
+    <p>We use Google Analytics 4 to understand how visitors use our Website. Google Analytics uses cookies to collect anonymised usage data. We have configured Google Analytics with IP anonymisation enabled. Google processes this data in accordance with Google's Privacy Policy. Analytics cookies are only set with your consent.</p>
+    <p>You can opt out of Google Analytics tracking across all websites by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+    <h3>Stripe</h3>
+    <p>Our payment processor, Stripe, may set cookies on the payment pages to prevent fraud and enable secure payment processing. These are necessary cookies and cannot be disabled on payment pages. Stripe's Cookie Policy governs their use.</p>
+
+    <h3>Firebase / Google</h3>
+    <p>Firebase Authentication (used for Platform login) sets cookies as part of the secure authentication flow. These are strictly necessary and cannot be disabled for Platform users.</p>
+
+    <h2 id="managing">6. Managing Your Cookie Preferences</h2>
+
+    <h3>6.1 Our cookie banner</h3>
+    <p>When you first visit our Website, a cookie banner will appear allowing you to accept or decline analytics cookies. You can change your preference at any time by clicking the "Cookie settings" link in the footer of any page on our Website.</p>
+
+    <h3>6.2 Browser settings</h3>
+    <p>Most web browsers allow you to control cookies through their settings. You can typically:</p>
+    <ul>
+      <li>View all cookies stored on your device and delete them individually;</li>
+      <li>Block all cookies, or block cookies from specific websites;</li>
+      <li>Set your browser to notify you when a cookie is being placed.</li>
+    </ul>
+    <p>Please note that blocking strictly necessary cookies will prevent the MarketMate Platform from functioning correctly. Instructions for managing cookies in common browsers:</p>
+    <ul>
+      <li><strong>Google Chrome:</strong> Settings → Privacy and security → Cookies and other site data</li>
+      <li><strong>Mozilla Firefox:</strong> Settings → Privacy & Security → Cookies and Site Data</li>
+      <li><strong>Apple Safari:</strong> Preferences → Privacy → Manage Website Data</li>
+      <li><strong>Microsoft Edge:</strong> Settings → Cookies and site permissions → Cookies and site data</li>
+    </ul>
+
+    <h3>6.3 Do Not Track</h3>
+    <p>Some browsers have a "Do Not Track" (DNT) feature that signals to websites that you do not want to be tracked. There is currently no universal standard for DNT signals, and MarketMate does not alter its tracking practices based on DNT signals. You can manage your preferences using the methods described above.</p>
+
+    <h2 id="changes-cookies">7. Changes to This Cookie Policy</h2>
+    <p>We may update this Cookie Policy from time to time — for example, when we add new third-party services or change the cookies we use. We will update the "last updated" date at the top of this policy and, where changes are material, notify you via email or the cookie banner.</p>
+
+    <h2 id="contact-cookies">8. Contact</h2>
+    <p>If you have any questions about our use of cookies, please contact us:</p>
+    <p>
+      <strong>Email:</strong> <a href="mailto:privacy@marketmate.co.uk">privacy@marketmate.co.uk</a><br>
+      <strong>Postal:</strong> Marketmate Solutions Ltd, England & Wales
+    </p>
+    <p>For broader privacy enquiries, please see our <a href="privacy.html">Privacy Policy</a>. For questions about how we use your data within the Platform, please see our <a href="terms.html">Terms of Service</a>.</p>
+
+  </article>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Market<span class="logo-dot">Mate</span></div>
+      <p>Multichannel order management, inventory, and listings — built for serious sellers.</p>
+      <div class="amazon-badge">✦ Amazon SP-API Approved</div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <a href="feature-orders.html">Order Management</a><a href="feature-inventory.html">Inventory & WMS</a>
+      <a href="feature-listings.html">AI Listing Tools</a><a href="feature-shipping.html">Shipping & Dispatch</a>
+      <a href="feature-analytics.html">Analytics</a><a href="feature-automation.html">Automation</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="about.html">About</a><a href="channels.html">Channels</a>
+      <a href="pricing.html">Pricing</a><a href="roadmap.html">Roadmap</a><a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a><a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Marketmate Solutions Ltd. Registered in England & Wales.</span>
+    <span>Version 1.0 · Updated 1 March 2026</span>
+  </div>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>
