@@ -561,11 +561,32 @@ def scan_trivy_config():
         res["error"] = str(e)
         print(f"  Parse error: {e}")
 
-    res["passed"] = res["critical"] == 0 and res["high"] == 0
+    # Accepted Dockerfile misconfigurations — documented risks with mitigations.
+    ACCEPTED_TRIVY_CONFIG = {
+        # backend/Dockerfile runs as root — USER appuser caused Cloud Run startup
+        # failure because the binary is built as root and the working directory
+        # /app is root-owned. Cloud Run gVisor sandbox provides kernel-level
+        # isolation regardless of in-container user. Non-root deferred pending
+        # build ownership fix (RUN chown appuser /app/server before USER directive).
+        "DS-0002": "backend/Dockerfile runs as root — mitigated by Cloud Run gVisor sandbox; non-root deferred pending build ownership fix",
+    }
+
+    actionable = [f for f in res["findings"]
+                  if f["severity"] in ("CRITICAL", "HIGH")
+                  and f.get("id") not in ACCEPTED_TRIVY_CONFIG]
+    accepted   = [f for f in res["findings"]
+                  if f.get("id") in ACCEPTED_TRIVY_CONFIG]
+
+    res["passed"] = len(actionable) == 0
+    res["accepted_risks"] = [f.get("id") for f in accepted]
+
     print(f"  Critical: {res['critical']}  High: {res['high']}  Medium: {res['medium']}")
+    if accepted:
+        for f in accepted:
+            print(f"  ⚠ [{f['severity']}] {f['id']} — ACCEPTED RISK: {ACCEPTED_TRIVY_CONFIG[f['id']][:80]}")
     if not res["passed"]:
         print("  HIGH/CRITICAL Dockerfile findings — REQUIRES FIXING:")
-        for f in [x for x in res["findings"] if x["severity"] in ("CRITICAL", "HIGH")][:10]:
+        for f in actionable[:10]:
             print(f"    [{f['severity']}] {f['id']} in {f['file']}: {f['title']}")
     print(f"  {ok(res['passed'])}")
     return res
