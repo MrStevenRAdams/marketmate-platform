@@ -1,4 +1,4 @@
-FROM golang:1.26-alpine3.23@sha256:9dfeab91d05d576e6102400be6596b381cb659608a561bcd98bde2048b13a9a2 AS builder
+FROM golang:1.26-alpine3.23@sha256:c2a1f7b2095d046ae14b286b18413a05bb82c9bca9b25fe7ff5efef0f0826166 AS builder
 WORKDIR /app
 COPY go.mod ./
 COPY main.go ./
